@@ -1,9 +1,10 @@
 var Rx = require('rxjs/Rx');
 var request = require('request');
-var baseUrl = 'https://www.advancedeventsystems.com/EventResults/';
+var baseUrl = require('./baseUrl');
+var eventClubListUrl = 'ClubList.aspx';
 
-module.exports = function tournamentObserver(clubListUrl, tournamentCode, clubCode) {
-  var url = baseUrl + clubListUrl + '?e=' + tournamentCode + '&c=' + clubCode;
+module.exports = function tournamentObserver(tournamentCode, clubCode) {
+  var url = baseUrl + eventClubListUrl + '?e=' + tournamentCode + '&c=' + clubCode;
   console.log('tournamentObserver(): Requesting url [' + url + ']');
 
   return Rx.Observable.create(function subscriber(observer) {
