@@ -12,7 +12,6 @@ var scheduleObserver = require('./scheduleObserver');
 var poolObserver = require('./poolObserver');
 var resultsObserver = require('./resultsObserver');
 
-var fixTeamName = require('./fixTeamName');
 var makePool = require('./makePool');
 
 var tournamentCodes = require('./tournamentCodes');
@@ -25,7 +24,7 @@ app.get('/scrapeAES', function (req, res) {
   "use strict";
 
   function isTeamPlaying(teamName) {
-    console.log('TEAM PLAYING [' + teamName + ']');
+    // console.log('TEAM PLAYING [' + teamName + ']');
     // return true;
     return teamList[teamName] && teamList[teamName].playing;
   }
@@ -105,14 +104,10 @@ app.get('/scrapeAES', function (req, res) {
           lastDivision = team.division;
         }
 
-        Object.keys(team.pools).
-          filter(function(pool) {
-            return isTodayOrLater(team.pools[pool]);
-          }).
-          forEach(function(pool) {
-            html += makePool(team.name, pool, team.pools[pool]);
-          });
+        Object.keys(team.pools).forEach(function(pool) {
+          html += makePool(team.name, pool, team.pools[pool]);
         });
+      });
 
       html += "</body>\n</html>\n";
       // console.log(JSON.stringify(teamData));
@@ -149,6 +144,7 @@ app.get('/scrapeAES', function (req, res) {
         console.log('extractData(): getting pool results for [' + team.name + ']');
         return Rx.Observable.
           from(Object.keys(team.pools)).
+          filter(pool => isTodayOrLater(team.pools[pool])). // Only fetch pools from today or later so we make fewer requests
           map(pool => poolObserver(team, pool));
       }).
       mergeAll(). // map() returns an array of arrays of observables, so we must flatten twice.
