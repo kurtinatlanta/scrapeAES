@@ -1,5 +1,5 @@
 {
-  "name": "aes-scraper",
+  "name": "scrapeAES",
   "version": "2.0.0",
   "description": "Scrape results from AES",
   "main": "server.js",
