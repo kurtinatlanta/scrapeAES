@@ -1,0 +1,12 @@
+{
+  "name": "aes-scraper",
+  "version": "0.0.1",
+  "description": "Scrape results from AES",
+  "main": "server.js",
+  "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "request": "latest",
+    "rxjs": "^5.0.0-beta.9"
+  }
+}
