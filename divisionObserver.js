@@ -8,10 +8,10 @@ module.exports = function divisionObserver(content) {
   var $ = cheerio.load(content);
 
   return Rx.Observable.create(function subscriber(observer) {
-    var list = $('.list tr').each(function (index, item) {
+    var list = $('.list tr').each(function (/* index, item */) {
       var teamRows = [];
 
-      $(this).children().filter('td').children().filter('a').each(function (index1, item1) {
+      $(this).children().filter('td').children().filter('a').each(function (/* index1, item1 */) {
         teamRows.push({link: $(this).attr('href'), text: $(this).text().trim()});
       });
 

@@ -2,8 +2,6 @@
  * Created by kurt on 2/7/15.
  */
 var express = require('express');
-var request = require('request');
-var cheerio = require('cheerio');
 var Rx = require('rxjs/Rx');
 var app = express();
 
@@ -23,24 +21,8 @@ var teamCodes = require('./teamCodes');
 var divisionList = require('./divisionList');
 var teamList = require('./teamList');
 
-var baseUrl = 'https://www.advancedeventsystems.com/EventResults/';
-var eventClubListUrl = 'ClubList.aspx';
-
 app.get('/scrapeAES', function (req, res) {
   "use strict";
-  var teamData = {};
-  var teamsByDivision = {};
-
-  var signals = {};
-
-  /*
-  function isDivisionPlaying(division) {
-    // console.log('TEAM PLAYING [' + teamName + '] = [' + teamsPlaying[teamName] + ']');
-    // return true;
-    return divisionList[division] && divisionList[division].playing;
-    // return teamsPlaying[teamName];
-  }
-  */
 
   function isTeamPlaying(teamName) {
     console.log('TEAM PLAYING [' + teamName + ']');
@@ -81,8 +63,8 @@ app.get('/scrapeAES', function (req, res) {
   }
 
   // Send back the HTML so we can see it
-  function processObservedData(teamResults) {
-      console.log("processObservedData(): Starting");
+  function generateHtml(teamResults) {
+      console.log("generateHtml(): Starting");
       var html = "<html>\n<head>\n";
       html += '<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600" rel="stylesheet" type="text/css">\n';
       html += '<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">\n';
@@ -128,7 +110,7 @@ app.get('/scrapeAES', function (req, res) {
             return isTodayOrLater(team.pools[pool]);
           }).
           forEach(function(pool) {
-            html += makePool(team.name, pool, team.pools[pool], baseUrl);
+            html += makePool(team.name, pool, team.pools[pool]);
           });
         });
 
@@ -137,34 +119,34 @@ app.get('/scrapeAES', function (req, res) {
       res.send(html);
   }
 
-  function runObservable(clubListUrl, tournamentCode, tournamentTeams) {
+  function extractData(tournamentCode, tournamentTeams) {
     var teamResults = [];
 
     Rx.Observable.from(Object.keys(tournamentTeams)).
       map(function(key) {
-        console.log('runObservable(): fetching participating team list for [' + key + ']');
-        return tournamentObserver(clubListUrl, tournamentCode, tournamentTeams[key]);
+        console.log('extractData(): fetching participating team list for [' + key + ']');
+        return tournamentObserver(tournamentCode, tournamentTeams[key]);
       }).
       mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
       map(data => {
-        console.log('runObservable(): division statusCode = [' + data.response.statusCode + ']');
+        console.log('extractData(): division statusCode = [' + data.response.statusCode + ']');
         return divisionObserver(data.content);
       }).
       mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
       filter(team => isTeamPlaying(team.name)).
       map(team => {
-        console.log('runObservable(): fetching data for [' + team.name + ']');
+        console.log('extractData(): fetching data for [' + team.name + ']');
         return teamObserver(team);
       }).
       mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
       map(teamData => {
-        console.log('runObservable(): team status code = [' + teamData.response.statusCode + ']');
+        console.log('extractData(): team status code = [' + teamData.response.statusCode + ']');
         return scheduleObserver(teamData);
       }).
       mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
       filter(team => team.pools).
       map(team => {
-        console.log('runObservable(): getting pool results for [' + team.name + ']');
+        console.log('extractData(): getting pool results for [' + team.name + ']');
         return Rx.Observable.
           from(Object.keys(team.pools)).
           map(pool => poolObserver(team, pool));
@@ -172,30 +154,23 @@ app.get('/scrapeAES', function (req, res) {
       mergeAll(). // map() returns an array of arrays of observables, so we must flatten twice.
       mergeAll().
       map(results => {
-        console.log('runObservable(): fetched pool data status code = [' + results.response.statusCode + ']');
+        console.log('extractData(): fetched pool data status code = [' + results.response.statusCode + ']');
         return resultsObserver(results);
       }).
       mergeAll().
       subscribe(team => {
-        console.log('runObservable: finished team [' + team.name + ']');
+        console.log('extractData: finished team [' + team.name + ']');
         teamResults.push(team);
       },
       error => console.log(error),
       () => {
-        console.log('runObservable(): COMPLETED.');
+        console.log('extractData(): COMPLETED.');
         // console.log('teamResults = ' + JSON.stringify(teamResults));
-        processObservedData(teamResults);
+        generateHtml(teamResults);
       });
   }
 
-  // runAAU();
-  runObservable(eventClubListUrl, tournamentCodes.aauNationals, teamCodes.aauGirls);
-  // runUSAV();
-  // fetchTournament(eventClubListUrl, srvaRegionals, a5_boys, tournamentHandler);
-  // fetchTournament(eventClubListUrl, usav18, ga5, tournamentHandler);
-  // fetchTournament(eventClubListUrl, usav18, a5South, tournamentHandler);
-  // fetchTournament(eventClubListUrl, usav18, tsunami, tournamentHandler);
-  // setTimeout(processPoolResults, 5000);
+  extractData(tournamentCodes.aauNationals, teamCodes.aauGirls);
 });
 
 app.listen('3200');

@@ -1,8 +1,6 @@
 var Rx = require('rxjs/Rx');
 var cheerio = require('cheerio');
 var fixTeamName = require('./fixTeamName');
-// var fixDivision = require('./fixDivision');
-var fixPool = require('./fixPool');
 
 module.exports = function resultsObserver(resultsData) {
   // console.log('divisionObservable(): content = [' + content + ']');

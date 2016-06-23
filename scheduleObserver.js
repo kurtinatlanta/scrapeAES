@@ -1,7 +1,5 @@
 var Rx = require('rxjs/Rx');
 var cheerio = require('cheerio');
-// var fixTeamName = require('./fixTeamName');
-// var fixDivision = require('./fixDivision');
 var fixPool = require('./fixPool');
 
 module.exports = function scheduleObserver(teamData) {
@@ -12,11 +10,11 @@ module.exports = function scheduleObserver(teamData) {
   var schedule = $('.list').first();
 
   return Rx.Observable.create(function subscriber(observer) {
-    schedule.children('tr').each(function (index, item) {
+    schedule.children('tr').each(function (/* index, item */) {
       var teamItems = [];
       var poolLink = "";
 
-      $(this).children().filter('td').each(function (index1, item1) {
+      $(this).children().filter('td').each(function (/* index1, item1 */) {
         var links = $(this).children('a');
         var linkUrl = "";
 
