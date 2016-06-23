@@ -1,8 +1,9 @@
 {
   "name": "aes-scraper",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "Scrape results from AES",
   "main": "server.js",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "latest",
     "express": "latest",
