@@ -1,4 +1,4 @@
-module.exports = {
+var aauDivisions = {
   '18 Open': { playing: true, rank: 1 }, // 23 Jun
   '18 Premier': { playing: true, rank: 2 }, // 23 Jun
   '18 Club': { playing: false, rank: 3 }, // 19 Jun
@@ -33,3 +33,5 @@ module.exports = {
   '16U': { playing: false, rank: 32 }, // 18 Jun
   '14U': { playing: false, rank: 33 } // 18 Jun
 };
+
+module.exports = aauDivisions;
