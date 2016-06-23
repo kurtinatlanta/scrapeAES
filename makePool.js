@@ -1,5 +1,6 @@
 "use strict";
 var fixClubName = require('./fixClubName');
+var baseUrl = require('./baseUrl');
 
 function chopTeamName(teamName) {
   var newName = teamName;
@@ -152,7 +153,7 @@ function pushUnique(theArray, item) {
   }
 }
 
-module.exports = function makePool(teamName, pool, poolData, baseUrl) {
+module.exports = function makePool(teamName, pool, poolData) {
   var html = "";
   var courts = [];
   var poolStarted = false;

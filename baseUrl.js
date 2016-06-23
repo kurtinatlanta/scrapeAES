@@ -1,0 +1,1 @@
+module.exports = 'https://www.advancedeventsystems.com/EventResults/';

@@ -1,6 +1,6 @@
 var Rx = require('rxjs/Rx');
 var request = require('request');
-var baseUrl = 'https://www.advancedeventsystems.com/EventResults/';
+var baseUrl = require('./baseUrl');
 
 module.exports = function teamObserver(team) {
   var url = baseUrl + team.link;
