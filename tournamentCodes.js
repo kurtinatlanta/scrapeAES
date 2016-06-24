@@ -1,3 +1,6 @@
+var eventType = require('./eventType');
+var exportedValue = '';
+
 // var southernDream = 'PTAwMDAwMDg5NDc90';
 // var boysWinterChamp = 'PTAwMDAwMDkwMjA90';
 // var centralZoneInvitational = 'PTAwMDAwMDgyMzk90';
@@ -40,7 +43,15 @@
 // var usavBoys = 'PTAwMDAwMDYyMzk90';
 // var usav18 = 'PTAwMDAwMDkzNTk90';
 
-module.exports = {
-  aauNationals: 'NDNyZF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1',
-  aauBoys: 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2'
-};
+var aauNationals = 'NDNyZF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
+var aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
+var usavGirls = 'PTAwMDAwMDkxNjc90';
+
+if (eventType === 'aau') {
+  exportedValue = aauNationals;
+}
+else if (eventType === 'usav') {
+  exportedValue = usavGirls;
+}
+
+module.exports = exportedValue;

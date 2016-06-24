@@ -1,6 +1,7 @@
 var Rx = require('rxjs/Rx');
 var cheerio = require('cheerio');
 var fixTeamName = require('./fixTeamName');
+var eventType = require('./eventType');
 
 module.exports = function resultsObserver(resultsData) {
   // console.log('divisionObservable(): content = [' + content + ']');
@@ -68,10 +69,21 @@ module.exports = function resultsObserver(resultsData) {
 
     pool.stayInContention = 0;
     pool.makeGold = 0;
-    var inContention = /\(R\dG1/;
+    var inContention;
     var crossover = /\(R\dG\dXO/;
-    var challenge = /\(R\dChallenge/i;
-    var gold = /\(R\dGOLD/i;
+    var challenge;
+    var gold;
+
+    if (eventType === 'aau') {
+      inContention = /\(R\dG1/;
+      challenge = /\(R\dChallenge/i;
+      gold = /\(R\dGOLD/i;
+    }
+    else if (eventType === 'usav') {
+      inContention = /\(R\d D1/;
+      challenge = /\(CR.*CH/i;
+      gold = /\( Gold/i;
+    }
 
     // Get the last table in the page, which will help us determine what's next.
     results = $('.list').

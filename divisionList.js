@@ -1,3 +1,6 @@
+var eventType = require('./eventType');
+var exportedList = {};
+
 var aauDivisions = {
   '18 Open': { playing: true, rank: 1 }, // 23 Jun
   '18 Premier': { playing: true, rank: 2 }, // 23 Jun
@@ -34,4 +37,41 @@ var aauDivisions = {
   '14U': { playing: false, rank: 33 } // 18 Jun
 };
 
-module.exports = aauDivisions;
+var usavDivisions = {
+  '18 American': { playing: true, rank: 1 },
+  '17 Open': { playing: true, rank: 2 },
+  '17 National': { playing: false, rank: 3 },
+  '17 USA': { playing: false, rank: 4 },
+  '17 American': { playing: true, rank: 5 },
+  '17 Patriot': { playing: true, rank: 6 },
+  '16 Open': { playing: true, rank: 7 },
+  '16 National': { playing: true, rank: 8 },
+  '16 USA': { playing: true, rank: 9 },
+  '16 American': { playing: true, rank: 10 },
+  '16 Patriot': { playing: true, rank: 11 },
+  '15 Open': { playing: true, rank: 12 },
+  '15 National': { playing: true, rank: 13 },
+  '15 USA': { playing: false, rank: 14 },
+  '15 American': { playing: false, rank: 15 },
+  '15 Patriot': { playing: false, rank: 16 },
+  '14 Open': { playing: true, rank: 17 },
+  '14 National': { playing: true, rank: 18 },
+  '14 USA': { playing: false, rank: 19 },
+  '14 American': { playing: false, rank: 20 },
+  '14 Patriot': { playing: false, rank: 21 },
+  '13 Open': { playing: false, rank: 22 },
+  '13 National': { playing: false, rank: 23 },
+  '13 American': { playing: false, rank: 24 },
+  '12 National': { playing: true, rank: 25 },
+  '12 American': { playing: false, rank: 26 },
+  '11 Patriot': { playing: false, rank: 27 }
+};
+
+if (eventType === 'aau') {
+  exportedList = Object.assign({}, aauDivisions);
+}
+else if (eventType === 'usav') {
+  exportedList = Object.assign({}, usavDivisions);
+}
+
+module.exports = exportedList;

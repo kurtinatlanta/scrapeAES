@@ -14,11 +14,13 @@ var resultsObserver = require('./resultsObserver');
 
 var makePool = require('./makePool');
 
-var tournamentCodes = require('./tournamentCodes');
+var tournamentCode = require('./tournamentCodes');
 var teamCodes = require('./teamCodes');
 
 var divisionList = require('./divisionList');
 var teamList = require('./teamList');
+
+var eventType = require('./eventType');
 
 app.get('/scrapeAES', function (req, res) {
   "use strict";
@@ -57,7 +59,7 @@ app.get('/scrapeAES', function (req, res) {
         }
       });
 
-    // console.log("isTodayOrLater(): today = [" + today + "], lastDate = [" + lastDate + "]");
+    // console.log("isTodayOrLater(): [" + (lastDate >= today) + "] - today = [" + today + "], lastDate = [" + lastDate + "]");
     return lastDate >= today;
   }
 
@@ -104,9 +106,13 @@ app.get('/scrapeAES', function (req, res) {
           lastDivision = team.division;
         }
 
-        Object.keys(team.pools).forEach(function(pool) {
-          html += makePool(team.name, pool, team.pools[pool]);
-        });
+        Object.keys(team.pools).
+          filter(function(pool) {
+            return isTodayOrLater(team.pools[pool]);
+          }).
+          forEach(function(pool) {
+            html += makePool(team.name, pool, team.pools[pool]);
+          });
       });
 
       html += "</body>\n</html>\n";
@@ -166,7 +172,7 @@ app.get('/scrapeAES', function (req, res) {
       });
   }
 
-  extractData(tournamentCodes.aauNationals, teamCodes.aauGirls);
+  extractData(tournamentCode, teamCodes);
 });
 
 app.listen('3200');
