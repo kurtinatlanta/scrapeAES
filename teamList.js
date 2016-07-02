@@ -1,6 +1,3 @@
-var eventType = require('./eventType');
-var exportedList = {};
-
 var masterTeamList = {
   'A5 18 Bob': { playing: true, rank: 1 },
   'A5 18 Katie': { playing: true, rank: 2 },
@@ -99,55 +96,30 @@ var aauSession2 = {
 
 var aauSession3 = {
   // AAU Session 3
-  'A5 181 Bob': { playing: true, rank: 1 },
-  'A5 182 Katie': { playing: true, rank: 2 },
-  'A5 South 17 Jamie': { playing: true, rank: 10 },
-  'GA5 17 Alex': { playing: true, rank: 12 },
-  'A5 163 Matt': { playing: true, rank: 13 },
-  'A5 South 16 Hannah': { playing: true, rank: 16 },
-  'A5 South 16 Derrick': { playing: true, rank: 17 },
-  'GA5 16 Kelsey': { playing: true, rank: 18 },
-  'GA5 16 Jessica': { playing: true, rank: 19 },
-  'GA5 16 Christine': { playing: true, rank: 20 },
-  'A5 154 Erik': { playing: true, rank: 24 },
-  'A5 South 15 Charlette': { playing: true, rank: 27 },
-  'GA5 15 Karen': { playing: true, rank: 30 }
-};
-
-var aauMorning = {
-  'A5 181 Bob': { playing: true, rank: 1 },
-  'A5 182 Katie': { playing: true, rank: 2 },
-  'A5 171 Jing': { playing: true, rank: 7 },
-  'A5 172 Marc': { playing: true, rank: 8 },
-  'A5 South 17 James': { playing: true, rank: 9 },
-  'A5 161 Gabe': { playing: true, rank: 13 },
-  'A5 162 Gary': { playing: true, rank: 14 },
-  'A5 South 16 Joe': { playing: true, rank: 15 },
-  'GA5 16 Kelsey': { playing: true, rank: 18 },
-  'A5 154 Erik': { playing: true, rank: 24 },
-  'A5 South 15 Charlette': { playing: true, rank: 27 },
-  'GA5 15 Karen': { playing: true, rank: 30 }
-};
-
-var aauAfternoon = {
-  'A5 South 17 Jamie': { playing: true, rank: 10 },
-  'GA5 17 Alex': { playing: true, rank: 12 },
-  'A5 163 Matt': { playing: true, rank: 13 },
-  'A5 South 16 Hannah': { playing: true, rank: 16 },
-  'A5 South 16 Derrick': { playing: true, rank: 17 },
-  'GA5 16 Jessica': { playing: true, rank: 19 },
-  'GA5 16 Christine': { playing: true, rank: 20 }
+  'A5 181 Bob': { playing: false, rank: 1 },
+  'A5 182 Katie': { playing: false, rank: 2 },
+  'A5 South 17 Jamie': { playing: false, rank: 10 },
+  'GA5 17 Alex': { playing: false, rank: 12 },
+  'A5 163 Matt': { playing: false, rank: 13 },
+  'A5 South 16 Hannah': { playing: false, rank: 16 },
+  'A5 South 16 Derrick': { playing: false, rank: 17 },
+  'GA5 16 Kelsey': { playing: false, rank: 18 },
+  'GA5 16 Jessica': { playing: false, rank: 19 },
+  'GA5 16 Christine': { playing: false, rank: 20 },
+  'A5 154 Erik': { playing: false, rank: 24 },
+  'A5 South 15 Charlette': { playing: false, rank: 27 },
+  'GA5 15 Karen': { playing: false, rank: 30 }
 };
 
 var usavGirls = {
   // 24 Jun
-  'A5 14 Suzanne': { playing: true, rank: 25 },
-  'A5 14 Karen': { playing: true, rank: 26 },
-  'A5 14 LA': { playing: true, rank: 27 },
-  'Club West Nashville 14': { playing: true, rank: 28 },
-  'Cobb Atlanta 14 Kevin': { playing: true, rank: 29 },
-  'Rocket City 141': { playing: true, rank: 30 },
-  'Tsunami 14 Tad': { playing: true, rank: 31 },
+  'A5 14 Suzanne': { playing: false, rank: 25 },
+  'A5 14 Karen': { playing: false, rank: 26 },
+  'A5 14 LA': { playing: false, rank: 27 },
+  'Club West Nashville 14': { playing: false, rank: 28 },
+  'Cobb Atlanta 14 Kevin': { playing: false, rank: 29 },
+  'Rocket City 141': { playing: false, rank: 30 },
+  'Tsunami 14 Tad': { playing: false, rank: 31 },
   // 25 Jun
   'A5 15 Scoba': { playing: false, rank: 19 },
   'A5 15 JJ': { playing: false, rank: 20 },
@@ -164,12 +136,12 @@ var usavGirls = {
   'Tsunami 13 Rafael': { playing: false, rank: 37 },
   // 27 Jun
   'A5 12 Jing': { playing: false, rank: 38 },
-  'A5 12 Bri': { playing: false, rank: 39 },
-  'Cobb Atlanta 12 Tom': { playing: false, rank: 40 },
+  'A5 12 Bri': { playing: true, rank: 39 },
+  'Cobb Atlanta 12 Tom': { playing: true, rank: 40 },
   // 28 Jun
   'GA5 18 April': { playing: false, rank: 1 },
   'ProLink 18N Chris': { playing: false, rank: 2 },
-  // 29 Jun
+  // 29 Jun + BOYS
   'A5 17 Jing': { playing: false, rank: 3 },
   'A5 17 Marc': { playing: false, rank: 4 },
   'A5 South 17 JMac': { playing: false, rank: 5 },
@@ -178,25 +150,41 @@ var usavGirls = {
   'Club West Nashville 17': { playing: false, rank: 8 },
   'North Atlanta 17 Damien': { playing: false, rank: 9 },
   // 30 Jun + BOYS
-  'A5 16 Gabe': { playing: false, rank: 10 },
-  'A5 16 Gary': { playing: false, rank: 11 },
-  'A5 16 Matt': { playing: false, rank: 12 },
-  'A5 South 16 Joe': { playing: false, rank: 13 },
-  'Capital City Juniors 16': { playing: false, rank: 14 },
-  'Club West Nashville 16': { playing: false, rank: 15 },
-  'Cobb Atlanta 16 Michael': { playing: false, rank: 16 },
-  'MidTN 161 RC': { playing: false, rank: 17 },
-  'Tsunami 16 Dun': { playing: false, rank: 18 }
+  'A5 16 Gabe': { playing: true, rank: 10 },
+  'A5 16 Gary': { playing: true, rank: 11 },
+  'A5 16 Matt': { playing: true, rank: 12 },
+  'A5 South 16 Joe': { playing: true, rank: 13 },
+  'Capital City Juniors 16': { playing: true, rank: 14 },
+  'Club West Nashville 16': { playing: true, rank: 15 },
+  'Cobb Atlanta 16 Michael': { playing: true, rank: 16 },
+  'MidTN 161 RC': { playing: true, rank: 17 },
+  'Tsunami 16 Dun': { playing: true, rank: 18 }
 };
 
-if (eventType === 'aau') {
-  exportedList = Object.assign({}, aauMorning);
-  // exportedList = Object.assign({}, aauSession2);
-  // exportedList = Object.assign({}, aauSession3);
-  // exportedList = Object.assign({}, aauSession2, aauSession3);
-}
-else if (eventType === 'usav') {
-  exportedList = Object.assign({}, usavGirls);
-}
+var usavBoys = {
+  // 29 Jun
+  'A5 18 Marc': { playing: true, rank: 52 },
+  // 30 Jun
+  'A5 14 Kip': { playing: true, rank: 54 },
+  // 1 Jul
+  'A5 16 Erin': { playing: true, rank: 53 }
+};
 
-module.exports = exportedList;
+var usavMorning = {
+};
+
+var usavAfternoon = {
+  'A5 16 Gabe': { playing: true, rank: 10 },
+  'A5 16 Gary': { playing: true, rank: 11 },
+  'A5 South 16 Joe': { playing: true, rank: 12 },
+  'A5 16 Matt': { playing: true, rank: 13 },
+  'Tsunami 16 Dun': { playing: true, rank: 14 },
+  'Capital City Juniors 16': { playing: true, rank: 15 },
+  'Cobb Atlanta 16 Michael': { playing: true, rank: 16 },
+  'MidTN 161 RC': { playing: true, rank: 17 },
+  'Club West Nashville 16': { playing: true, rank: 18 },
+  'A5 14 Kip': { playing: true, rank: 54 },
+  'A5 16 Erin': { playing: true, rank: 53 }
+};
+
+module.exports = usavAfternoon;
