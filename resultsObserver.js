@@ -1,9 +1,8 @@
 var Rx = require('rxjs/Rx');
 var cheerio = require('cheerio');
 var fixTeamName = require('./fixTeamName');
-var eventType = require('./eventType');
 
-module.exports = function resultsObserver(resultsData) {
+module.exports = function resultsObserver(resultsData, eventType) {
   // console.log('divisionObservable(): content = [' + content + ']');
   var teamData = resultsData.teamData;
   var teamName = teamData.name;
@@ -79,10 +78,10 @@ module.exports = function resultsObserver(resultsData) {
       challenge = /\(R\dChallenge/i;
       gold = /\(R\dGOLD/i;
     }
-    else if (eventType === 'usav') {
-      inContention = /\(R\d D1/;
-      challenge = /\(CR.*CH/i;
-      gold = /\( Gold/i;
+    else if ((eventType === 'usav') || (eventType = 'boys')) {
+      inContention = /D1|Gold/;
+      challenge = /CH/;
+      gold = /Gold/i;
     }
 
     // Get the last table in the page, which will help us determine what's next.
@@ -98,6 +97,8 @@ module.exports = function resultsObserver(resultsData) {
         $(this).children().filter('td').each(function (index1, item1) {
           columns.push($(this).text().trim());
         });
+
+        // console.log('resultsObserver(): columns[1] = [' + columns[1] + ']');
 
         if (columns[1] && columns[1].match(inContention)) {
           pool.stayInContention++;

@@ -1,4 +1,3 @@
-var eventType = require('./eventType');
 var exportedList = {};
 
 var aauDivisions = {
@@ -67,11 +66,25 @@ var usavDivisions = {
   '11 Patriot': { playing: false, rank: 27 }
 };
 
-if (eventType === 'aau') {
-  exportedList = Object.assign({}, aauDivisions);
-}
-else if (eventType === 'usav') {
-  exportedList = Object.assign({}, usavDivisions);
-}
+var boysDivisions = {
+  '18 Open': { playing: true, rank: 1 },
+  '18 Club': { playing: true, rank: 2 },
+  '17 Open': { playing: false, rank: 3 },
+  '17 Club': { playing: false, rank: 4 },
+  '16 Open': { playing: true, rank: 5 },
+  '16 Club': { playing: true, rank: 6 },
+  '15 Open': { playing: true, rank: 7 },
+  '15 Club': { playing: true, rank: 8 },
+  '14 Open': { playing: true, rank: 9 },
+  '14 Club': { playing: true, rank: 10 },
+  '13 Club': { playing: true, rank: 11 },
+  '12 Club': { playing: true, rank: 12 }
+};
 
-module.exports = exportedList;
+divisions = {
+  'aau': aauDivisions,
+  'usav': usavDivisions,
+  'boys': boysDivisions
+};
+
+module.exports = divisions;

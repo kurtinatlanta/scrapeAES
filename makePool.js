@@ -28,9 +28,9 @@ function didWeWin(match) {
   }
 }
 
-function fixOpponent(opponent, teamName) {
-  var newOpponent = fixClubName(opponent);
-  var teamStart = teamName.substr(0, 3);
+function fixOpponent(opponent, teamName, eventType) {
+  var newOpponent = fixClubName(opponent, eventType);
+  var teamStart = teamName.substr(0, 4);
 
   if ((newOpponent.indexOf(teamStart) === 0) && (newOpponent.indexOf('A5 South') == -1)) {
     newOpponent = "<strong>" + newOpponent + "</strong>";
@@ -63,23 +63,58 @@ function getDate(location) {
   return days[matchDate.getDay()] + " " + matchDate.getDate() + " " + months[matchDate.getMonth()];
 }
 
-function getPoolName(pool) {
-  var brackets = [
-    { regex: /R\dG\dXO/i, name: 'Crossover Match' },
-    { regex: /R\dChallenge/i, name: 'Challenge Match' },
-    { regex: /R\dGold/i, name: 'Championship Bracket' },
-    { regex: /R\dCon/i, name: 'Consolation Bracket' },
-    { regex: /R\dRuby/i, name: 'Ruby Bracket' },
-    { regex: /R\dDiam/i, name: 'Diamond Bracket' },
-    { regex: /R\dSapp/i, name: 'Sapphire Bracket' },
-    { regex: /R\dPearl/i, name: 'Pearl Bracket' },
-    { regex: /R\dEmer/i, name: 'Emerald Bracket' },
-    { regex: /R\dAmeth/i, name: 'Amethyst Bracket' },
-    { regex: /R\dCryst/i, name: 'Crystal Bracket' },
-    { regex: /R\dGarn/i, name: 'Garnet Bracket' },
-    { regex: /R\dTopaz/i, name: 'Topaz Bracket' },
-    { regex: /R\dOpal/i, name: 'Opal Bracket' }
-  ];
+function getPoolName(pool, eventType) {
+  var brackets = [];
+
+  if (eventType === 'aau') {
+    brackets = [
+      { regex: /R\dG\dXO/i, name: 'Crossover Match' },
+      { regex: /R\dChallenge/i, name: 'Challenge Match' },
+      { regex: /R\dGold/i, name: 'Championship Bracket' },
+      { regex: /R\dCon/i, name: 'Consolation Bracket' },
+      { regex: /R\dRuby/i, name: 'Ruby Bracket' },
+      { regex: /R\dDiam/i, name: 'Diamond Bracket' },
+      { regex: /R\dSapp/i, name: 'Sapphire Bracket' },
+      { regex: /R\dPearl/i, name: 'Pearl Bracket' },
+      { regex: /R\dEmer/i, name: 'Emerald Bracket' },
+      { regex: /R\dAmeth/i, name: 'Amethyst Bracket' },
+      { regex: /R\dCryst/i, name: 'Crystal Bracket' },
+      { regex: /R\dGarn/i, name: 'Garnet Bracket' },
+      { regex: /R\dTopaz/i, name: 'Topaz Bracket' },
+      { regex: /R\dOpal/i, name: 'Opal Bracket' }
+    ];
+  }
+  else if ((eventType === 'usav') || (eventType === 'boys')) {
+    brackets = [
+      { regex: /R\dG\dXO/i, name: 'Crossover Match' },
+      { regex: /CR D\d CH/, name: 'Challenge Match' },
+      { regex: /R\d D\d CH/, name: 'Challenge Match' },
+      { regex: /R\d D\dCH/, name: 'Challenge Match' },
+      { regex: /Gold/, name: 'Gold Bracket' },
+      { regex: /Slvr/, name: 'Silver Bracket' },
+      { regex: /Brnz/, name: 'Bronze Bracket' },
+      { regex: /F10/, name: 'Flight 10' },
+      { regex: /Flt 10/, name: 'Flight 10' },
+      { regex: /F1$/, name: 'Flight 1' },
+      { regex: /Flt 1$/, name: 'Flight 1' },
+      { regex: /F2/, name: 'Flight 2' },
+      { regex: /Flt 2/, name: 'Flight 2' },
+      { regex: /F3/, name: 'Flight 3' },
+      { regex: /Flt 3/, name: 'Flight 3' },
+      { regex: /F4/, name: 'Flight 4' },
+      { regex: /Flt 4/, name: 'Flight 4' },
+      { regex: /F5/, name: 'Flight 5' },
+      { regex: /Flt 5/, name: 'Flight 5' },
+      { regex: /F6/, name: 'Flight 6' },
+      { regex: /Flt 6/, name: 'Flight 6' },
+      { regex: /F7/, name: 'Flight 7' },
+      { regex: /Flt 7/, name: 'Flight 7' },
+      { regex: /F8/, name: 'Flight 8' },
+      { regex: /Flt 8/, name: 'Flight 8' },
+      { regex: /F9/, name: 'Flight 9' },
+      { regex: /Flt 9/, name: 'Flight 9' }
+    ];
+  }
 
   return brackets.
   filter(function(item) {
@@ -153,15 +188,15 @@ function pushUnique(theArray, item) {
   }
 }
 
-module.exports = function makePool(teamName, pool, poolData) {
+module.exports = function makePool(teamName, pool, poolData, eventType) {
   var html = "";
   var courts = [];
   var poolStarted = false;
   var startTimes = "";
   var matchList = poolData.matches;
 
-  var numbers = pool.match(/(\d+)/g, pool);
-  // console.log('makePool(): pool = ' + pool + ', numbers = ' + JSON.stringify(numbers));
+  var numbers = pool.match(/(\d+)/g, pool) || [];
+  console.log('makePool(): pool = ' + pool + ', numbers = ' + JSON.stringify(numbers));
   var round = 0;
   var group = 0;
   var poolNumber = 0;
@@ -179,12 +214,39 @@ module.exports = function makePool(teamName, pool, poolData) {
     round = parseInt(numbers[0], 10);
     matchNumber = parseInt(numbers[1], 10);
   }
+  else if ((numbers.length == 2) && (pool.match(/R\d D\d CH/))) {
+    round = parseInt(numbers[0], 10);
+    group = parseInt(numbers[1], 10);
+    matchNumber = pool.match(/(R\d D\d CH)(.)/)[2];
+  }
+  else if ((numbers.length == 2) && (pool.match(/R\d D\d CH/))) {
+    round = parseInt(numbers[0], 10);
+    group = parseInt(numbers[1], 10);
+    matchNumber = pool.match(/(R\d D\d CH)(.)/)[2];
+  }
+  else if ((numbers.length == 2) && (pool.match(/CR D\dCH/))) {
+    group = parseInt(numbers[0], 10);
+    matchNumber = pool.match(/(CR D\dCH)(.)/)[2];
+  }
+  else if ((numbers.length == 1) && (pool.match(/CR D\d CH/))) {
+    group = parseInt(numbers[0], 10);
+    matchNumber = pool.match(/(CR D\d CH)(.)/)[2];
+  }
+  else if ((numbers.length == 1) && (pool.match(/CR D\dCH/))) {
+    group = parseInt(numbers[0], 10);
+    matchNumber = pool.match(/(CR D\dCH)(.)/)[2];
+  }
   else if ((numbers.length == 3) && (pool.indexOf('XO') > 0)) {
     round = parseInt(numbers[0], 10);
     group = parseInt(numbers[1], 10);
     matchNumber = pool.match(/(R\dG\dXO)(.+)/)[2];
   }
   else if ((numbers.length == 3) && (pool.indexOf('G') > 0)) {
+    round = parseInt(numbers[0], 10);
+    group = parseInt(numbers[1], 10);
+    poolNumber = parseInt(numbers[2], 10);
+  }
+  else if ((numbers.length == 3) && (pool.match(/R\d D\d/))) {
     round = parseInt(numbers[0], 10);
     group = parseInt(numbers[1], 10);
     poolNumber = parseInt(numbers[2], 10);
@@ -209,13 +271,13 @@ module.exports = function makePool(teamName, pool, poolData) {
 
   // html = "<div><b>" + teamName + "</b> - #" + seed + " in " + division + " Pool " + pool;
   if ((round == 1) && (seed == 1)) {
-    html = "<div>\n<b>" + teamName + "</b> - #" + poolNumber + " overall seed and #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool) + "</a>";
+    html = "<div>\n<b>" + teamName + "</b> - #" + poolNumber + " overall seed and #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool, eventType) + "</a>";
   }
   else if (seed) {
-    html = "<div>\n<b>" + teamName + "</b> - #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool) + (matchNumber ? " " + matchNumber : "") + "</a>";
+    html = "<div>\n<b>" + teamName + "</b> - #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool, eventType) + (matchNumber ? " " + matchNumber : "") + "</a>";
   }
   else {
-    html = "<div>\n<b>" + teamName + "</b> - <a href='" + baseUrl + poolData.poolLink + "' target='new'><b>" + getPoolName(pool) + (matchNumber ? " " + matchNumber : "") + "</b></a>";
+    html = "<div>\n<b>" + teamName + "</b> - <a href='" + baseUrl + poolData.poolLink + "' target='new'><b>" + getPoolName(pool, eventType) + (matchNumber ? " " + matchNumber : "") + "</b></a>";
   }
 
   if (seed && (courts.length == 1)) {
@@ -247,7 +309,7 @@ module.exports = function makePool(teamName, pool, poolData) {
     // html += "<td style=\"text-align: right\">" + ((lastDate != thisDate) ? thisDate : '&nbsp') + "</td>\n";
     html += "<td style=\"text-align: right\">" + getTime(match.location) + "</td>\n";
     // html += "<td><strong>" + teamName + "</strong> vs. " + fixOpponent(match.opponent, teamName);
-    html += "<td>" + fixOpponent(match.opponent, teamName);
+    html += "<td>" + fixOpponent(match.opponent, teamName, eventType);
 
     if ((!seed || (courts.length > 1)) && (match.winner == "Undecided")) {
       html += " on " + getCourt(match.location);
@@ -312,11 +374,17 @@ module.exports = function makePool(teamName, pool, poolData) {
     }
 
     if (poolData.challenge) {
-      html += 'Teams may have to win a challenge match to stay in contention.';
+      console.log('makePool(): Challenge. eventType = [' + eventType + '], group = [' + group + ']');
+      if (((eventType === 'usav') || (eventType === 'boys')) && group != 1) {
+        html += 'Teams will play a challenge match to determine bracket placement.';
+      }
+      else {
+        html += 'Some teams must win a challenge match to stay in contention.';
+      }
     }
 
     if (poolData.crossover) {
-      html += 'Teams may play a crossover match after this pool.';
+      html += 'Teams will play a crossover match after this pool.';
     }
   }
 

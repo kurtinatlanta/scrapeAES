@@ -1,4 +1,3 @@
-var eventType = require('./eventType');
 var exportedValue = '';
 
 // var southernDream = 'PTAwMDAwMDg5NDc90';
@@ -43,15 +42,44 @@ var exportedValue = '';
 // var usavBoys = 'PTAwMDAwMDYyMzk90';
 // var usav18 = 'PTAwMDAwMDkzNTk90';
 
-var aauNationals = 'NDNyZF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
-var aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
-var usavGirls = 'PTAwMDAwMDkxNjc90';
+// var aauNationals = 'NDNyZF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
+// var aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
+// var usavGirls = 'PTAwMDAwMDkxNjc90';
+// var usavBoys = 'PTAwMDAwMDkxMzU90';
 
-if (eventType === 'aau') {
-  exportedValue = aauNationals;
-}
-else if (eventType === 'usav') {
-  exportedValue = usavGirls;
-}
+// Teams
+var aauBoys = {
+  a5: '-50659'
+};
 
-module.exports = exportedValue;
+var aauGirls = {
+  a5: '-62830',
+  a5South: '-63896',
+  ga5: '-64921'
+};
+
+var usavGirls = {
+  a5: '39',
+  a5South: '5869',
+  ga5: '1148',
+  bvc: '1024',
+  ccj: '2971',
+  clubWest: '4208',
+  cobbAtlanta: '1501',
+  midTN: '3163',
+  northAtlanta: '1812',
+  prolink: '1893',
+  rocketCity: '564',
+  tsunami: '1164'
+};
+
+var usavBoys = {
+  a5: '39'
+};
+
+tournaments = [
+  { name: 'USAV Girls', code: 'PTAwMDAwMDkxNjc90', eventType: 'usav', clubs: usavGirls },
+  { name: 'USAV Boys', code: 'PTAwMDAwMDkxMzU90', eventType: 'boys', clubs: usavBoys }
+];
+
+module.exports = tournaments;

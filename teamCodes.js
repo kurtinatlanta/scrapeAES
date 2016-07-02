@@ -38,6 +38,10 @@ var usavGirls = {
   tsunami: '1164'
 };
 
+var usavBoys = {
+  'a5': '39'
+};
+
 if (eventType === 'aau') {
   exportedList = Object.assign({}, aauGirls);
   // exportedList = Object.assign({}, aauSession2);
@@ -46,6 +50,9 @@ if (eventType === 'aau') {
 }
 else if (eventType === 'usav') {
   exportedList = Object.assign({}, usavGirls);
+}
+else if (eventType === 'boys') {
+  exportedList = Object.assign({}, usavBoys);
 }
 
 module.exports = exportedList;
