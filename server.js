@@ -38,7 +38,7 @@ app.get('/scrapeAES', function (req, res) {
     );
 });
 
-app.listen('3200');
+app.listen(process.env.PORT || '3200');
 
 console.log('Magic happens on port 3200');
 
