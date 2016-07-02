@@ -686,6 +686,11 @@ function fixUSAVNames(teamName) {
     newTeamName = newTeamName.replace('Roch PaceBootleggr', 'Rochester Pace Bootlegger ');
   }
 
+  if (newTeamName.indexOf('SA STING') === 0) {
+    newTeamName = newTeamName.replace('SA STING', 'San Antonio Sting');
+    newTeamName = newTeamName.replace('BLACK', 'Black');
+  }
+
   if (newTeamName.indexOf('SASVBC') === 0) {
     newTeamName = newTeamName.replace('SASVBC', 'Spike and Serve');
     newTeamName = newTeamName.replace('RED', 'Red');
@@ -1487,11 +1492,6 @@ function fixUSAVNames(teamName) {
    if (newTeamName.indexOf('SA MAGIC') === 0) {
    newTeamName = newTeamName.replace('SA MAGIC', 'San Antonio Magic');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
-   }
-
-   if (newTeamName.indexOf('SA STING') === 0) {
-   newTeamName = newTeamName.replace('SA STING', 'San Antonio Sting');
-   newTeamName = newTeamName.replace('BLACK', 'Black');
    }
 
    if (newTeamName.indexOf('SBVC') === 0) {
