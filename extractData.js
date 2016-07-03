@@ -22,6 +22,7 @@ function isTodayOrLater(poolData) {
   var matchList = poolData.matches;
   var today = new Date();
   today.setHours(0);
+  today.setHours(today.getHours() - 4); // AWS uses UTC
   today.setMinutes(0);
   today.setSeconds(0);
 
