@@ -47,7 +47,7 @@ function isTodayOrLater(poolData) {
       }
     });
 
-  // console.log("isTodayOrLater(): [" + (lastDate >= today) + "] - today = [" + today + "], lastDate = [" + lastDate + "]");
+  console.log("isTodayOrLater(): [" + (lastDate >= today) + "] - today = [" + today + "], lastDate = [" + lastDate + "]");
   return lastDate >= today;
 }
 /*
