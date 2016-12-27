@@ -1,4 +1,4 @@
-var masterTeamList = {
+let masterTeamList = {
   'A5 18 Bob': { playing: true, rank: 1 },
   'A5 18 Katie': { playing: true, rank: 2 },
   'A5 18 Duane': { playing: true, rank: 3 },
@@ -55,7 +55,7 @@ var masterTeamList = {
   'GA5 11 Susan': { playing: true, rank: 48 }
 };
 
-var aauSession1 = {
+let aauSession1 = {
   // AAU Session 1
   'A5 183 Duane': { playing: false, rank: 3 },
   'A5 South 18 Joe': { playing: false, rank: 4 },
@@ -84,7 +84,7 @@ var aauSession1 = {
   'A5 14 Kip': { playing: false, rank: 47 }
 };
 
-var aauSession2 = {
+let aauSession2 = {
   // AAU Session 2
   'A5 171 Jing': { playing: true, rank: 7 },
   'A5 172 Marc': { playing: true, rank: 8 },
@@ -94,7 +94,7 @@ var aauSession2 = {
   'A5 South 16 Joe': { playing: true, rank: 15 }
 };
 
-var aauSession3 = {
+let aauSession3 = {
   // AAU Session 3
   'A5 181 Bob': { playing: false, rank: 1 },
   'A5 182 Katie': { playing: false, rank: 2 },
@@ -111,7 +111,7 @@ var aauSession3 = {
   'GA5 15 Karen': { playing: false, rank: 30 }
 };
 
-var usavGirls = {
+let usavGirls = {
   // 24 Jun
   'A5 14 Suzanne': { playing: false, rank: 25 },
   'A5 14 Karen': { playing: false, rank: 26 },
@@ -161,7 +161,7 @@ var usavGirls = {
   'Tsunami 16 Dun': { playing: true, rank: 18 }
 };
 
-var usavBoys = {
+let usavBoys = {
   // 29 Jun
   'A5 18 Marc': { playing: true, rank: 52 },
   // 30 Jun
@@ -170,10 +170,10 @@ var usavBoys = {
   'A5 16 Erin': { playing: true, rank: 53 }
 };
 
-var usavMorning = {
+let usavMorning = {
 };
 
-var usavAfternoon = {
+let usavAfternoon = {
   'A5 16 Gabe': { playing: true, rank: 10 },
   'A5 16 Gary': { playing: true, rank: 11 },
   'A5 South 16 Joe': { playing: true, rank: 12 },

@@ -1,27 +1,27 @@
-var Rx = require('rxjs/Rx');
-var cheerio = require('cheerio');
-var fixTeamName = require('./fixTeamName');
+let Rx = require('rxjs/Rx');
+let cheerio = require('cheerio');
+let fixTeamName = require('./fixTeamName');
 
 module.exports = function resultsObserver(resultsData, eventType) {
   // console.log('divisionObservable(): content = [' + content + ']');
-  var teamData = resultsData.teamData;
-  var teamName = teamData.name;
-  var pool = teamData.pools[resultsData.poolName];
-  var $ = cheerio.load(resultsData.content);
+  let teamData = resultsData.teamData;
+  let teamName = teamData.name;
+  let pool = teamData.pools[resultsData.poolName];
+  let $ = cheerio.load(resultsData.content);
 
   return Rx.Observable.create(function subscriber(observer) {
-    var results = $('.list').first();
+    let results = $('.list').first();
 
     console.log("fetchPoolResults(): Getting pool results for team [" + teamName + "] in pool [" + resultsData.poolName + "]");
 
     results.children('tr.list_odd_row').each(function (index /*, item */) {
-      var columns = [];
+      let columns = [];
 
       $(this).children().filter('td').each(function (/* index1, item1 */) {
         columns.push($(this).text().trim());
       });
 
-      var resultTeam = columns[0];
+      let resultTeam = columns[0];
 
       if (resultTeam && (fixTeamName(resultTeam) == teamName)) {
         pool.matchesWon = columns[1];
@@ -41,13 +41,13 @@ module.exports = function resultsObserver(resultsData, eventType) {
     });
 
     results.children('tr.list_even_row').each(function (index /*, item */) {
-      var columns = [];
+      let columns = [];
 
       $(this).children().filter('td').each(function (/* index1, item1 */) {
         columns.push($(this).text().trim());
       });
 
-      var resultTeam = columns[0];
+      let resultTeam = columns[0];
 
       if (resultTeam && (fixTeamName(resultTeam) == teamName)) {
         console.log("teamName = [" + teamName + "] - pool = [" + resultsData.poolName + "], pool.place = [" + columns[8] + "]");
@@ -68,10 +68,10 @@ module.exports = function resultsObserver(resultsData, eventType) {
 
     pool.stayInContention = 0;
     pool.makeGold = 0;
-    var inContention;
-    var crossover = /\(R\dG\dXO/;
-    var challenge;
-    var gold;
+    let inContention;
+    let crossover = /\(R\dG\dXO/;
+    let challenge;
+    let gold;
 
     if (eventType === 'aau') {
       inContention = /\(R\dG1/;
@@ -92,7 +92,7 @@ module.exports = function resultsObserver(resultsData, eventType) {
         return !($(this).hasClass('list_header_row'))
       }).
       each(function(index, item) {
-        var columns = [];
+        let columns = [];
 
         $(this).children().filter('td').each(function (index1, item1) {
           columns.push($(this).text().trim());

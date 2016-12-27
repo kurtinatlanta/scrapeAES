@@ -1,15 +1,15 @@
-var Rx = require('rxjs/Rx');
-var cheerio = require('cheerio');
-var fixTeamName = require('./fixTeamName');
-var fixDivision = require('./fixDivision');
+let Rx = require('rxjs/Rx');
+let cheerio = require('cheerio');
+let fixTeamName = require('./fixTeamName');
+let fixDivision = require('./fixDivision');
 
 module.exports = function divisionObserver(content) {
   // console.log('divisionObservable(): content = [' + content + ']');
-  var $ = cheerio.load(content);
+  let $ = cheerio.load(content);
 
   return Rx.Observable.create(function subscriber(observer) {
-    var list = $('.list tr').each(function (/* index, item */) {
-      var teamRows = [];
+    let list = $('.list tr').each(function (/* index, item */) {
+      let teamRows = [];
 
       $(this).children().filter('td').children().filter('a').each(function (/* index1, item1 */) {
         teamRows.push({link: $(this).attr('href'), text: $(this).text().trim()});

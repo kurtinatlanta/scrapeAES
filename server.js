@@ -1,21 +1,21 @@
 /**
  * Created by kurt on 2/7/15.
  */
-var express = require('express');
-var Rx = require('rxjs/Rx');
-var app = express();
+let express = require('express');
+let Rx = require('rxjs/Rx');
+let app = express();
 
-var tournaments = require('./tournamentCodes');
-var extractData = require('./extractData');
+let tournaments = require('./tournamentCodes');
+let extractData = require('./extractData');
 
 app.get('/scrapeAES', function (req, res) {
   "use strict";
-  var html = "<html>\n<head>\n";
+  let html = "<html>\n<head>\n";
   html += '<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600" rel="stylesheet" type="text/css">\n';
   html += '<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">\n';
   html += '<link rel="stylesheet" href="http://a5volleyball.com/css/style1.css">\n';
   html += "</head>\n<body>\n";
-  var footer = "</body>\n</html>\n";
+  let footer = "</body>\n</html>\n";
 
   Rx.Observable.from(tournaments)
     .map(tournament => {

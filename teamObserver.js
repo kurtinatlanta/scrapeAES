@@ -1,9 +1,9 @@
-var Rx = require('rxjs/Rx');
-var request = require('request');
-var baseUrl = require('./baseUrl');
+let Rx = require('rxjs/Rx');
+let request = require('request');
+let baseUrl = require('./baseUrl');
 
 module.exports = function teamObserver(team) {
-  var url = baseUrl + team.link;
+  let url = baseUrl + team.link;
   console.log('teamObserver(): Requesting url [' + url + ']');
 
   return Rx.Observable.create(function subscriber(observer) {

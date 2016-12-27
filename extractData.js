@@ -1,16 +1,16 @@
-var Rx = require('rxjs/Rx');
+let Rx = require('rxjs/Rx');
 
-var tournamentObserver = require('./tournamentObserver');
-var divisionObserver = require('./divisionObserver');
-var teamObserver = require('./teamObserver');
-var scheduleObserver = require('./scheduleObserver');
-var poolObserver = require('./poolObserver');
-var resultsObserver = require('./resultsObserver');
+let tournamentObserver = require('./tournamentObserver');
+let divisionObserver = require('./divisionObserver');
+let teamObserver = require('./teamObserver');
+let scheduleObserver = require('./scheduleObserver');
+let poolObserver = require('./poolObserver');
+let resultsObserver = require('./resultsObserver');
 
-var makePool = require('./makePool');
+let makePool = require('./makePool');
 
-// var divisionList = require('./divisionList');
-var teamList = require('./teamList');
+// let divisionList = require('./divisionList');
+let teamList = require('./teamList');
 
 function isTeamPlaying(teamName) {
   // console.log('TEAM PLAYING [' + teamName + ']');
@@ -19,17 +19,17 @@ function isTeamPlaying(teamName) {
 }
 
 function isTodayOrLater(poolData) {
-  var matchList = poolData.matches;
-  var today = new Date();
+  let matchList = poolData.matches;
+  let today = new Date();
   today.setHours(0);
   today.setHours(today.getHours() - 10); // AWS uses UTC
   today.setMinutes(0);
   today.setSeconds(0);
 
-  var lastDate = matchList.
+  let lastDate = matchList.
     map(function(match) {
-      var location = match.location;
-      var matchDate = new Date(location.substr(location.indexOf('at ') + 3));
+      let location = match.location;
+      let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
       matchDate.setYear(2016);
       return matchDate;
     }).
@@ -90,15 +90,15 @@ function sortTeams(a, b) {
 // Send back the HTML so we can see it
 function generateHtml(teamResults, name, eventType) {
   console.log("generateHtml(): Starting");
-  var html = "<h2>" + name + "</h2>\n";
+  let html = "<h2>" + name + "</h2>\n";
 
   // groupTeamsByDivision();
-  var lastDivision = '';
-  var teamFound = {};
+  let lastDivision = '';
+  let teamFound = {};
 
   teamResults.
     filter(team => {
-      var returnValue = !teamFound[team.name];
+      let returnValue = !teamFound[team.name];
       teamFound[team.name] = true;
       return returnValue;
     }).
@@ -125,7 +125,7 @@ function generateHtml(teamResults, name, eventType) {
 module.exports = function extractData(tournament) {
   return Rx.Observable.create(function subscriber(observer) {
     "use strict";
-    var teamResults = [];
+    let teamResults = [];
 
     Rx.Observable.from(Object.keys(tournament.clubs)).
       map(function(key) {

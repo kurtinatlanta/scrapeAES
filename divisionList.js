@@ -1,6 +1,6 @@
-var exportedList = {};
+let exportedList = {};
 
-var aauDivisions = {
+let aauDivisions = {
   '18 Open': { playing: true, rank: 1 }, // 23 Jun
   '18 Premier': { playing: true, rank: 2 }, // 23 Jun
   '18 Club': { playing: false, rank: 3 }, // 19 Jun
@@ -36,7 +36,7 @@ var aauDivisions = {
   '14U': { playing: false, rank: 33 } // 18 Jun
 };
 
-var usavDivisions = {
+let usavDivisions = {
   '18 American': { playing: true, rank: 1 },
   '17 Open': { playing: true, rank: 2 },
   '17 National': { playing: false, rank: 3 },
@@ -66,7 +66,7 @@ var usavDivisions = {
   '11 Patriot': { playing: false, rank: 27 }
 };
 
-var boysDivisions = {
+let boysDivisions = {
   '18 Open': { playing: true, rank: 1 },
   '18 Club': { playing: true, rank: 2 },
   '17 Open': { playing: false, rank: 3 },
@@ -81,7 +81,7 @@ var boysDivisions = {
   '12 Club': { playing: true, rank: 12 }
 };
 
-divisions = {
+let divisions = {
   'aau': aauDivisions,
   'usav': usavDivisions,
   'boys': boysDivisions

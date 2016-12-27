@@ -1,10 +1,10 @@
-var Rx = require('rxjs/Rx');
-var request = require('request');
-var baseUrl = require('./baseUrl');
+let Rx = require('rxjs/Rx');
+let request = require('request');
+let baseUrl = require('./baseUrl');
 
 module.exports = function poolObserver(team, poolName) {
-  var pool = team.pools[poolName];
-  var url = baseUrl + pool.poolLink;
+  let pool = team.pools[poolName];
+  let url = baseUrl + pool.poolLink;
   console.log('poolObserver(): Requesting url [' + url + ']');
 
   return Rx.Observable.create(function subscriber(observer) {

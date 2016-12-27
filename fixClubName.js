@@ -1,8 +1,8 @@
-var fixTeamName = require('./fixTeamName');
+let fixTeamName = require('./fixTeamName');
 
 function fixAAUNames(teamName) {
   "use strict";
-  var newTeamName = teamName;
+  let newTeamName = teamName;
 
   if (newTeamName.indexOf('(') > 0) {
     newTeamName = newTeamName.substr(0, (newTeamName.indexOf('(') - 1));
@@ -392,7 +392,7 @@ function fixAAUNames(teamName) {
 
 function fixUSAVNames(teamName) {
   "use strict";
-  var newTeamName = teamName;
+  let newTeamName = teamName;
 
   if (newTeamName.indexOf('AJV') === 0) {
     newTeamName = newTeamName.replace('AJV', 'Austin Juniors');
@@ -1361,7 +1361,7 @@ function fixUSAVNames(teamName) {
    }
 
    if (newTeamName.indexOf('NBVBC') === 0) {
-   newTeamName = newTeamName.replace('NBVBC', 'Navarre Beach');
+   newTeamName = newTeamName.replace('NBVBC', 'Naletre Beach');
    }
 
    if (newTeamName.indexOf('NCVC') === 0) {
@@ -1747,7 +1747,7 @@ function fixUSAVNames(teamName) {
 }
 
 module.exports = function fixClubName(teamName, eventType) {
-  var newTeamName = teamName;
+  let newTeamName = teamName;
 
   if (eventType === 'aau') {
     newTeamName = fixAAUNames(teamName);

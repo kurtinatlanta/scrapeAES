@@ -1,9 +1,9 @@
 "use strict";
-var fixClubName = require('./fixClubName');
-var baseUrl = require('./baseUrl');
+let fixClubName = require('./fixClubName');
+let baseUrl = require('./baseUrl');
 
 function chopTeamName(teamName) {
-  var newName = teamName;
+  let newName = teamName;
 
   if (newName.indexOf('(') > 0) {
     newName = newName.substr(0, (newName.indexOf('(') - 1));
@@ -13,9 +13,9 @@ function chopTeamName(teamName) {
 }
 
 function didWeWin(match) {
-  var winner = chopTeamName(match.winner);
-  var opponent = chopTeamName(match.opponent);
-  var opponentWon = winner.indexOf(opponent);
+  let winner = chopTeamName(match.winner);
+  let opponent = chopTeamName(match.opponent);
+  let opponentWon = winner.indexOf(opponent);
 
   if (opponentWon === 0) {
     return 'lost';
@@ -29,8 +29,8 @@ function didWeWin(match) {
 }
 
 function fixOpponent(opponent, teamName, eventType) {
-  var newOpponent = fixClubName(opponent, eventType);
-  var teamStart = teamName.substr(0, 4);
+  let newOpponent = fixClubName(opponent, eventType);
+  let teamStart = teamName.substr(0, 4);
 
   if ((newOpponent.indexOf(teamStart) === 0) && (newOpponent.indexOf('A5 South') == -1)) {
     newOpponent = "<strong>" + newOpponent + "</strong>";
@@ -40,7 +40,7 @@ function fixOpponent(opponent, teamName, eventType) {
 }
 
 function getCourt(location) {
-  var newLocation = location.substr(0, location.indexOf('at ')).trim();
+  let newLocation = location.substr(0, location.indexOf('at ')).trim();
   newLocation = newLocation.replace('Ct. ', '');
   newLocation = newLocation.replace('Ct ', '');
   // newLocation = newLocation.replace('Court ', '');
@@ -54,17 +54,17 @@ function getCourt(location) {
   return newLocation;
 }
 
-var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function getDate(location) {
-  var matchDate = new Date(location.substr(location.indexOf('at ') + 3));
+  let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
   matchDate.setYear(2016);
   return days[matchDate.getDay()] + " " + matchDate.getDate() + " " + months[matchDate.getMonth()];
 }
 
 function getPoolName(pool, eventType) {
-  var brackets = [];
+  let brackets = [];
 
   if (eventType === 'aau') {
     brackets = [
@@ -126,15 +126,15 @@ function getPoolName(pool, eventType) {
 }
 
 function getScore(score, lost) {
-  var newScore = score;
-  var setScores;
+  let newScore = score;
+  let setScores;
 
   if (lost) {
     setScores = newScore.split(',');
 
     setScores = setScores.map(function (item) {
-      var newItem = item.trim();
-      var scoreSplit = newItem.split('-');
+      let newItem = item.trim();
+      let scoreSplit = newItem.split('-');
       return scoreSplit[1] + '-' + scoreSplit[0];
     });
 
@@ -145,11 +145,11 @@ function getScore(score, lost) {
 }
 
 function getTime(location) {
-  var matchDate = new Date(location.substr(location.indexOf('at ') + 3));
+  let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
   matchDate.setYear(2016);
-  var hours = matchDate.getHours();
-  var minutes = matchDate.getMinutes().toString();
-  var ampm = "";
+  let hours = matchDate.getHours();
+  let minutes = matchDate.getMinutes().toString();
+  let ampm = "";
 
   if (hours > 12) {
     hours = hours - 12;
@@ -174,9 +174,9 @@ function getTime(location) {
 }
 
 function pushUnique(theArray, item) {
-  var isUnique = true;
+  let isUnique = true;
 
-  for (var i = 0; i < theArray.length; i++) {
+  for (let i = 0; i < theArray.length; i++) {
     if (theArray[i] == item) {
       isUnique = false;
       break;
@@ -189,18 +189,18 @@ function pushUnique(theArray, item) {
 }
 
 module.exports = function makePool(teamName, pool, poolData, eventType) {
-  var html = "";
-  var courts = [];
-  var poolStarted = false;
-  var startTimes = "";
-  var matchList = poolData.matches;
+  let html = "";
+  let courts = [];
+  let poolStarted = false;
+  let startTimes = "";
+  let matchList = poolData.matches;
 
-  var numbers = pool.match(/(\d+)/g, pool) || [];
+  let numbers = pool.match(/(\d+)/g, pool) || [];
   console.log('makePool(): pool = ' + pool + ', numbers = ' + JSON.stringify(numbers));
-  var round = 0;
-  var group = 0;
-  var poolNumber = 0;
-  var matchNumber = 0;
+  let round = 0;
+  let group = 0;
+  let poolNumber = 0;
+  let matchNumber = 0;
 
   if ((numbers.length == 2) && (pool.indexOf('P') > 0)) {
     round = parseInt(numbers[0], 10);
@@ -261,13 +261,13 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
       poolStarted = true;
     }
 
-    var time = getTime(match.location);
+    let time = getTime(match.location);
     startTimes += time.substr(0, time.indexOf(':'));
   });
 
   // console.log(startTimes);
-  // var seed = inferPlace(startTimes);
-  var seed = poolData.rank;
+  // let seed = inferPlace(startTimes);
+  let seed = poolData.rank;
 
   // html = "<div><b>" + teamName + "</b> - #" + seed + " in " + division + " Pool " + pool;
   if ((round == 1) && (seed == 1)) {
@@ -287,12 +287,12 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
   // html += "\n<table class='table tableauto table-striped'>\n<tbody>\n";
   html += "\n<table class='table tableauto table-condensed table-responsive'>\n<tbody>\n";
 
-  var lastDate = '';
+  let lastDate = '';
 
   matchList.forEach(function (match) {
-    var lost = false;
-    var thisDate = getDate(match.location);
-    var matchResult = didWeWin(match);
+    let lost = false;
+    let thisDate = getDate(match.location);
+    let matchResult = didWeWin(match);
 
     if (thisDate != lastDate) {
       html += "<tr>\n<td colspan='2'><h5 class='small'>" + thisDate + "</h5></td>\n</tr>\n"

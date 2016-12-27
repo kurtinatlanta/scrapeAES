@@ -1,22 +1,22 @@
-var Rx = require('rxjs/Rx');
-var cheerio = require('cheerio');
-var fixPool = require('./fixPool');
+let Rx = require('rxjs/Rx');
+let cheerio = require('cheerio');
+let fixPool = require('./fixPool');
 
 module.exports = function scheduleObserver(teamData) {
   // console.log('divisionObservable(): content = [' + content + ']');
-  var team = teamData.team;
-  var $ = cheerio.load(teamData.content);
+  let team = teamData.team;
+  let $ = cheerio.load(teamData.content);
 
-  var schedule = $('.list').first();
+  let schedule = $('.list').first();
 
   return Rx.Observable.create(function subscriber(observer) {
     schedule.children('tr').each(function (/* index, item */) {
-      var teamItems = [];
-      var poolLink = "";
+      let teamItems = [];
+      let poolLink = "";
 
       $(this).children().filter('td').each(function (/* index1, item1 */) {
-        var links = $(this).children('a');
-        var linkUrl = "";
+        let links = $(this).children('a');
+        let linkUrl = "";
 
         if (links && links.length > 0) {
           teamItems.push(links.text().trim());
@@ -31,7 +31,7 @@ module.exports = function scheduleObserver(teamData) {
         }
       });
 
-      var scheduleItem = {
+      let scheduleItem = {
         pool: fixPool(teamItems[1]),
         poolLink: poolLink,
         opponent: teamItems[2],

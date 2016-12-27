@@ -1,5 +1,5 @@
 module.exports = function fixTeamName(teamName) {
-  var newName = teamName;
+  let newName = teamName;
   newName = newName.replace('[+]', '');
   // newName = newName.replace('101', '10');
   // newName = newName.replace('111', '11');

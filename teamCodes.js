@@ -1,29 +1,29 @@
-var eventType = require('./eventType');
-var exportedList = {};
+let eventType = 'usav';
+let exportedList = {};
 
 // A5 team codes
 /*
-var a5 = '39';
-var a5_prime = '-56632';
-var a5_prime2 = '-50109';
-var a5_aau = '-62830';
-var ga5 = '1148';
-var ga5_prime = '-56323';
-var ga5_prime2 = '-50021';
-var ga5_aau = '-64921';
+let a5 = '39';
+let a5_prime = '-56632';
+let a5_prime2 = '-50109';
+let a5_aau = '-62830';
+let ga5 = '1148';
+let ga5_prime = '-56323';
+let ga5_prime2 = '-50021';
+let ga5_aau = '-64921';
 */
 
-var boys = {
+let boys = {
   a5Boys: '-50659'
 };
 
-var aauGirls = {
+let aauGirls = {
   a5: '-62830',
   a5South: '-63896',
   ga5: '-64921'
 };
 
-var usavGirls = {
+let usavGirls = {
   a5: '39',
   a5South: '5869',
   ga5: '1148',
@@ -38,7 +38,7 @@ var usavGirls = {
   tsunami: '1164'
 };
 
-var usavBoys = {
+let usavBoys = {
   'a5': '39'
 };
 
