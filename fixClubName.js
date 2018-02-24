@@ -16,59 +16,59 @@ function fixAAUNames(teamName) {
     newTeamName = newTeamName.replace(' Volleyball', '');
   }
 
-  if (newTeamName.indexOf('Academy 13 AAU') === 0) {
+  if (newTeamName.startsWith('Academy 13 AAU')) {
     newTeamName = newTeamName.replace('Academy ', 'North Carolina Volleyball Academy ');
   }
 
-  if (newTeamName.indexOf('ACV') === 0) {
+  if (newTeamName.startsWith('ACV')) {
     newTeamName = newTeamName.replace('ACV', 'Angels Country');
   }
 
-  if (newTeamName.indexOf('AJV ') === 0) {
+  if (newTeamName.startsWith('AJV ')) {
     newTeamName = newTeamName.replace('AJV ', 'Austin Juniors ');
     newTeamName = newTeamName.replace('MIZUNO ', 'Mizuno');
     newTeamName = newTeamName.replace('CEDAR PARK', 'Cedar Park');
     newTeamName = newTeamName.replace('NAVY', 'Navy');
   }
 
-  if (newTeamName.indexOf('AP ') === 0) {
+  if (newTeamName.startsWith('AP ')) {
     newTeamName = newTeamName.replace('AP ', 'Austin Performance ');
   }
 
-  if (newTeamName.indexOf('AVA -') === 0) {
+  if (newTeamName.startsWith('AVA -')) {
     newTeamName = newTeamName.replace('AVA -', 'Arsenal');
   }
 
-  if (newTeamName.indexOf('AZ Des Sky') === 0) {
+  if (newTeamName.startsWith('AZ Des Sky')) {
     newTeamName = newTeamName.replace('AZ Des Sky', 'Arizona Desert Sky');
   }
 
-  if (newTeamName.indexOf('BORINQUEN') === 0) {
+  if (newTeamName.startsWith('BORINQUEN')) {
     newTeamName = newTeamName.replace('BORINQUEN COQUI', 'Borinquen Coqui');
     newTeamName = newTeamName.replace('COLIN', 'Colin');
   }
 
-  if (newTeamName.indexOf('CAPITAL CITY') === 0) {
+  if (newTeamName.startsWith('CAPITAL CITY')) {
     newTeamName = newTeamName.replace('CAPITAL CITY JUNIORS', 'Capital City Juniors');
   }
 
-  if (newTeamName.indexOf('Carolina UVC') === 0) {
+  if (newTeamName.startsWith('Carolina UVC')) {
     newTeamName = newTeamName.replace('Carolina UVC', 'Carolina Union');
   }
 
-  if (newTeamName.indexOf('Chas ') === 0) {
+  if (newTeamName.startsWith('Chas ')) {
     newTeamName = newTeamName.replace('Chas ', 'Charleston ');
   }
 
-  if (newTeamName.indexOf('Choo Choo ') === 0) {
+  if (newTeamName.startsWith('Choo Choo ')) {
     newTeamName = newTeamName.replace('VBC ', '');
   }
 
-  if (newTeamName.indexOf('CJV') === 0) {
+  if (newTeamName.startsWith('CJV')) {
     newTeamName = newTeamName.replace('CJV', 'Carolina Juniors');
   }
 
-  if (newTeamName.indexOf('Club Fusion') === 0) {
+  if (newTeamName.startsWith('Club Fusion')) {
     newTeamName = newTeamName.replace('Black', ' Black');
     newTeamName = newTeamName.replace('Blue', ' Blue');
     newTeamName = newTeamName.replace('Cardinal', ' Cardinal');
@@ -78,97 +78,97 @@ function fixAAUNames(teamName) {
     newTeamName = newTeamName.replace('White', ' White');
   }
 
-  if (newTeamName.indexOf('Club Savannah') === 0) {
+  if (newTeamName.startsWith('Club Savannah')) {
     newTeamName = newTeamName.replace('premier', ' Premier');
   }
 
-  if (newTeamName.indexOf('CNVBC') === 0) {
+  if (newTeamName.startsWith('CNVBC')) {
     newTeamName = newTeamName.replace('CNVBC', 'Columbus North');
   }
 
-  if (newTeamName.indexOf('EC Power') === 0) {
+  if (newTeamName.startsWith('EC Power')) {
     newTeamName = newTeamName.replace('EC Power', 'East Coast Power');
   }
 
-  if (newTeamName.indexOf('ECJ ') === 0) {
+  if (newTeamName.startsWith('ECJ ')) {
     newTeamName = newTeamName.replace('ECJ ', 'Eastside Cleveland ');
   }
 
-  if (newTeamName.indexOf('ECJVC') === 0) {
+  if (newTeamName.startsWith('ECJVC')) {
     newTeamName = newTeamName.replace('ECJVC', 'East Carolina');
   }
 
-  if (newTeamName.indexOf('ECVBA') === 0) {
+  if (newTeamName.startsWith('ECVBA')) {
     newTeamName = newTeamName.replace('ECVBA', 'East County');
     newTeamName = newTeamName.replace('CARLOS', 'Carlos');
   }
 
-  if (newTeamName.indexOf('EliteVBTC') === 0) {
+  if (newTeamName.startsWith('EliteVBTC')) {
     newTeamName = newTeamName.replace('EliteVBTC', 'Elite VBTC');
   }
 
-  if (newTeamName.indexOf('Extreme Jr VBC') === 0) {
+  if (newTeamName.startsWith('Extreme Jr VBC')) {
     newTeamName = newTeamName.replace('Extreme Jr VBC', 'Extreme Juniors');
   }
 
-  if (newTeamName.indexOf('GBV') === 0) {
+  if (newTeamName.startsWith('GBV')) {
     newTeamName = newTeamName.replace('GBV', 'Gainesville Beach');
   }
 
-  if (newTeamName.indexOf('GIOCCO TECH') === 0) {
+  if (newTeamName.startsWith('GIOCCO TECH')) {
     newTeamName = newTeamName.replace('GIOCCO TECH', 'Giocco Tech');
     newTeamName = newTeamName.replace('SUB', 'Sub');
   }
 
-  if (newTeamName.indexOf('GSJ ') === 0) {
+  if (newTeamName.startsWith('GSJ ')) {
     newTeamName = newTeamName.replace('GSJ ', 'Grand Strand ');
   }
 
-  if (newTeamName.indexOf('GVA') === 0) {
+  if (newTeamName.startsWith('GVA')) {
     newTeamName = newTeamName.replace('GVA/', 'GVA ');
     newTeamName = newTeamName.replace('MIZUNO', 'Mizuno');
     newTeamName = newTeamName.replace('BLUE', 'Blue');
     newTeamName = newTeamName.replace('TEAL', 'Teal');
   }
 
-  if (newTeamName.indexOf('Guaynabo City') === 0) {
+  if (newTeamName.startsWith('Guaynabo City')) {
     newTeamName = newTeamName.replace('mets', 'Mets');
   }
 
-  if (newTeamName.indexOf('HIGH VOLTAGE') === 0) {
+  if (newTeamName.startsWith('HIGH VOLTAGE')) {
     newTeamName = newTeamName.replace('HIGH VOLTAGE', 'High Voltage');
     newTeamName = newTeamName.replace('LightningBolt', 'Lightning Bolt');
   }
 
-  if (newTeamName.indexOf('HOTSHOTS') === 0) {
+  if (newTeamName.startsWith('HOTSHOTS')) {
     newTeamName = newTeamName.replace('HOTSHOTS', 'Hot Shots');
   }
 
-  if (newTeamName.indexOf('HV Adidas') === 0) {
+  if (newTeamName.startsWith('HV Adidas')) {
     newTeamName = newTeamName.replace('HV Adidas', 'Huron Valley Adidas');
   }
 
-  if (newTeamName.indexOf('KMVA') === 0) {
+  if (newTeamName.startsWith('KMVA')) {
     newTeamName = newTeamName.replace('navy', ' Navy');
   }
 
-  if (newTeamName.indexOf('LanikaiAthleticClub') === 0) {
+  if (newTeamName.startsWith('LanikaiAthleticClub')) {
     newTeamName = newTeamName.replace('LanikaiAthleticClub', 'Lanikai');
     newTeamName = newTeamName.replace('14Blk', '14 Black');
   }
 
-  if (newTeamName.indexOf('LBVBC') === 0) {
+  if (newTeamName.startsWith('LBVBC')) {
     newTeamName = newTeamName.replace('LBVBC', 'Laguna Beach');
     newTeamName = newTeamName.replace('17Kevin', '17 Kevin');
   }
 
-  if (newTeamName.indexOf('LEGACY ') === 0) {
+  if (newTeamName.startsWith('LEGACY ')) {
     newTeamName = newTeamName.replace('LEGACY ', 'Legacy ');
     newTeamName = newTeamName.replace('ELITE', 'Elite');
     newTeamName = newTeamName.replace('ASICS', 'Asics');
   }
 
-  if (newTeamName.indexOf('Lions ') === 0) {
+  if (newTeamName.startsWith('Lions ')) {
     newTeamName = newTeamName.replace('Lions ', '1st Alliance Lions ');
     newTeamName = newTeamName.replace('Red', ' Red');
     newTeamName = newTeamName.replace('Blue', ' Blue');
@@ -177,53 +177,53 @@ function fixAAUNames(teamName) {
     newTeamName = newTeamName.replace('Silver', ' Silver');
   }
 
-  if (newTeamName.indexOf('LVA') === 0) {
+  if (newTeamName.startsWith('LVA')) {
     newTeamName = newTeamName.replace('LVA', 'Lightning Volleyball Academy');
   }
 
-  if (newTeamName.indexOf('MEVBA') === 0) {
+  if (newTeamName.startsWith('MEVBA')) {
     newTeamName = newTeamName.replace('MEVBA', 'Michigan Elite');
   }
 
-  if (newTeamName.indexOf('MIAMI SELECT') === 0) {
+  if (newTeamName.startsWith('MIAMI SELECT')) {
     newTeamName = newTeamName.replace('MIAMI SELECT ', 'Miami Select ');
     newTeamName = newTeamName.replace(' BLACK', ' Black');
     newTeamName = newTeamName.replace(' BOYS', ' Boys');
   }
 
-  if (newTeamName.indexOf('MIAMI XTREME') === 0) {
+  if (newTeamName.startsWith('MIAMI XTREME')) {
     newTeamName = newTeamName.replace('MIAMI XTREME VOLLEYBALL', 'Miami Xtreme');
   }
 
-  if (newTeamName.indexOf('Mizuno Northern Lights') === 0) {
+  if (newTeamName.startsWith('Mizuno Northern Lights')) {
     newTeamName = newTeamName.replace('Mizuno Northern Lights', 'Northern Lights');
   }
 
-  if (newTeamName.indexOf('Mizuno Sports Performance') === 0) {
+  if (newTeamName.startsWith('Mizuno Sports Performance')) {
     newTeamName = newTeamName.replace('Mizuno Sports Performance', 'Sports Performance');
   }
 
-  if (newTeamName.indexOf('Mizuno WI') === 0) {
+  if (newTeamName.startsWith('Mizuno WI')) {
     newTeamName = newTeamName.replace('Mizuno WI', 'Wisconsin');
   }
 
-  if (newTeamName.indexOf('MN North') === 0) {
+  if (newTeamName.startsWith('MN North')) {
     newTeamName = newTeamName.replace('MN', 'Minnesota');
   }
 
-  if (newTeamName.indexOf('MN Select') === 0) {
+  if (newTeamName.startsWith('MN Select')) {
     newTeamName = newTeamName.replace('MN', 'Minnesota');
   }
 
-  if (newTeamName.indexOf('Neb Jrs') === 0) {
+  if (newTeamName.startsWith('Neb Jrs')) {
     newTeamName = newTeamName.replace('Neb Jrs', 'Nebraska Juniors');
   }
 
-  if (newTeamName.indexOf('OVC Rampage') === 0) {
+  if (newTeamName.startsWith('OVC Rampage')) {
     newTeamName = newTeamName.replace('OVC', 'Owensboro');
   }
 
-  if (newTeamName.indexOf('PIEDMONT VBC') === 0) {
+  if (newTeamName.startsWith('PIEDMONT VBC')) {
     newTeamName = newTeamName.replace('PIEDMONT VBC', 'Piedmont');
     newTeamName = newTeamName.replace('VEDAT', 'Vedat');
     newTeamName = newTeamName.replace('BLAINE', 'Blaine');
@@ -231,124 +231,124 @@ function fixAAUNames(teamName) {
     newTeamName = newTeamName.replace('KERRY', 'Kerry');
   }
 
-  if (newTeamName.indexOf('PSVA') === 0) {
+  if (newTeamName.startsWith('PSVA')) {
     newTeamName = newTeamName.replace('PSVA', 'Prostyle');
   }
 
-  if (newTeamName.indexOf('ProLink') === 0) {
+  if (newTeamName.startsWith('ProLink')) {
     newTeamName = newTeamName.replace('Nat', ' National');
   }
 
-  if (newTeamName.indexOf('Protege') === 0) {
+  if (newTeamName.startsWith('Protege')) {
     newTeamName = newTeamName.replace('16Kim', '16 Kim');
   }
 
-  if (newTeamName.indexOf('PVC ') === 0) {
+  if (newTeamName.startsWith('PVC ')) {
     newTeamName = newTeamName.replace('PVC ', 'Powers ');
     newTeamName = newTeamName.replace('BLACK', 'Black');
     newTeamName = newTeamName.replace('PINK', 'Pink');
   }
 
-  if (newTeamName.indexOf('QUEENS') === 0) {
+  if (newTeamName.startsWith('QUEENS')) {
     newTeamName = newTeamName.replace('QUEENS', ' Queens');
   }
 
-  if (newTeamName.indexOf('RCVC') === 0) {
+  if (newTeamName.startsWith('RCVC')) {
     newTeamName = newTeamName.replace('RCVC', 'Rocket City');
   }
 
-  if (newTeamName.indexOf('Replay SELECT') === 0) {
+  if (newTeamName.startsWith('Replay SELECT')) {
     newTeamName = newTeamName.replace('SELECT', 'Select');
     newTeamName = newTeamName.replace('NAT', 'National');
     newTeamName = newTeamName.replace('BLACK', 'Black');
   }
 
-  if (newTeamName.indexOf('RVC ') === 0) {
+  if (newTeamName.startsWith('RVC ')) {
     newTeamName = newTeamName.replace('RVC ', 'Richmond ');
   }
 
-  if (newTeamName.indexOf('RVCH ') === 0) {
+  if (newTeamName.startsWith('RVCH ')) {
     newTeamName = newTeamName.replace('RVCH ', 'Rainbows ');
   }
 
-  if (newTeamName.indexOf('-GRIND') > 0) {
+  if (newTeamName.startsWith('-GRIND') > 0) {
     newTeamName = newTeamName.replace('RVC ', 'Relentless ');
     newTeamName = newTeamName.replace('GRIND', 'Grind');
   }
 
-  if (newTeamName.indexOf('SA Kryptonite') === 0) {
+  if (newTeamName.startsWith('SA Kryptonite')) {
     newTeamName = newTeamName.replace('SA Kryptonite', 'San Antonio Kryptonite');
   }
 
-  if (newTeamName.indexOf('SCVC') === 0) {
+  if (newTeamName.startsWith('SCVC')) {
     newTeamName = newTeamName.replace('Roxy', ' Roxy');
   }
 
-  if (newTeamName.indexOf('SDVBC') === 0) {
+  if (newTeamName.startsWith('SDVBC')) {
     newTeamName = newTeamName.replace('SDVBC', 'San Diego');
   }
 
-  if (newTeamName.indexOf('ShamRo15\'s') === 0) {
+  if (newTeamName.startsWith('ShamRo15\'s')) {
     newTeamName = newTeamName.replace('ShamRo15\'s', 'ShamRocks 15\'s');
   }
 
-  if (newTeamName.indexOf('SynergyForce') === 0) {
+  if (newTeamName.startsWith('SynergyForce')) {
     newTeamName = newTeamName.replace('SynergyForce', 'Synergy Force');
   }
 
-  if (newTeamName.indexOf('SVVC') === 0) {
+  if (newTeamName.startsWith('SVVC')) {
     newTeamName = newTeamName.replace('SVVC', 'Snohomish Valley');
   }
 
-  if (newTeamName.indexOf('TALONS') === 0) {
+  if (newTeamName.startsWith('TALONS')) {
     newTeamName = newTeamName.replace('TALONS', 'Talons');
   }
 
-  if (newTeamName.indexOf('Tianas') === 0) {
+  if (newTeamName.startsWith('Tianas')) {
     newTeamName = newTeamName.replace('VC ', '');
   }
 
-  if (newTeamName.indexOf('TIV') === 0) {
+  if (newTeamName.startsWith('TIV')) {
     newTeamName = newTeamName.replace('TIV', 'Texas Image');
   }
 
-  if (newTeamName.indexOf('ToledoSTORM') === 0) {
+  if (newTeamName.startsWith('ToledoSTORM')) {
     newTeamName = newTeamName.replace('ToledoSTORM', 'Toledo Storm');
   }
 
-  if (newTeamName.indexOf('TOP SELECT') === 0) {
+  if (newTeamName.startsWith('TOP SELECT')) {
     newTeamName = newTeamName.replace('TOP SELECT', 'Top Select');
     newTeamName = newTeamName.replace('ELITE', 'Elite');
     newTeamName = newTeamName.replace('AMANDA', 'Amanda');
     newTeamName = newTeamName.replace('BLAKE', 'Blake');
   }
 
-  if (newTeamName.indexOf('Turistas ') === 0) {
+  if (newTeamName.startsWith('Turistas ')) {
     newTeamName = newTeamName.replace('ADVITL', 'Advitl');
   }
 
-  if (newTeamName.indexOf('TVA ') === 0) {
+  if (newTeamName.startsWith('TVA ')) {
     newTeamName = newTeamName.replace('SYSTEM', 'System');
     newTeamName = newTeamName.replace('MAGDIEL', 'Magdiel');
   }
 
-  if (newTeamName.indexOf('TX Eclipse') === 0) {
+  if (newTeamName.startsWith('TX Eclipse')) {
     newTeamName = newTeamName.replace('TX Eclipse', 'Texas Eclipse');
   }
 
-  if (newTeamName.indexOf('UNION') === 0) {
+  if (newTeamName.startsWith('UNION')) {
     newTeamName = newTeamName.replace('UNION', 'Union');
     newTeamName = newTeamName.replace('IN', 'Indiana');
     newTeamName = newTeamName.replace('KY', 'Kentucky');
   }
 
-  if (newTeamName.indexOf('USA SOUTH') === 0) {
+  if (newTeamName.startsWith('USA SOUTH')) {
     newTeamName = newTeamName.replace('SOUTH', 'South');
     newTeamName = newTeamName.replace('PREMIER', 'Premier');
     newTeamName = newTeamName.replace('PURPLE', 'Purple');
   }
 
-  if (newTeamName.indexOf('UVA ') === 0) {
+  if (newTeamName.startsWith('UVA ')) {
     newTeamName = newTeamName.replace('UVA', 'Upontop');
     newTeamName = newTeamName.replace('\'S', '\'s');
     newTeamName = newTeamName.replace('NATIONAL', 'National');
@@ -356,34 +356,34 @@ function fixAAUNames(teamName) {
     newTeamName = newTeamName.replace('NICK', 'Nick');
   }
 
-  if (newTeamName.indexOf('vaqueras') === 0) {
+  if (newTeamName.startsWith('vaqueras')) {
     newTeamName = newTeamName.replace('vaqueras', 'Vaqueras');
     newTeamName = newTeamName.replace('14-2 danny', ' 14-2 Danny');
   }
 
-  if (newTeamName.indexOf('VCVC') === 0) {
+  if (newTeamName.startsWith('VCVC')) {
     newTeamName = newTeamName.replace('VCVC', 'Ventura County');
   }
 
-  if (newTeamName.indexOf('VOLLEY TOP') === 0) {
+  if (newTeamName.startsWith('VOLLEY TOP')) {
     newTeamName = newTeamName.replace('VOLLEY TOP', 'Volley Top');
     newTeamName = newTeamName.replace('WES', 'Wes');
   }
 
-  if (newTeamName.indexOf('VOLYCAY CAYEY') === 0) {
+  if (newTeamName.startsWith('VOLYCAY CAYEY')) {
     newTeamName = newTeamName.replace('VOLYCAY CAYEY', ' Volycay Cayey');
   }
 
-  if (newTeamName.indexOf('VVC') === 0) {
+  if (newTeamName.startsWith('VVC')) {
     newTeamName = newTeamName.replace('VVC', 'Vital');
   }
 
-  if (newTeamName.indexOf('WEST') === 0) {
+  if (newTeamName.startsWith('WEST')) {
     newTeamName = newTeamName.replace('WEST', 'West');
     newTeamName = newTeamName.replace('Elite', ' Elite');
   }
 
-  if (newTeamName.indexOf('WPVC') === 0) {
+  if (newTeamName.startsWith('WPVC')) {
     newTeamName = newTeamName.replace('WPVC', 'Winter Park');
   }
 
@@ -394,88 +394,96 @@ function fixUSAVNames(teamName) {
   "use strict";
   let newTeamName = teamName;
 
-  if (newTeamName.indexOf('AJV') === 0) {
+  if (newTeamName.startsWith('AJV')) {
     newTeamName = newTeamName.replace('AJV', 'Austin Juniors');
   }
 
-  if (newTeamName.indexOf('ARIZONA STORM') === 0) {
+  if (newTeamName.startsWith('Alliance ')) {
+    newTeamName = newTeamName.replace('MIZUNO', 'Mizuno');
+  }
+
+  if (newTeamName.startsWith('ARIZONA STORM')) {
     newTeamName = newTeamName.replace('ARIZONA STORM', 'Arizona Storm');
     newTeamName = newTeamName.replace('THUNDER', 'Thunder');
   }
 
-  if (newTeamName.indexOf('ASICS MAVS') === 0) {
+  if (newTeamName.startsWith('ASICS MAVS')) {
     newTeamName = newTeamName.replace('ASICS ', '');
   }
 
-  if (newTeamName.indexOf('AsicsWillowbrook') === 0) {
+  if (newTeamName.startsWith('AsicsWillowbrook')) {
     newTeamName = newTeamName.replace('AsicsWillowbrook', 'Willowbrook ');
     newTeamName = newTeamName.replace('12Gold', '12 Gold');
     newTeamName = newTeamName.replace('16Gold', '16 Gold');
   }
 
-  if (newTeamName.indexOf('ASPIRE') === 0) {
+  if (newTeamName.startsWith('ASPIRE')) {
     newTeamName = newTeamName.replace('ASPIRE', 'Aspire');
   }
 
-  if (newTeamName.indexOf('AVA TX') === 0) {
+  if (newTeamName.startsWith('AVA TX')) {
     newTeamName = newTeamName.replace('AVA TX', 'AVA Texas');
   }
 
-  if (newTeamName.indexOf('AVC Clev') === 0) {
+  if (newTeamName.startsWith('AVC Clev')) {
     newTeamName = newTeamName.replace('AVC Clev', 'AVC Cleveland');
   }
 
-  if (newTeamName.indexOf('AZ EVJ') === 0) {
+  if (newTeamName.startsWith('AZ EVJ')) {
     newTeamName = newTeamName.replace('AZ EVJ', 'Arizona East Valley');
   }
 
-  if (newTeamName.indexOf('AZ REV') === 0) {
+  if (newTeamName.startsWith('AZ REV')) {
     newTeamName = newTeamName.replace('AZ REV', 'Arizona Revolution');
   }
 
-  if (newTeamName.indexOf('AZ Sky') === 0) {
+  if (newTeamName.startsWith('AZ Sky')) {
     newTeamName = newTeamName.replace('AZ Sky', 'Arizona Sky');
   }
 
-  if (newTeamName.indexOf('AZ SKY') === 0) {
+  if (newTeamName.startsWith('AZ SKY')) {
     newTeamName = newTeamName.replace('AZ SKY', 'Arizona Sky');
   }
 
-  if (newTeamName.indexOf('Balboa Bay') === 0) {
+  if (newTeamName.startsWith('Balboa Bay')) {
     newTeamName = newTeamName.replace('14Blue', '14 Blue');
   }
 
-  if (newTeamName.indexOf('BEACH ELITE') === 0) {
+  if (newTeamName.startsWith('BEACH ELITE')) {
     newTeamName = newTeamName.replace('BEACH ELITE', 'Beach Elite');
     newTeamName = newTeamName.replace('ADIDAS', 'Adidas');
   }
 
-  if (newTeamName.indexOf('Brandywine') === 0) {
+  if (newTeamName.startsWith('Brandywine')) {
     newTeamName = newTeamName.replace('BAM', 'Bam');
   }
 
-  if (newTeamName.indexOf('CIA') === 0) {
+  if (newTeamName.startsWith('BRAVO')) {
+    newTeamName = newTeamName.replace('BRAVO', 'Bravo');
+  }
+
+  if (newTeamName.startsWith('CIA')) {
     newTeamName = newTeamName.replace('CIA', 'Club Iowa');
   }
 
-  if (newTeamName.indexOf('CinciVB') === 0) {
+  if (newTeamName.startsWith('CinciVB')) {
     newTeamName = newTeamName.replace('CinciVB Acad', ' Cincinnati Volleyball Academy');
   }
 
-  if (newTeamName.indexOf('CIS') === 0) {
+  if (newTeamName.startsWith('CIS')) {
     newTeamName = newTeamName.replace('CIS', 'Central Iowa Select');
   }
 
-  if (newTeamName.indexOf('CJV') === 0) {
+  if (newTeamName.startsWith('CJV')) {
     newTeamName = newTeamName.replace('CJV', 'Carolina Juniors');
     newTeamName = newTeamName.replace(' - ', '-');
   }
 
-  if (newTeamName.indexOf('CKVA') === 0) {
+  if (newTeamName.startsWith('CKVA')) {
     newTeamName = newTeamName.replace('CKVA', 'Central Kentucky');
   }
 
-  if (newTeamName.indexOf('Club One AZ') === 0) {
+  if (newTeamName.startsWith('Club One AZ')) {
     newTeamName = newTeamName.replace('AZ', 'Arizona');
     newTeamName = newTeamName.replace('18Platinum', '18 Platinum');
     newTeamName = newTeamName.replace('17Platinum', '17 Platinum');
@@ -483,55 +491,55 @@ function fixUSAVNames(teamName) {
     newTeamName = newTeamName.replace('15Platinum', '15 Platinum');
   }
 
-  if (newTeamName.indexOf('COAST') === 0) {
+  if (newTeamName.startsWith('COAST')) {
     newTeamName = newTeamName.replace('COAST', 'Coast');
   }
 
-  if (newTeamName.indexOf('CoJrs') === 0) {
+  if (newTeamName.startsWith('CoJrs')) {
     newTeamName = newTeamName.replace('CoJrs/Kaepa', 'Colorado Juniors');
     newTeamName = newTeamName.replace('17Peer', '17 Peer');
     newTeamName = newTeamName.replace('15Shannon', '15 Shannon');
     newTeamName = newTeamName.replace('14Matt', '14 Matt');
   }
 
-  if (newTeamName.indexOf('CVC') === 0) {
+  if (newTeamName.startsWith('CVC')) {
     newTeamName = newTeamName.replace('BLACK', 'Black');
     newTeamName = newTeamName.replace('BLUE', 'Blue');
   }
 
-  if (newTeamName.indexOf('DYNASTY') === 0) {
+  if (newTeamName.startsWith('DYNASTY')) {
     newTeamName = newTeamName.replace('DYNASTY', 'Dynasty');
   }
 
-  if (newTeamName.indexOf('ECJ ') === 0) {
+  if (newTeamName.startsWith('ECJ ')) {
     newTeamName = newTeamName.replace('ECJ ', 'Eastside Cleveland ');
   }
 
-  if (newTeamName.indexOf('EC Power') === 0) {
+  if (newTeamName.startsWith('EC Power')) {
     newTeamName = newTeamName.replace('EC Power', 'East Cost Power');
   }
 
-  if (newTeamName.indexOf('Edge VBC') === 0) {
+  if (newTeamName.startsWith('Edge VBC')) {
     newTeamName = newTeamName.replace(' VBC', '');
   }
 
-  if (newTeamName.indexOf('EP Diggers') === 0) {
+  if (newTeamName.startsWith('EP Diggers')) {
     newTeamName = newTeamName.replace('EP Diggers', 'El Paso Diggers');
     newTeamName = newTeamName.replace('13Lutich', '13 Lutich');
     newTeamName = newTeamName.replace('12Hill', '12 Hill');
   }
 
-  if (newTeamName.indexOf('FORZA') === 0) {
+  if (newTeamName.startsWith('FORZA')) {
     newTeamName = newTeamName.replace('FORZA', 'Forza');
     newTeamName = newTeamName.replace('NORTH', 'North');
     newTeamName = newTeamName.replace('ASICS', 'Asics');
   }
 
-  if (newTeamName.indexOf('FRVBC') === 0) {
+  if (newTeamName.startsWith('FRVBC')) {
     newTeamName = newTeamName.replace('FRVBC', 'Front Range');
   }
 
-  if (newTeamName.indexOf('FSJ') === 0) {
+  if (newTeamName.startsWith('FSJ')) {
     newTeamName = newTeamName.replace('FSJ', 'Fort Smith');
     newTeamName = newTeamName.replace('BLACK', 'Black');
     newTeamName = newTeamName.replace('DEWEY', 'Dewey');
@@ -541,58 +549,58 @@ function fixUSAVNames(teamName) {
     newTeamName = newTeamName.replace('NEVILLS', 'Nevills');
   }
 
-  if (newTeamName.indexOf('GCVA') === 0) {
+  if (newTeamName.startsWith('GCVA')) {
     newTeamName = newTeamName.replace('GCVA', 'Gulf Coast');
   }
 
-  if (newTeamName.indexOf('HIC') === 0) {
+  if (newTeamName.startsWith('HIC')) {
     newTeamName = newTeamName.replace('HIC', 'High Country');
   }
 
-  if (newTeamName.indexOf('HJV') === 0) {
+  if (newTeamName.startsWith('HJV')) {
     newTeamName = newTeamName.replace('HJV', 'Houston Juniors');
   }
 
-  if (newTeamName.indexOf('H Skyline') === 0) {
+  if (newTeamName.startsWith('H Skyline')) {
     newTeamName = newTeamName.replace('H Skyline', 'Houston Skyline');
     // newTeamName = newTeamName.replace('RSB', 'RoShamBo');
   }
 
-  if (newTeamName.indexOf('IGNITE') === 0) {
+  if (newTeamName.startsWith('IGNITE')) {
     newTeamName = newTeamName.replace('IGNITE', 'Ignite');
   }
 
-  if (newTeamName.indexOf('Instinct') === 0) {
+  if (newTeamName.startsWith('Instinct')) {
     newTeamName = newTeamName.replace('Instinct16', 'Instinct 16');
     newTeamName = newTeamName.replace('WTigers Wild G', 'White Tigers Wild Gold');
   }
 
-  if (newTeamName.indexOf('IPVA') === 0) {
+  if (newTeamName.startsWith('IPVA')) {
     newTeamName = newTeamName.replace('IPVA', 'Iowa Power');
   }
 
-  if (newTeamName.indexOf('JJVA') === 0) {
+  if (newTeamName.startsWith('JJVA')) {
     // newTeamName = newTeamName.replace('JJVA', 'Jacksonville Juniors');
     newTeamName = newTeamName.replace('TEAM', 'Team');
   }
 
-  if (newTeamName.indexOf('KC POWER') === 0) {
+  if (newTeamName.startsWith('KC POWER')) {
     newTeamName = newTeamName.replace('KC POWER', 'KC Power');
   }
 
-  if (newTeamName.indexOf('KU`IKAHI') === 0) {
+  if (newTeamName.startsWith('KU`IKAHI')) {
     newTeamName = newTeamName.replace('KU`IKAHI', 'Ku`ikahi');
   }
 
-  if (newTeamName.indexOf('LIVEWIRE') === 0) {
+  if (newTeamName.startsWith('LIVEWIRE')) {
     newTeamName = newTeamName.replace('LIVEWIRE', 'Livewire');
   }
 
-  if (newTeamName.indexOf('LoneStar') === 0) {
+  if (newTeamName.startsWith('LoneStar')) {
     newTeamName = newTeamName.replace('LoneStar', 'Lone Star');
   }
 
-  if (newTeamName.indexOf('MADFROG') === 0) {
+  if (newTeamName.startsWith('MADFROG')) {
     newTeamName = newTeamName.replace('MADFROG', 'Madfrog');
     newTeamName = newTeamName.replace('BLACK', 'Black');
     newTeamName = newTeamName.replace('BLUE', 'Blue');
@@ -601,197 +609,197 @@ function fixUSAVNames(teamName) {
     newTeamName = newTeamName.replace('\'S', '\'s');
   }
 
-  if (newTeamName.indexOf('MEVBA') === 0) {
+  if (newTeamName.startsWith('MEVBA')) {
     newTeamName = newTeamName.replace('MEVBA', 'Michigan Elite');
   }
 
-  if (newTeamName.indexOf('Michio Chicago') === 0) {
+  if (newTeamName.startsWith('Michio Chicago')) {
     newTeamName = newTeamName.replace('12Natl', '12 National');
   }
 
-  if (newTeamName.indexOf('Miz LB') === 0) {
+  if (newTeamName.startsWith('Miz LB')) {
     newTeamName = newTeamName.replace('Miz LB', 'Long Beach');
   }
 
-  if (newTeamName.indexOf('MJVA') === 0) {
+  if (newTeamName.startsWith('MJVA')) {
     newTeamName = newTeamName.replace('MJVA', 'Memphis Juniors');
   }
 
-  if (newTeamName.indexOf('MVA ') === 0) {
+  if (newTeamName.startsWith('MVA ')) {
     newTeamName = newTeamName.replace('ELITE', 'Elite');
   }
 
-  if (newTeamName.indexOf('MVVC') === 0) {
+  if (newTeamName.startsWith('MVVC')) {
     newTeamName = newTeamName.replace('MVVC', 'Mountain View');
   }
 
-  if (newTeamName.indexOf('Nebraska ONE') === 0) {
+  if (newTeamName.startsWith('Nebraska ONE')) {
     newTeamName = newTeamName.replace('ONE', 'One');
   }
 
-  if (newTeamName.indexOf('NIVA') === 0) {
+  if (newTeamName.startsWith('NIVA')) {
     newTeamName = newTeamName.replace('VOLT', 'Volt');
   }
 
-  if (newTeamName.indexOf('NKYVC') === 0) {
+  if (newTeamName.startsWith('NKYVC')) {
     newTeamName = newTeamName.replace('NKYVC', 'Northern Kentucky');
   }
 
-  if (newTeamName.indexOf('NPJ') === 0) {
+  if (newTeamName.startsWith('NPJ')) {
     newTeamName = newTeamName.replace('NPJ', 'North Pacific Juniors');
   }
 
-  if (newTeamName.indexOf('Ocean Breeze') === 0) {
+  if (newTeamName.startsWith('Ocean Breeze')) {
     newTeamName = newTeamName.replace('Quiksilver', ' Quiksilver');
   }
 
-  if (newTeamName.indexOf('OCVC') === 0) {
+  if (newTeamName.startsWith('OCVC')) {
     newTeamName = newTeamName.replace('OCVC', 'Orange Coast');
   }
 
-  if (newTeamName.indexOf('OJVA') === 0) {
+  if (newTeamName.startsWith('OJVA')) {
     newTeamName = newTeamName.replace('OJVA', 'Oregon Juniors');
   }
 
-  if (newTeamName.indexOf('Performance') === 0) {
+  if (newTeamName.startsWith('Performance')) {
     newTeamName = newTeamName.replace('NIKE', 'Nike');
   }
 
-  if (newTeamName.indexOf('Pgh Elite') === 0) {
+  if (newTeamName.startsWith('Pgh Elite')) {
     newTeamName = newTeamName.replace('Pgh ', 'Pittsburgh ');
   }
 
-  if (newTeamName.indexOf('Prime') === 0) {
+  if (newTeamName.startsWith('Prime')) {
     newTeamName = newTeamName.replace('ASICS', 'Asics');
   }
 
-  if (newTeamName.indexOf('PSVA') === 0) {
+  if (newTeamName.startsWith('PSVA')) {
     newTeamName = newTeamName.replace('PSVA', 'Prostyle');
   }
 
-  if (newTeamName.indexOf('PSVBA') === 0) {
+  if (newTeamName.startsWith('PSVBA')) {
     newTeamName = newTeamName.replace('PSVBA', 'Puget Sound');
   }
 
-  if (newTeamName.indexOf('PVC ') === 0) {
+  if (newTeamName.startsWith('PVC ')) {
     newTeamName = newTeamName.replace('PVC ', 'Powers ');
   }
 
-  if (newTeamName.indexOf('Rancho Valley') === 0) {
+  if (newTeamName.startsWith('Rancho Valley')) {
     newTeamName = newTeamName.replace('17Select', '17 Select');
     newTeamName = newTeamName.replace('16Premier', '16 Premier');
   }
 
-  if (newTeamName.indexOf('Roch ') === 0) {
+  if (newTeamName.startsWith('Roch ')) {
     newTeamName = newTeamName.replace('Roch PaceBootleggr', 'Rochester Pace Bootlegger ');
   }
 
-  if (newTeamName.indexOf('SA STING') === 0) {
+  if (newTeamName.startsWith('SA STING')) {
     newTeamName = newTeamName.replace('SA STING', 'San Antonio Sting');
     newTeamName = newTeamName.replace('BLACK', 'Black');
   }
 
-  if (newTeamName.indexOf('SASVBC') === 0) {
+  if (newTeamName.startsWith('SASVBC')) {
     newTeamName = newTeamName.replace('SASVBC', 'Spike and Serve');
     newTeamName = newTeamName.replace('RED', 'Red');
     newTeamName = newTeamName.replace('BLUE', 'Blue');
   }
 
-  if (newTeamName.indexOf('SEATTLE JRS') === 0) {
+  if (newTeamName.startsWith('SEATTLE JRS')) {
     newTeamName = newTeamName.replace('SEATTLE JRS', 'Seattle Juniors');
   }
 
-  if (newTeamName.indexOf('SF JRS') === 0) {
+  if (newTeamName.startsWith('SF JRS')) {
     newTeamName = newTeamName.replace('SF JRS', 'San Francisco Juniors');
   }
 
-  if (newTeamName.indexOf('SG Elite') === 0) {
+  if (newTeamName.startsWith('SG Elite')) {
     newTeamName = newTeamName.replace('SG ', 'San Gabriel ');
     newTeamName = newTeamName.replace('13Elite', '13 Elite');
   }
 
-  if (newTeamName.indexOf('SG ELITE') === 0) {
+  if (newTeamName.startsWith('SG ELITE')) {
     newTeamName = newTeamName.replace('SG ', 'San Gabriel ');
     newTeamName = newTeamName.replace('ELITE', 'Elite');
     newTeamName = newTeamName.replace('12Roshambo', '12 Roshambo');
     newTeamName = newTeamName.replace('16Roshambo', '16 Roshambo');
   }
 
-  if (newTeamName.indexOf('SIVA') === 0) {
+  if (newTeamName.startsWith('SIVA')) {
     newTeamName = newTeamName.replace('SIVA', 'Skagit Island');
     newTeamName = newTeamName.replace('BLUE', 'Blue');
   }
 
-  if (newTeamName.indexOf('SJVBC') === 0) {
+  if (newTeamName.startsWith('SJVBC')) {
     newTeamName = newTeamName.replace('SJVBC', 'San Juan');
   }
 
-  if (newTeamName.indexOf('SNVC') === 0) {
+  if (newTeamName.startsWith('SNVC')) {
     newTeamName = newTeamName.replace('SNVC', 'Summit Nitro');
   }
 
-  if (newTeamName.indexOf('SoCal VBC') === 0) {
+  if (newTeamName.startsWith('SoCal VBC')) {
     newTeamName = newTeamName.replace(' VBC', '');
   }
 
-  if (newTeamName.indexOf('Spike and Serve') === 0) {
+  if (newTeamName.startsWith('Spike and Serve')) {
     newTeamName = newTeamName.replace('BOYS', 'Boys');
   }
 
-  if (newTeamName.indexOf('Springfield') === 0) {
+  if (newTeamName.startsWith('Springfield')) {
     newTeamName = newTeamName.replace('16Blue', '16 Blue');
   }
 
-  if (newTeamName.indexOf('SPORTIME') === 0) {
+  if (newTeamName.startsWith('SPORTIME')) {
     newTeamName = newTeamName.replace('SPORTIME', 'Sportime');
     newTeamName = newTeamName.replace('GOLD', 'Gold');
   }
 
-  if (newTeamName.indexOf('STC Stars') === 0) {
+  if (newTeamName.startsWith('STC Stars')) {
     newTeamName = newTeamName.replace('STC', 'St. Charles');
   }
 
-  if (newTeamName.indexOf('TCVA') === 0) {
+  if (newTeamName.startsWith('TCVA')) {
     newTeamName = newTeamName.replace('TCVA', 'TriCounty');
   }
 
-  if (newTeamName.indexOf('TEXAS PISTOLS') === 0) {
+  if (newTeamName.startsWith('TEXAS PISTOLS')) {
     newTeamName = newTeamName.replace('TEXAS PISTOLS', 'Texas Pistols');
     newTeamName = newTeamName.replace('BLACK', 'Black');
   }
 
-  if (newTeamName.indexOf('TJVBC') === 0) {
+  if (newTeamName.startsWith('TJVBC')) {
     newTeamName = newTeamName.replace('TJVBC', 'Tallahassee Juniors');
   }
 
-  if (newTeamName.indexOf('TVC') === 0) {
+  if (newTeamName.startsWith('TVC')) {
     newTeamName = newTeamName.replace('TVC', 'Toledo');
   }
 
-  if (newTeamName.indexOf('TxPerformance') === 0) {
+  if (newTeamName.startsWith('TxPerformance')) {
     newTeamName = newTeamName.replace('TxPerformance', 'Texas Performance');
   }
 
-  if (newTeamName.indexOf('UNION') === 0) {
+  if (newTeamName.startsWith('UNION')) {
     newTeamName = newTeamName.replace('UNION', 'Union');
     newTeamName = newTeamName.replace('IN', 'Indiana');
     newTeamName = newTeamName.replace('KY', 'Kentucky');
   }
 
-  if (newTeamName.indexOf('USA SOUTH') === 0) {
+  if (newTeamName.startsWith('USA SOUTH')) {
     newTeamName = newTeamName.replace('SOUTH', 'South');
     newTeamName = newTeamName.replace('Purp', 'Purple');
   }
 
-  if (newTeamName.indexOf('VA Juniors') === 0) {
+  if (newTeamName.startsWith('VA Juniors')) {
     newTeamName = newTeamName.replace('VA', 'Virginia');
   }
 
-  if (newTeamName.indexOf('Victory') === 0) {
+  if (newTeamName.startsWith('Victory')) {
     newTeamName = newTeamName.replace('Elite', ' Elite');
   }
 
-  if (newTeamName.indexOf('WAVE ') === 0) {
+  if (newTeamName.startsWith('WAVE ')) {
     newTeamName = newTeamName.replace('WAVE ', 'Wave ');
   }
 
@@ -799,74 +807,74 @@ function fixUSAVNames(teamName) {
   return newTeamName;
 
   /*
-   if (newTeamName.indexOf('PM_') === 0) {
+   if (newTeamName.indexOf('PM_')) {
    newTeamName = newTeamName.replace('PM_', '');
    }
 
-   if ((newTeamName.indexOf('12- Jen') === 0) || (newTeamName.indexOf('13- Laney') === 0) || (newTeamName.indexOf('14- Allyson') === 0)
-   || (newTeamName.indexOf('15- Kody') === 0) || (newTeamName.indexOf('16- Ben') === 0) || (newTeamName.indexOf('16- Charis') === 0)
-   || (newTeamName.indexOf('17- Emily') === 0) || (newTeamName.indexOf('18- Tori') === 0)) {
+   if ((newTeamName.indexOf('12- Jen')) || (newTeamName.indexOf('13- Laney')) || (newTeamName.indexOf('14- Allyson'))
+   || (newTeamName.indexOf('15- Kody')) || (newTeamName.indexOf('16- Ben')) || (newTeamName.indexOf('16- Charis'))
+   || (newTeamName.indexOf('17- Emily')) || (newTeamName.indexOf('18- Tori'))) {
    newTeamName = 'Gamecock ' + newTeamName.replace('- ', '-');
    }
 
-   if ((newTeamName.indexOf('15-Ruffing') === 0) || (newTeamName.indexOf('16-Atchison') === 0)) {
+   if ((newTeamName.indexOf('15-Ruffing')) || (newTeamName.indexOf('16-Atchison'))) {
    newTeamName = 'Blackswamp ' + newTeamName;
    }
 
-   if (newTeamName.indexOf('16-HAM') === 0) {
+   if (newTeamName.indexOf('16-HAM')) {
    newTeamName = 'Lanier 16-Ham';
    }
 
-   if (newTeamName.indexOf('14-1') === 0) {
+   if (newTeamName.indexOf('14-1')) {
    newTeamName = 'Aftershock 14-1';
    }
 
-   if (newTeamName.indexOf('15-1') === 0) {
+   if (newTeamName.indexOf('15-1')) {
    newTeamName = 'Aftershock 15-1';
    }
 
-   if (newTeamName.indexOf('15 Colorado Challenge') === 0) {
+   if (newTeamName.indexOf('15 Colorado Challenge')) {
    newTeamName = 'White Tiger ' + newTeamName;
    }
 
-   if (newTeamName.indexOf('16-1') === 0) {
+   if (newTeamName.indexOf('16-1')) {
    newTeamName = 'Aftershock 16-1';
    }
 
-   if (newTeamName.indexOf('17-1 Black') === 0) {
+   if (newTeamName.indexOf('17-1 Black')) {
    newTeamName = 'Aftershock 17-1 Black';
    }
 
-   if (newTeamName.indexOf('17-2 Green') === 0) {
+   if (newTeamName.indexOf('17-2 Green')) {
    newTeamName = 'Aftershock 17-2 Green';
    }
 
-   if (newTeamName.indexOf('18U A GOZAR') === 0) {
+   if (newTeamName.indexOf('18U A GOZAR')) {
    newTeamName = newTeamName.replace('GOZAR', 'Gozar');
    }
 
-   if (newTeamName.indexOf('41 South') === 0) {
+   if (newTeamName.indexOf('41 South')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    newTeamName = newTeamName.replace('BLACK', 'Black');
    }
 
-   if (newTeamName.indexOf('A5 South') === 0) {
+   if (newTeamName.indexOf('A5 South')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('A5 Mizuon') === 0) {
+   if (newTeamName.indexOf('A5 Mizuon')) {
    newTeamName = newTeamName.replace('Mizuon', 'Mizuno');
    }
 
-   if (newTeamName.indexOf('AFTERSHOCK') === 0) {
+   if (newTeamName.indexOf('AFTERSHOCK')) {
    newTeamName = newTeamName.replace('AFTERSHOCK', 'Aftershock');
    }
 
-   if (newTeamName.indexOf('Alabama Elite') === 0) {
+   if (newTeamName.indexOf('Alabama Elite')) {
    newTeamName = newTeamName.replace(' VB', '');
    }
 
-   if (newTeamName.indexOf('Alabama Juniors') === 0) {
+   if (newTeamName.indexOf('Alabama Juniors')) {
    newTeamName = newTeamName.replace(' ALJRS 12-1', '');
    newTeamName = newTeamName.replace(' ALJRS 12-2', '');
    newTeamName = newTeamName.replace(' ALJRS 13-1', '');
@@ -875,79 +883,79 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace(' ALJRS 16-1', '');
    }
 
-   if (newTeamName.indexOf('ALJRS') === 0) {
+   if (newTeamName.indexOf('ALJRS')) {
    newTeamName = newTeamName.replace('ALJRS', 'Alabama Juniors');
    }
 
-   if (newTeamName.indexOf('Alliance') === 0) {
+   if (newTeamName.indexOf('Alliance')) {
    newTeamName = newTeamName.replace('M\'boro', 'Murfreesboro');
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Arsenal Volleyball Academy') === 0) {
+   if (newTeamName.indexOf('Arsenal Volleyball Academy')) {
    newTeamName = newTeamName.replace(' - ', ' ');
    }
 
-   if (newTeamName.indexOf('AT LBoom') === 0) {
+   if (newTeamName.indexOf('AT LBoom')) {
    newTeamName = newTeamName.replace('AT LBoom', 'Atlanta Boom');
    newTeamName = newTeamName.replace('DiamondRox', 'Diamond Rox');
    }
 
-   if (newTeamName.indexOf('ATL Boom') === 0) {
+   if (newTeamName.indexOf('ATL Boom')) {
    newTeamName = newTeamName.replace('ATL Boom', 'Atlanta Boom');
    newTeamName = newTeamName.replace('DiamondRox', 'Diamond Rox');
    newTeamName = newTeamName.replace('15Diamond', '15 Diamond');
    newTeamName = newTeamName.replace('16Diamond', '16 Diamond');
    }
 
-   if (newTeamName.indexOf('Atlanta Boom') === 0) {
+   if (newTeamName.indexOf('Atlanta Boom')) {
    newTeamName = newTeamName.replace('DiamondRox', 'Diamond Rox');
    }
 
-   if (newTeamName.indexOf('Atlanta Extreme') === 0) {
+   if (newTeamName.indexOf('Atlanta Extreme')) {
    newTeamName = newTeamName.replace(' Volleyball', '');
    }
 
-   if (newTeamName.indexOf('Austin Juniors') === 0) {
+   if (newTeamName.indexOf('Austin Juniors')) {
    newTeamName = newTeamName.replace('NAVY', 'Navy');
    }
 
-   if (newTeamName.indexOf('BCVC') === 0) {
+   if (newTeamName.indexOf('BCVC')) {
    newTeamName = newTeamName.replace('BCVC', 'Black Creek');
    }
 
-   if (newTeamName.indexOf('Birmingham') === 0) {
+   if (newTeamName.indexOf('Birmingham')) {
    newTeamName = newTeamName.replace('Birmingham Volleyball Club', 'BVC');
    }
 
-   if (newTeamName.indexOf('Boise VBC') === 0) {
+   if (newTeamName.indexOf('Boise VBC')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('BRAVO') === 0) {
+   if (newTeamName.indexOf('BRAVO')) {
    newTeamName = newTeamName.replace('BRAVO', 'Bravo ');
    }
 
-   if (newTeamName.indexOf('BUEV') === 0) {
+   if (newTeamName.indexOf('BUEV')) {
    newTeamName = newTeamName.replace('BUEV', 'Bay United Elite');
    }
 
-   if (newTeamName.indexOf('BVA') === 0) {
+   if (newTeamName.indexOf('BVA')) {
    newTeamName = newTeamName.replace('BVA', 'Biltmore');
    newTeamName = newTeamName.replace('17E', '17 Elite');
    }
 
-   if (newTeamName.indexOf('C1VB') === 0) {
+   if (newTeamName.indexOf('C1VB')) {
    newTeamName = newTeamName.replace('C1VB', 'Carolina One');
    newTeamName = newTeamName.replace('Blk Grvl', 'Black Greenville');
    newTeamName = newTeamName.replace('Power Grvl', 'Power Greenville');
    }
 
-   if (newTeamName.indexOf('C2 Attack') === 0) {
+   if (newTeamName.indexOf('C2 Attack')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('C4') === 0) {
+   if (newTeamName.indexOf('C4')) {
    newTeamName = newTeamName.replace(' Explosive Volleyball Club', '');
    newTeamName = newTeamName.replace('NAVY', 'Navy');
    newTeamName = newTeamName.replace('SILVER', 'Silver');
@@ -957,19 +965,19 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('C4 WHITE', 'White');
    }
 
-   if (newTeamName.indexOf('Car. Islanders') === 0) {
+   if (newTeamName.indexOf('Car. Islanders')) {
    newTeamName = newTeamName.replace('Car. Islanders', 'Carolina Islanders');
    }
 
-   if (newTeamName.indexOf('Car Islanders') === 0) {
+   if (newTeamName.indexOf('Car Islanders')) {
    newTeamName = newTeamName.replace('Car Islanders', 'Carolina Islanders');
    }
 
-   if (newTeamName.indexOf('Car .Islanders') === 0) {
+   if (newTeamName.indexOf('Car .Islanders')) {
    newTeamName = newTeamName.replace('Car .Islanders', 'Carolina Islanders');
    }
 
-   if (newTeamName.indexOf('Carolina One') === 0) {
+   if (newTeamName.indexOf('Carolina One')) {
    newTeamName = newTeamName.replace('Pkns', 'Pickens');
    newTeamName = newTeamName.replace('Reg ', 'Regional');
    newTeamName = newTeamName.replace('Blk', 'Black');
@@ -979,51 +987,51 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('Royal Gr', 'Royal Greenville');
    }
 
-   if (newTeamName.indexOf('CCCVBC') === 0) {
+   if (newTeamName.indexOf('CCCVBC')) {
    newTeamName = newTeamName.replace('CCCVBC', 'Choo Choo City');
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('CC Force') === 0) {
+   if (newTeamName.indexOf('CC Force')) {
    newTeamName = newTeamName.replace('CC Force', 'Corpus Christi Force');
    }
 
-   if (newTeamName.indexOf('CCJ') === 0) {
+   if (newTeamName.indexOf('CCJ')) {
    newTeamName = newTeamName.replace('CCJ', 'Capital City Juniors');
    newTeamName = newTeamName.replace('(BLACK)', 'Black');
    }
 
-   if (newTeamName.indexOf('Central Georgia') === 0) {
+   if (newTeamName.indexOf('Central Georgia')) {
    newTeamName = newTeamName.replace(' VB Association', '');
    }
 
-   if (newTeamName.indexOf('Chicago Elite') === 0) {
+   if (newTeamName.indexOf('Chicago Elite')) {
    newTeamName = newTeamName.replace(' - ', '-');
    }
 
-   if (newTeamName.indexOf('Chicago Jrs') === 0) {
+   if (newTeamName.indexOf('Chicago Jrs')) {
    newTeamName = newTeamName.replace('Chicago Jrs', 'Chicago Juniors');
    }
 
-   if (newTeamName.indexOf('Choo Choo') === 0) {
+   if (newTeamName.indexOf('Choo Choo')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('CFVC') === 0) {
+   if (newTeamName.indexOf('CFVC')) {
    newTeamName = newTeamName.replace('CFVC', 'Central Florida');
    newTeamName = newTeamName.replace('18RED', '18 Red');
    newTeamName = newTeamName.replace('RED', 'Red');
    }
 
-   if (newTeamName.indexOf('CGVA') === 0) {
+   if (newTeamName.indexOf('CGVA')) {
    newTeamName = newTeamName.replace('CGVA', 'Central Georgia ');
    }
 
-   if (newTeamName.indexOf('Classic City') === 0) {
+   if (newTeamName.indexOf('Classic City')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Club Fusion') === 0) {
+   if (newTeamName.indexOf('Club Fusion')) {
    newTeamName = newTeamName.replace('13Red', '13 Red');
    newTeamName = newTeamName.replace('14Black', '14 Black');
    newTeamName = newTeamName.replace('14Silver', '14 Silver');
@@ -1048,114 +1056,114 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('18White', '18 White');
    }
 
-   if (newTeamName.indexOf('CLUB ONE') === 0) {
+   if (newTeamName.indexOf('CLUB ONE')) {
    newTeamName = newTeamName.replace('CLUB ONE', 'Club One');
    }
 
-   if (newTeamName.indexOf('Coast') === 0) {
+   if (newTeamName.indexOf('Coast')) {
    newTeamName = newTeamName.replace('MIZUNO', 'Mizuno');
    newTeamName = newTeamName.replace('North18', 'North 18');
    }
 
-   if (newTeamName.indexOf('COLAVOL') === 0) {
+   if (newTeamName.indexOf('COLAVOL')) {
    newTeamName = newTeamName.replace('COLAVOL VBC', 'COLAVOL');
    }
 
-   if (newTeamName.indexOf('Conway Jrs') === 0) {
+   if (newTeamName.indexOf('Conway Jrs')) {
    newTeamName = newTeamName.replace('Jrs', 'Juniors');
    }
 
-   if (newTeamName.indexOf('CR_Carolina UVC') === 0) {
+   if (newTeamName.indexOf('CR_Carolina UVC')) {
    newTeamName = newTeamName.replace('CR_Carolina UVC', 'Carolina Union');
    }
 
-   if (newTeamName.indexOf('Crossfire') === 0) {
+   if (newTeamName.indexOf('Crossfire')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Crossfire MN') === 0) {
+   if (newTeamName.indexOf('Crossfire MN')) {
    newTeamName = newTeamName.replace('MN', 'Minnesota');
    }
 
-   if (newTeamName.indexOf('CSVC') === 0) {
+   if (newTeamName.indexOf('CSVC')) {
    newTeamName = newTeamName.replace('CSVC', 'Carolina Select');
    }
 
-   if (newTeamName.indexOf('CUVC') === 0) {
+   if (newTeamName.indexOf('CUVC')) {
    newTeamName = newTeamName.replace('CUVC', 'Carolina Union');
    }
 
-   if ((newTeamName.indexOf('CVA') === 0) && (newTeamName.indexOf('Colorado') < 0)) {
+   if ((newTeamName.indexOf('CVA')) && (newTeamName.indexOf('Colorado') < 0)) {
    newTeamName = newTeamName.replace('CVA', 'Columbus Volleyball Academy');
    }
 
-   if (newTeamName.indexOf('Dynamite') === 0) {
+   if (newTeamName.indexOf('Dynamite')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Eastside ClevelandVC') === 0) {
+   if (newTeamName.indexOf('Eastside ClevelandVC')) {
    newTeamName = newTeamName.replace('ClevelandVC', 'Cleveland');
    }
 
-   if (newTeamName.indexOf('The EDGE') === 0) {
+   if (newTeamName.indexOf('The EDGE')) {
    newTeamName = newTeamName.replace('EDGE', 'Edge');
    }
 
-   if (newTeamName.indexOf('Ellis Co') === 0) {
+   if (newTeamName.indexOf('Ellis Co')) {
    newTeamName = newTeamName.replace('Ellis Co', 'Ellis County');
    newTeamName = newTeamName.replace('Nat', 'National');
    }
 
-   if (newTeamName.indexOf('ESVBC') === 0) {
+   if (newTeamName.indexOf('ESVBC')) {
    newTeamName = newTeamName.replace('ESVBC', 'Eastside');
    }
 
-   if (newTeamName.indexOf('Ethos') === 0) {
+   if (newTeamName.indexOf('Ethos')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Elevation') === 0) {
+   if (newTeamName.indexOf('Elevation')) {
    newTeamName = newTeamName.replace('LovMah', 'National 1');
    }
 
-   if (newTeamName.indexOf('ESVC') === 0) {
+   if (newTeamName.indexOf('ESVC')) {
    newTeamName = newTeamName.replace('ESVC', 'Eastern Shore');
    }
 
-   if (newTeamName.indexOf('EXCEL') === 0) {
+   if (newTeamName.indexOf('EXCEL')) {
    newTeamName = newTeamName.replace('EXCEL', 'Excel');
    }
 
-   if (newTeamName.indexOf('EXTREME MAVS') === 0) {
+   if (newTeamName.indexOf('EXTREME MAVS')) {
    newTeamName = newTeamName.replace('EXTREME', 'Extreme');
    }
 
-   if (newTeamName.indexOf('FDL Fusion') === 0) {
+   if (newTeamName.indexOf('FDL Fusion')) {
    newTeamName = newTeamName.replace('FDL', 'Fond du Lac');
    }
 
-   if (newTeamName.indexOf('Forza1') === 0) {
+   if (newTeamName.indexOf('Forza1')) {
    newTeamName = newTeamName.replace('ASICS', 'Asics');
    }
 
-   if (newTeamName.indexOf('FPVA') === 0) {
+   if (newTeamName.indexOf('FPVA')) {
    newTeamName = newTeamName.replace('FPVA', 'Florida Premier');
    }
 
-   if (newTeamName.indexOf('Frisco Flyers') === 0) {
+   if (newTeamName.indexOf('Frisco Flyers')) {
    newTeamName = newTeamName.replace('RED', 'Red');
    }
 
-   if (newTeamName.indexOf('Front Range') === 0) {
+   if (newTeamName.indexOf('Front Range')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('FSVBC') === 0) {
+   if (newTeamName.indexOf('FSVBC')) {
    newTeamName = newTeamName.replace('FSVBC SUNS', 'Florida Suns');
    newTeamName = newTeamName.replace('Black', ' Black');
    }
 
-   if (newTeamName.indexOf('FW ') === 0) {
+   if (newTeamName.indexOf('FW ')) {
    newTeamName = newTeamName.replace('FW Fire', 'Ft Worth Fire');
    newTeamName = newTeamName.replace('FW FIre', 'Ft Worth Fire');
    newTeamName = newTeamName.replace('FW FIRE', 'Ft Worth Fire');
@@ -1167,79 +1175,79 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('17BROOKS', '17 Brooks');
    }
 
-   if (newTeamName.indexOf('GEVA') === 0) {
+   if (newTeamName.indexOf('GEVA')) {
    newTeamName = newTeamName.replace('GEVA', 'Guaynabo Elite');
    newTeamName = newTeamName.replace('UNDER', 'Under');
    }
 
-   if (newTeamName.indexOf('GJVC') === 0) {
+   if (newTeamName.indexOf('GJVC')) {
    newTeamName = newTeamName.replace('GJVC', 'Georgia Juniors');
    }
 
-   if (newTeamName.indexOf('Guns Up') === 0) {
+   if (newTeamName.indexOf('Guns Up')) {
    newTeamName = newTeamName.replace('VBC ', ' ');
    }
 
-   if (newTeamName.indexOf('H2 STL') === 0) {
+   if (newTeamName.indexOf('H2 STL')) {
    newTeamName = newTeamName.replace('UnderArmour', 'Under Armour');
    }
 
-   if (newTeamName.indexOf('HPSTL') === 0) {
+   if (newTeamName.indexOf('HPSTL')) {
    newTeamName = newTeamName.replace('HPSTL', 'High Performance St. Louis');
    }
 
-   if (newTeamName.indexOf('Hurricane VBC') === 0) {
+   if (newTeamName.indexOf('Hurricane VBC')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('ICT MAVS') === 0) {
+   if (newTeamName.indexOf('ICT MAVS')) {
    newTeamName = newTeamName.replace('ICT MAVS', 'ICT Mavs');
    }
 
-   if (newTeamName.indexOf('IlliniElite16Cardinal') === 0) {
+   if (newTeamName.indexOf('IlliniElite16Cardinal')) {
    newTeamName = newTeamName.replace('IlliniElite16Cardinal', 'Illini Elite 16 Cardinal');
    }
 
-   if (newTeamName.indexOf('IVC') === 0) {
+   if (newTeamName.indexOf('IVC')) {
    newTeamName = newTeamName.replace('IVC -', 'Intensity');
    }
 
-   if (newTeamName.indexOf('JVC') === 0) {
+   if (newTeamName.indexOf('JVC')) {
    newTeamName = newTeamName.replace('JVC', 'Jupiter');
    }
 
-   if (newTeamName.indexOf('K2 Volleyball') === 0) {
+   if (newTeamName.indexOf('K2 Volleyball')) {
    newTeamName = newTeamName.replace('K2 Volleyball', 'K2');
    }
 
-   if (newTeamName.indexOf('Kaepa BL') === 0) {
+   if (newTeamName.indexOf('Kaepa BL')) {
    newTeamName = newTeamName.replace('Kaepa BL', 'Kaepa Borderline');
    }
 
-   if (newTeamName.indexOf('Knoxville') === 0) {
+   if (newTeamName.indexOf('Knoxville')) {
    newTeamName = newTeamName.replace('RED', 'Red');
    newTeamName = newTeamName.replace('17Emilee', 'Emilee');
    }
 
-   if (newTeamName.indexOf('KPVA') === 0) {
+   if (newTeamName.indexOf('KPVA')) {
    newTeamName = newTeamName.replace('ELITES', 'Elites');
    }
 
-   if (newTeamName.indexOf('KVA') === 0) {
+   if (newTeamName.indexOf('KVA')) {
    newTeamName = newTeamName.replace('14Carmen', '14 Carmen');
    newTeamName = newTeamName.replace('13White', '13 White');
    newTeamName = newTeamName.replace('12Joe', '12 Joe');
    }
 
-   if (newTeamName.indexOf('KVC') === 0) {
+   if (newTeamName.indexOf('KVC')) {
    newTeamName = newTeamName.replace('KVC', 'Kingsport');
    }
 
-   if (newTeamName.indexOf('Lake VBC') === 0) {
+   if (newTeamName.indexOf('Lake VBC')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('Lanier') === 0) {
+   if (newTeamName.indexOf('Lanier')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    newTeamName = newTeamName.replace(' 13-Kirby', 'Kirby');
    newTeamName = newTeamName.replace(' 14-Mary', 'Mary');
@@ -1251,197 +1259,197 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace(' 17 Kim', 'Kim');
    }
 
-   if (newTeamName.indexOf('LAV') === 0) {
+   if (newTeamName.indexOf('LAV')) {
    newTeamName = newTeamName.replace('LAV', 'Lower Alabama');
    }
 
-   if (newTeamName.indexOf('Lex United') === 0) {
+   if (newTeamName.indexOf('Lex United')) {
    newTeamName = newTeamName.replace('Lex United', 'Lexington United');
    }
 
-   if (newTeamName.indexOf('liga voleibol bogota') === 0) {
+   if (newTeamName.indexOf('liga voleibol bogota')) {
    newTeamName = newTeamName.replace('liga voleibol bogota', 'Liga Voleibol Bogota');
    }
 
-   if (newTeamName.indexOf('Lions') === 0) {
+   if (newTeamName.indexOf('Lions')) {
    newTeamName = newTeamName.replace('14Blue', '14 Blue');
    }
 
-   if (newTeamName.indexOf('LVBR') === 0) {
+   if (newTeamName.indexOf('LVBR')) {
    newTeamName = newTeamName.replace('LVBR', 'Louisiana Baton Rouge');
    }
 
-   if (newTeamName.indexOf('LVL') === 0) {
+   if (newTeamName.indexOf('LVL')) {
    newTeamName = newTeamName.replace('LVL', 'Louisiana Lafayette');
    }
 
-   if (newTeamName.indexOf('Madison') === 0) {
+   if (newTeamName.indexOf('Madison')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('MADISON COUNTY') === 0) {
+   if (newTeamName.indexOf('MADISON COUNTY')) {
    newTeamName = newTeamName.replace('MADISON COUNTY ACE', 'Madison County Ace');
    newTeamName = newTeamName.replace(' 141', '');
    }
 
-   if (newTeamName.indexOf('matrix') === 0) {
+   if (newTeamName.indexOf('matrix')) {
    newTeamName = newTeamName.replace('matrix', 'Matrix');
    }
 
-   if (newTeamName.indexOf('MAVBC') === 0) {
+   if (newTeamName.indexOf('MAVBC')) {
    newTeamName = newTeamName.replace('MAVBC', 'Metro American');
    }
 
-   if (newTeamName.indexOf('MAVERICK') === 0) {
+   if (newTeamName.indexOf('MAVERICK')) {
    newTeamName = newTeamName.replace('MAVERICK', 'Maverick');
    }
 
-   if (newTeamName.indexOf('Mem Metro') === 0) {
+   if (newTeamName.indexOf('Mem Metro')) {
    newTeamName = newTeamName.replace('Mem Metro', 'Memphis Metro');
    }
 
-   if (newTeamName.indexOf('METRO VOLLEYBALL') === 0) {
+   if (newTeamName.indexOf('METRO VOLLEYBALL')) {
    newTeamName = newTeamName.replace('METRO VOLLEYBALL CLUB- ATL', 'Metro Atlanta');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
    }
 
-   if (newTeamName.indexOf('METRO-ATL') === 0) {
+   if (newTeamName.indexOf('METRO-ATL')) {
    newTeamName = newTeamName.replace('METRO-ATL', 'Metro Atlanta');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
    }
 
-   if (newTeamName.indexOf('MEVC') === 0) {
+   if (newTeamName.indexOf('MEVC')) {
    newTeamName = newTeamName.replace('14Power', ' 14 Power');
    newTeamName = newTeamName.replace('17Power', ' 17 Power');
    newTeamName = newTeamName.replace('MEVC', 'Mountain Elite');
    }
 
-   if (newTeamName.indexOf('MIDTN') === 0) {
+   if (newTeamName.indexOf('MIDTN')) {
    newTeamName = newTeamName.replace('MIDTN', 'MidTN');
    newTeamName = newTeamName.replace('NORTH', 'North');
    }
 
-   if (newTeamName.indexOf('Mid TN') === 0) {
+   if (newTeamName.indexOf('Mid TN')) {
    newTeamName = newTeamName.replace('1 1', '1');
    }
 
-   if (newTeamName.indexOf('Milw Sting') === 0) {
+   if (newTeamName.indexOf('Milw Sting')) {
    newTeamName = newTeamName.replace('Milw Sting', 'Milwaukee Sting');
    }
 
-   if (newTeamName.indexOf('MMTSC') === 0) {
+   if (newTeamName.indexOf('MMTSC')) {
    newTeamName = newTeamName.replace('MMTSC', 'Momentus');
    }
 
-   if (newTeamName.indexOf('MSLCT') === 0) {
+   if (newTeamName.indexOf('MSLCT')) {
    newTeamName = newTeamName.replace('MSLCT', 'Miami Select');
    newTeamName = newTeamName.replace('BLACK', 'Black');
    }
 
-   if (newTeamName.indexOf('MVA') === 0) {
+   if (newTeamName.indexOf('MVA')) {
    newTeamName = newTeamName.replace('MVA', 'Miami Volleyball Academy');
    }
 
-   if (newTeamName.indexOf('MVC') === 0) {
+   if (newTeamName.indexOf('MVC')) {
    newTeamName = newTeamName.replace('MVC', 'Madison');
    }
 
-   if (newTeamName.indexOf('N. Alabama') === 0) {
+   if (newTeamName.indexOf('N. Alabama')) {
    newTeamName = newTeamName.replace(' NACAV 142', '');
    }
 
-   if (newTeamName.indexOf('N GA Aces') === 0) {
+   if (newTeamName.indexOf('N GA Aces')) {
    newTeamName = newTeamName.replace('N GA', 'North Georgia');
    newTeamName = newTeamName.replace(' Volleyball', '');
    }
 
-   if (newTeamName.indexOf('NAVC') === 0) {
+   if (newTeamName.indexOf('NAVC')) {
    newTeamName = newTeamName.replace('NAVC', 'North Atlanta');
    newTeamName = newTeamName.replace(' - ', '-');
    }
 
-   if (newTeamName.indexOf('NBVBC') === 0) {
+   if (newTeamName.indexOf('NBVBC')) {
    newTeamName = newTeamName.replace('NBVBC', 'Naletre Beach');
    }
 
-   if (newTeamName.indexOf('NCVC') === 0) {
+   if (newTeamName.indexOf('NCVC')) {
    newTeamName = newTeamName.replace('NCVC', 'Northern California');
    }
 
-   if (newTeamName.indexOf('Neb Impact') === 0) {
+   if (newTeamName.indexOf('Neb Impact')) {
    newTeamName = newTeamName.replace('Neb Impact', 'Nebraska Impact');
    }
 
-   if (newTeamName.indexOf('NF PIRATES') === 0) {
+   if (newTeamName.indexOf('NF PIRATES')) {
    newTeamName = newTeamName.replace('NF PIRATES', 'North Florida Pirates');
    newTeamName = newTeamName.replace('GOLD', 'Gold');
    }
 
-   if (newTeamName.indexOf('Nfinity VBC') === 0) {
+   if (newTeamName.indexOf('Nfinity VBC')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('NGACE') === 0) {
+   if (newTeamName.indexOf('NGACE')) {
    newTeamName = newTeamName.replace('NGACE', 'North Georgia Aces ');
    }
 
-   if (newTeamName.indexOf('NI Thunder') === 0) {
+   if (newTeamName.indexOf('NI Thunder')) {
    newTeamName = newTeamName.replace('NI Thunder', 'North Idaho Thunder');
    }
 
-   if (newTeamName.indexOf('NM Jrs') === 0) {
+   if (newTeamName.indexOf('NM Jrs')) {
    newTeamName = newTeamName.replace('NM Jrs', 'New Mexico Juniors');
    }
 
-   if (newTeamName.indexOf('NNJ') === 0) {
+   if (newTeamName.indexOf('NNJ')) {
    newTeamName = newTeamName.replace('NNJ', 'Northern Nevada');
    }
 
-   if (newTeamName.indexOf('North Atlanta') === 0) {
+   if (newTeamName.indexOf('North Atlanta')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('OEV') === 0) {
+   if (newTeamName.indexOf('OEV')) {
    newTeamName = newTeamName.replace('OEV', 'Oakland Elite');
    }
 
-   if (newTeamName.indexOf('Ohana') === 0) {
+   if (newTeamName.indexOf('Ohana')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('OP2') === 0) {
+   if (newTeamName.indexOf('OP2')) {
    newTeamName = newTeamName.replace('SMACK', 'Smack');
    }
 
-   if (newTeamName.indexOf('OT ') === 0) {
+   if (newTeamName.indexOf('OT ')) {
    newTeamName = newTeamName.replace('OT ', 'OVA/TBVA ');
    }
 
-   if (newTeamName.indexOf('Pacific Jrs') === 0) {
+   if (newTeamName.indexOf('Pacific Jrs')) {
    newTeamName = newTeamName.replace('Jrs', 'Juniors');
    }
 
-   if (newTeamName.indexOf('Pineapple') === 0) {
+   if (newTeamName.indexOf('Pineapple')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('PITT PREMIER') === 0) {
+   if (newTeamName.indexOf('PITT PREMIER')) {
    newTeamName = newTeamName.replace('PITT PREMIER', 'Pittsburgh Premier');
    }
 
-   if (newTeamName.indexOf('PLVC') === 0) {
+   if (newTeamName.indexOf('PLVC')) {
    newTeamName = newTeamName.replace('PLVC', 'Parkway Lightning');
    }
 
-   if (newTeamName.indexOf('Play Like Winners') === 0) {
+   if (newTeamName.indexOf('Play Like Winners')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('PoWer GB') === 0) {
+   if (newTeamName.indexOf('PoWer GB')) {
    newTeamName = newTeamName.replace('PoWer GB', 'PoWer Green Bay');
    }
 
-   if (newTeamName.indexOf('PR_KY') === 0) {
+   if (newTeamName.indexOf('PR_KY')) {
    newTeamName = newTeamName.replace('PR_KY STARZ', 'KY Starz');
    newTeamName = newTeamName.replace(' 12R-1', '');
    newTeamName = newTeamName.replace(' 12R-2', '');
@@ -1453,31 +1461,31 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace(' 17T-1', '');
    }
 
-   if (newTeamName.indexOf('PR_MAVA') === 0) {
+   if (newTeamName.indexOf('PR_MAVA')) {
    newTeamName = newTeamName.replace('PR_MAVA', 'MAVA');
    }
 
-   if (newTeamName.indexOf('PSV') === 0) {
+   if (newTeamName.indexOf('PSV')) {
    newTeamName = newTeamName.replace('PSV', 'Prostyle');
    }
 
-   if (newTeamName.indexOf('Queens') === 0) {
+   if (newTeamName.indexOf('Queens')) {
    newTeamName = newTeamName.replace('richard', 'Richard');
    }
 
-   if (newTeamName.indexOf('R Thunder') === 0) {
+   if (newTeamName.indexOf('R Thunder')) {
    newTeamName = newTeamName.replace('R Thunder', 'Rockwood Thunder');
    }
 
-   if (newTeamName.indexOf('Rancho Valley') === 0) {
+   if (newTeamName.indexOf('Rancho Valley')) {
    newTeamName = newTeamName.replace('14Premier', '14 Premier');
    }
 
-   if (newTeamName.indexOf('Rocket City') === 0) {
+   if (newTeamName.indexOf('Rocket City')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Rockwood Thunder') === 0) {
+   if (newTeamName.indexOf('Rockwood Thunder')) {
    newTeamName = newTeamName.replace('Mizuno', ' Mizuno');
    }
 
@@ -1489,143 +1497,143 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('RRVC', 'Rox Rainbows');
    }
 
-   if (newTeamName.indexOf('SA MAGIC') === 0) {
+   if (newTeamName.indexOf('SA MAGIC')) {
    newTeamName = newTeamName.replace('SA MAGIC', 'San Antonio Magic');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
    }
 
-   if (newTeamName.indexOf('SBVC') === 0) {
+   if (newTeamName.indexOf('SBVC')) {
    newTeamName = newTeamName.replace('SBVC', 'Santa Barbara');
    }
 
-   if (newTeamName.indexOf('SC Midlands') === 0) {
+   if (newTeamName.indexOf('SC Midlands')) {
    newTeamName = newTeamName.replace('Nat', 'National');
    }
 
-   if (newTeamName.indexOf('SDVC') === 0) {
+   if (newTeamName.indexOf('SDVC')) {
    newTeamName = newTeamName.replace('SDVC', 'South Dade');
    }
 
-   if (newTeamName.indexOf('SIVBC') === 0) {
+   if (newTeamName.indexOf('SIVBC')) {
    newTeamName = newTeamName.replace('SIVBC', 'Sudden Impact');
    }
 
-   if (newTeamName.indexOf('SLVVC') === 0) {
+   if (newTeamName.indexOf('SLVVC')) {
    newTeamName = newTeamName.replace('SLVVC', 'St. Louis Vision');
    }
 
-   if ((newTeamName.indexOf('South Perf') === 0) || (newTeamName.indexOf('Southern Perf') === 0)) {
+   if ((newTeamName.indexOf('South Perf')) || (newTeamName.indexOf('Southern Perf'))) {
    newTeamName = newTeamName.replace('Southern Perf', 'Southern Performance');
    newTeamName = newTeamName.replace('South Perf', 'Southern Performance');
    newTeamName = newTeamName.replace('NAT', 'National');
    newTeamName = newTeamName.replace('RED', 'Red');
    }
 
-   if (newTeamName.indexOf('Southern Strikers') === 0) {
+   if (newTeamName.indexOf('Southern Strikers')) {
    newTeamName = newTeamName.replace(' VBC', '');
    newTeamName = newTeamName.replace(' SSVBC 151', '');
    newTeamName = newTeamName.replace(' SSVBC 161', '');
    newTeamName = newTeamName.replace(' SSVBC 171', '');
    }
 
-   if (newTeamName.indexOf('Southwest') === 0) {
+   if (newTeamName.indexOf('Southwest')) {
    newTeamName = newTeamName.replace('Southwest15', 'Southwest 15');
    newTeamName = newTeamName.replace('Southwest16', 'Southwest 16');
    newTeamName = newTeamName.replace('Southwest17', 'Southwest 17');
    newTeamName = newTeamName.replace('ROX', 'Rox');
    }
 
-   if (newTeamName.indexOf('Spartan Volleyball') === 0) {
+   if (newTeamName.indexOf('Spartan Volleyball')) {
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    }
 
-   if (newTeamName.indexOf('Spiketown') === 0) {
+   if (newTeamName.indexOf('Spiketown')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('SPIRIT') === 0) {
+   if (newTeamName.indexOf('SPIRIT')) {
    newTeamName = newTeamName.replace('SPIRIT', 'Spirit');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
    newTeamName = newTeamName.replace('BLACK', 'Black');
    }
 
-   if (newTeamName.indexOf('SPVB') === 0) {
+   if (newTeamName.indexOf('SPVB')) {
    newTeamName = newTeamName.replace('SPVB', 'Sports Performance');
    }
 
-   if (newTeamName.indexOf('SPVC') === 0) {
+   if (newTeamName.indexOf('SPVC')) {
    newTeamName = newTeamName.replace('SPVC', 'Sacramento Performance');
    }
 
-   if (newTeamName.indexOf('SSVB') === 0) {
+   if (newTeamName.indexOf('SSVB')) {
    newTeamName = newTeamName.replace('SSVB', 'Southern Select');
    }
 
-   if (newTeamName.indexOf('SSVC') === 0) {
+   if (newTeamName.indexOf('SSVC')) {
    newTeamName = newTeamName.replace('SSVC', 'Silver State');
    }
 
-   if (newTeamName.indexOf('Supernova') === 0) {
+   if (newTeamName.indexOf('Supernova')) {
    newTeamName = newTeamName.replace('BLACK', 'Black');
    newTeamName = newTeamName.replace('GRAY', 'Gray');
    newTeamName = newTeamName.replace('RED', 'Red');
    }
 
-   if (newTeamName.indexOf('Swarm') === 0) {
+   if (newTeamName.indexOf('Swarm')) {
    newTeamName = newTeamName.replace(' VBC', '');
    }
 
-   if (newTeamName.indexOf('SWVBC') === 0) {
+   if (newTeamName.indexOf('SWVBC')) {
    newTeamName = newTeamName.replace('SWVBC', 'Southwest Milwaukee');
    }
 
-   if (newTeamName.indexOf('TAV') === 0) {
+   if (newTeamName.indexOf('TAV')) {
    newTeamName = newTeamName.replace('TAV', 'Texas Advantage');
    }
 
-   if (newTeamName.indexOf('TCV') === 0) {
+   if (newTeamName.indexOf('TCV')) {
    newTeamName = newTeamName.replace('TCV', 'TriCounty');
    }
 
-   if (newTeamName.indexOf('Team D ') === 0) {
+   if (newTeamName.indexOf('Team D ')) {
    newTeamName = newTeamName.replace('Team D ', 'Team Detroit ');
    }
 
-   if (newTeamName.indexOf('Team Momentum') === 0) {
+   if (newTeamName.indexOf('Team Momentum')) {
    newTeamName = newTeamName.replace('15Navy', '15 Navy');
    }
 
-   if (newTeamName.indexOf('TEXAS FURY') === 0) {
+   if (newTeamName.indexOf('TEXAS FURY')) {
    newTeamName = newTeamName.replace('TEXAS FURY', 'Texas Fury');
    }
 
-   if (newTeamName.indexOf('TEXAS STARS') === 0) {
+   if (newTeamName.indexOf('TEXAS STARS')) {
    newTeamName = newTeamName.replace('TEXAS STARS-', 'Texas Stars');
    newTeamName = newTeamName.replace('BLACK', 'Black');
    }
 
-   if (newTeamName.indexOf('THUNDER BAY') === 0) {
+   if (newTeamName.indexOf('THUNDER BAY')) {
    newTeamName = newTeamName.replace('THUNDER BAY', 'Thunder Bay');
    newTeamName = newTeamName.replace('ELITE', 'Elite');
    }
 
-   if (newTeamName.indexOf('TI Elite') === 0) {
+   if (newTeamName.indexOf('TI Elite')) {
    newTeamName = newTeamName.replace('TI Elite', 'Team Indiana Elite');
    }
 
-   if (newTeamName.indexOf('TLVC') === 0) {
+   if (newTeamName.indexOf('TLVC')) {
    newTeamName = newTeamName.replace('TLVC', 'Team Life');
    }
 
-   if (newTeamName.indexOf('TRIVOLLEY') === 0) {
+   if (newTeamName.indexOf('TRIVOLLEY')) {
    newTeamName = newTeamName.replace('TRIVOLLEY', 'Trivolley');
    }
 
-   if (newTeamName.indexOf('Tsunami DKB') === 0) {
+   if (newTeamName.indexOf('Tsunami DKB')) {
    newTeamName = newTeamName.replace('DKB', 'DeKalb');
    }
 
-   if (newTeamName.indexOf('Tsunami Dekalb') === 0) {
+   if (newTeamName.indexOf('Tsunami Dekalb')) {
    newTeamName = newTeamName.replace('Dekalb', 'DeKalb');
    newTeamName = newTeamName.replace('BILL', 'Bill');
    newTeamName = newTeamName.replace('BRUCE', 'Bruce');
@@ -1635,16 +1643,16 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('VICKI', 'Vicki');
    }
 
-   if (newTeamName.indexOf('TSUNAMI ROME') === 0) {
+   if (newTeamName.indexOf('TSUNAMI ROME')) {
    newTeamName = newTeamName.replace('TSUNAMI ROME', 'Tsunami Rome');
    newTeamName = newTeamName.replace('MIKA', 'Mika');
    }
 
-   if (newTeamName.indexOf('Tsunami Volleyball') === 0) {
+   if (newTeamName.indexOf('Tsunami Volleyball')) {
    newTeamName = newTeamName.replace(' Volleyball', '');
    }
 
-   if (newTeamName.indexOf('TSUNAMI VOLLEYBALL') === 0) {
+   if (newTeamName.indexOf('TSUNAMI VOLLEYBALL')) {
    newTeamName = newTeamName.replace('TSUNAMI VOLLEYBALL', 'Tsunami');
    newTeamName = newTeamName.replace('ALEX', 'Alex');
    newTeamName = newTeamName.replace('DUN', 'Dun');
@@ -1657,31 +1665,31 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('KYLE', 'Kyle');
    }
 
-   if (newTeamName.indexOf('TUVA') === 0) {
+   if (newTeamName.indexOf('TUVA')) {
    newTeamName = newTeamName.replace('TUVA', 'Tampa United');
    }
 
-   if (newTeamName.indexOf('Tx Fusion') === 0) {
+   if (newTeamName.indexOf('Tx Fusion')) {
    newTeamName = newTeamName.replace('Tx Fusion', 'Texas Fusion');
    }
 
-   if (newTeamName.indexOf('TX Tornados') === 0) {
+   if (newTeamName.indexOf('TX Tornados')) {
    newTeamName = newTeamName.replace('TX Tornados', 'Texas Tornados');
    }
 
-   if (newTeamName.indexOf('Ultimate VBC') === 0) {
+   if (newTeamName.indexOf('Ultimate VBC')) {
    newTeamName = newTeamName.replace(' VBC -', '');
    }
 
-   if (newTeamName.indexOf('UNITED') === 0) {
+   if (newTeamName.indexOf('UNITED')) {
    newTeamName = newTeamName.replace('UNITED', 'United');
    }
 
-   if (newTeamName.indexOf('V1 Academy') === 0) {
+   if (newTeamName.indexOf('V1 Academy')) {
    newTeamName = newTeamName.replace(' Nat ', ' National ');
    }
 
-   if (newTeamName.indexOf('V-1 Academy') === 0) {
+   if (newTeamName.indexOf('V-1 Academy')) {
    newTeamName = newTeamName.replace(' ATH ', ' Athens ');
    newTeamName = newTeamName.replace(' Kenn ', ' Kennesaw ');
    newTeamName = newTeamName.replace(' PTC ', ' Peachtree City ');
@@ -1692,28 +1700,28 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace('MILTON', 'Milton');
    }
 
-   if (newTeamName.indexOf('VIA') === 0) {
+   if (newTeamName.startsWith('VIA')) {
    newTeamName = newTeamName.replace('VIA', 'Louisiana VIA');
    }
 
-   if (newTeamName.indexOf('VM') === 0) {
+   if (newTeamName.startsWith('VM')) {
    newTeamName = newTeamName.replace('VM', 'Voleimiami');
    newTeamName = newTeamName.replace('ORANGE', 'Orange');
    newTeamName = newTeamName.replace('GREEN', 'Green');
    newTeamName = newTeamName.replace('ASICS', 'Asics');
    }
 
-   if (newTeamName.indexOf('Volley One') === 0) {
+   if (newTeamName.startsWith('Volley One')) {
    newTeamName = newTeamName.replace(' Volleyball Academy', '');
    newTeamName = newTeamName.replace(' Volleyball Club', '');
    newTeamName = newTeamName.replace(' VBC ', ' ');
    }
 
-   if (newTeamName.indexOf('West FL') === 0) {
+   if (newTeamName.startsWith('West FL')) {
    newTeamName = newTeamName.replace('West FL', 'West Florida');
    }
 
-   if (newTeamName.indexOf('West Georgia') === 0) {
+   if (newTeamName.startsWith('West Georgia')) {
    newTeamName = newTeamName.replace(' Volleyball Academ', '');
    newTeamName = newTeamName.replace(' WGVA13 Rox', '');
    newTeamName = newTeamName.replace(' WGVA132', '');
@@ -1727,19 +1735,19 @@ function fixUSAVNames(teamName) {
    newTeamName = newTeamName.replace(' WGVA18 Rox', '');
    }
 
-   if (newTeamName.indexOf('WGVA') === 0) {
+   if (newTeamName.startsWith('WGVA')) {
    newTeamName = newTeamName.replace('WGVA', 'West Georgia');
    }
 
-   if (newTeamName.indexOf('WKVC') === 0) {
+   if (newTeamName.startsWith('WKVC')) {
    newTeamName = newTeamName.replace('WKVC', 'West Kentucky');
    }
 
-   if (newTeamName.indexOf('WVA ') === 0) {
+   if (newTeamName.startsWith('WVA ')) {
    newTeamName = newTeamName.replace('WVA ', 'Wisconsin Volleyball Academy ');
    }
 
-   if (newTeamName.indexOf('WBVA ') === 0) {
+   if (newTeamName.startsWith('WBVA ')) {
    newTeamName = newTeamName.replace('WVBA ', 'Washington Volleyball Academy ');
    }
    */
@@ -1776,7 +1784,7 @@ module.exports = function fixClubName(teamName, eventType) {
     newTeamName = newTeamName.replace('Nat\'l', 'National');
   }
 
-  if ((newTeamName.indexOf('GA5') === 0) || (newTeamName.indexOf('A5 Mizuno') === 0)) {
+  if ((newTeamName.startsWith('GA5')) || (newTeamName.startsWith('A5 Mizuno'))) {
     newTeamName = fixTeamName(newTeamName);
   }
 

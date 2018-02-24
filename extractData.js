@@ -13,7 +13,7 @@ let makePool = require('./makePool');
 let teamList = require('./teamList');
 
 function isTeamPlaying(teamName) {
-  // console.log('TEAM PLAYING [' + teamName + ']');
+  console.log('TEAM PLAYING [' + teamName + ']');
   // return true;
   return teamList[teamName] && teamList[teamName].playing;
 }
@@ -22,7 +22,7 @@ function isTodayOrLater(poolData) {
   let matchList = poolData.matches;
   let today = new Date();
   today.setHours(0);
-  today.setHours(today.getHours() - 10); // AWS uses UTC
+  today.setHours(today.getHours()); // AWS uses UTC
   today.setMinutes(0);
   today.setSeconds(0);
 
@@ -30,7 +30,7 @@ function isTodayOrLater(poolData) {
     map(function(match) {
       let location = match.location;
       let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
-      matchDate.setYear(2016);
+      matchDate.setYear(2018);
       return matchDate;
     }).
     reduce(function(previous, current) {

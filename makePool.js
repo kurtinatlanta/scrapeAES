@@ -32,7 +32,7 @@ function fixOpponent(opponent, teamName, eventType) {
   let newOpponent = fixClubName(opponent, eventType);
   let teamStart = teamName.substr(0, 4);
 
-  if ((newOpponent.indexOf(teamStart) === 0) && (newOpponent.indexOf('A5 South') == -1)) {
+  if ((newOpponent.startsWith(teamStart)) && (newOpponent.indexOf('A5 South') == -1)) {
     newOpponent = "<strong>" + newOpponent + "</strong>";
   }
 
@@ -41,6 +41,7 @@ function fixOpponent(opponent, teamName, eventType) {
 
 function getCourt(location) {
   let newLocation = location.substr(0, location.indexOf('at ')).trim();
+  newLocation = newLocation.replace('DCC Ct', 'Court');
   newLocation = newLocation.replace('Ct. ', '');
   newLocation = newLocation.replace('Ct ', '');
   // newLocation = newLocation.replace('Court ', '');
@@ -50,7 +51,7 @@ function getCourt(location) {
   newLocation = newLocation.replace('Atl Vb (Boom)', 'Atlanta Boom');
   newLocation = newLocation.replace('Peachtree VBC', 'PCVC');
   newLocation = newLocation.replace(' Richmond CC', '');
-  newLocation = newLocation.replace('GIC', 'Court');
+  newLocation = newLocation.replace('GICC', 'Court');
   return newLocation;
 }
 
@@ -59,7 +60,7 @@ let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
 
 function getDate(location) {
   let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
-  matchDate.setYear(2016);
+  matchDate.setYear(2018);
   return days[matchDate.getDay()] + " " + matchDate.getDate() + " " + months[matchDate.getMonth()];
 }
 
@@ -88,10 +89,13 @@ function getPoolName(pool, eventType) {
     brackets = [
       { regex: /R\dG\dXO/i, name: 'Crossover Match' },
       { regex: /CR D\d CH/, name: 'Challenge Match' },
+      { regex: /cxC/, name: 'Challenge Match' },
       { regex: /R\d D\d CH/, name: 'Challenge Match' },
       { regex: /R\d D\dCH/, name: 'Challenge Match' },
       { regex: /Gold/, name: 'Gold Bracket' },
+      { regex: /GOLD/, name: 'Gold Bracket' },
       { regex: /Slvr/, name: 'Silver Bracket' },
+      { regex: /SIL/, name: 'Silver Bracket' },
       { regex: /Brnz/, name: 'Bronze Bracket' },
       { regex: /F10/, name: 'Flight 10' },
       { regex: /Flt 10/, name: 'Flight 10' },
@@ -146,7 +150,7 @@ function getScore(score, lost) {
 
 function getTime(location) {
   let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
-  matchDate.setYear(2016);
+  matchDate.setYear(2017);
   let hours = matchDate.getHours();
   let minutes = matchDate.getMinutes().toString();
   let ampm = "";
@@ -239,7 +243,7 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
   else if ((numbers.length == 3) && (pool.indexOf('XO') > 0)) {
     round = parseInt(numbers[0], 10);
     group = parseInt(numbers[1], 10);
-    matchNumber = pool.match(/(R\dG\dXO)(.+)/)[2];
+    matchNumber = pool.match(/(R\d[DG]\dXO)(.+)/)[2];
   }
   else if ((numbers.length == 3) && (pool.indexOf('G') > 0)) {
     round = parseInt(numbers[0], 10);

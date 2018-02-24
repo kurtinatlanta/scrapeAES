@@ -15,7 +15,7 @@ module.exports = function fixTeamName(teamName) {
   // newName = newName.replace('143', '14');
   // newName = newName.replace('144', '14');
   // newName = newName.replace('145', '14');
-  newName = newName.replace('14 B', '14');
+  // newName = newName.replace('14 B', '14');
   // newName = newName.replace('151', '15');
   // newName = newName.replace('152', '15');
   // newName = newName.replace('153', '15');
@@ -23,13 +23,19 @@ module.exports = function fixTeamName(teamName) {
   // newName = newName.replace('161', '16');
   // newName = newName.replace('162', '16');
   // newName = newName.replace('163', '16');
-  newName = newName.replace('16-B', '16');
+  // newName = newName.replace('16-B', '16');
   // newName = newName.replace('171', '17');
   // newName = newName.replace('172', '17');
   // newName = newName.replace('181', '18');
   // newName = newName.replace('182', '18');
   // newName = newName.replace('183', '18');
-  newName = newName.replace('18-B', '18');
+  // newName = newName.replace('18-B', '18');
+  // newName = newName.replace('12-5', '12-5 Kathryn');
+  // newName = newName.replace('12-6', '12-5 Dani');
+  // newName = newName.replace('13-5', '13-5 Alex');
+  // newName = newName.replace('16-3', '16-3 Liang');
+  // newName = newName.replace('17-3', '17-3 Helen');
+  // newName = newName.replace('18-3', '18-3 Karen');
   newName = newName.replace('-1', '');
   newName = newName.replace('-2', '');
   newName = newName.replace('-3', '');
@@ -42,29 +48,33 @@ module.exports = function fixTeamName(teamName) {
   newName = newName.replace(' F1', ' 1');
   newName = newName.replace(' M1', ' 1');
   newName = newName.replace(' Volleyball Club', ' ');
-  newName = newName.replace('Keyeria', 'Keyaira');
-  newName = newName.replace('15 Bill', '15 Arieon');
-  newName = newName.replace('18/17 Hybrid', '18 Kip');
-  newName = newName.replace('18/17 Kip', '18 Kip');
+  // newName = newName.replace('Keyeria', 'Keyaira');
+  // newName = newName.replace('15 Bill', '15 Arieon');
+  // newName = newName.replace('18/17 Hybrid', '18 Kip');
+  // newName = newName.replace('18/17 Kip', '18 Kip');
   // newName = newName.replace('15 JJ', 'JJ');
-  newName = newName.replace('14 Michelle', '14 LA');
-  newName = newName.replace('14 Sandra', '14 Sandy');
+  // newName = newName.replace('14 Michelle', '14 LA');
+  // newName = newName.replace('14 Sandra', '14 Sandy');
 
-  newName = newName.replace('CCJ', 'Capital City Juniors');
-  newName = newName.replace('GA5  ', 'GA5 ');
-  newName = newName.replace('MIDTN', 'MidTN');
-  newName = newName.replace('NAVC', 'North Atlanta');
-  newName = newName.replace('RCVC', 'Rocket City');
+  // newName = newName.replace('CCJ', 'Capital City Juniors');
+  // newName = newName.replace('GA5  ', 'GA5 ');
+  // newName = newName.replace('MIDTN', 'MidTN');
+  // newName = newName.replace('NAVC', 'North Atlanta');
+  // newName = newName.replace('RCVC', 'Rocket City');
 
   if (newName.indexOf('(') > 0) {
     newName = newName.substr(0, (newName.indexOf('(') - 1));
   }
 
-  if (newName.indexOf('ProLink') === 0) {
+  if (newName.startsWith('ProLink')) {
     newName = newName.replace('Nat', ' National');
   }
 
-  if (newName.indexOf('CAPITAL CITY') === 0) {
+  if (newName.startsWith('Cobb Atlanta  ')) {
+    newName = newName.replace('  ', ' ');
+  }
+
+  if (newName.startsWith('CAPITAL CITY')) {
     newName = newName.replace('CAPITAL CITY JUNIORS', 'Capital City Juniors');
   }
 

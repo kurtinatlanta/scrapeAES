@@ -3,14 +3,14 @@ let cheerio = require('cheerio');
 let fixPool = require('./fixPool');
 
 module.exports = function scheduleObserver(teamData) {
-  // console.log('divisionObservable(): content = [' + content + ']');
+  // console.log('scheduleObserver(): teamData = [' + JSON.stringify(teamData) + ']');
   let team = teamData.team;
   let $ = cheerio.load(teamData.content);
 
   let schedule = $('.list').first();
 
   return Rx.Observable.create(function subscriber(observer) {
-    schedule.children('tr').each(function (/* index, item */) {
+    schedule.children('tbody').children('tr').each(function (/* index, item */) {
       let teamItems = [];
       let poolLink = "";
 
@@ -59,6 +59,7 @@ module.exports = function scheduleObserver(teamData) {
       }
     });
 
+    // console.log('scheduleObserver(): teamData = [' + JSON.stringify(team) + ']');
     observer.next(team);
     observer.complete();
   });

@@ -5,6 +5,9 @@ let express = require('express');
 let Rx = require('rxjs/Rx');
 let app = express();
 
+// Increase the max listeners
+require('events').EventEmitter.prototype._maxListeners = 100;
+
 let tournaments = require('./tournamentCodes');
 let extractData = require('./extractData');
 

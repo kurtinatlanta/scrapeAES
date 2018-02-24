@@ -14,7 +14,7 @@ module.exports = function resultsObserver(resultsData, eventType) {
 
     console.log("fetchPoolResults(): Getting pool results for team [" + teamName + "] in pool [" + resultsData.poolName + "]");
 
-    results.children('tr.list_odd_row').each(function (index /*, item */) {
+    results.children('tbody').children('tr.list_odd_row').each(function (index /*, item */) {
       let columns = [];
 
       $(this).children().filter('td').each(function (/* index1, item1 */) {
@@ -23,7 +23,7 @@ module.exports = function resultsObserver(resultsData, eventType) {
 
       let resultTeam = columns[0];
 
-      if (resultTeam && (fixTeamName(resultTeam) == teamName)) {
+      if (resultTeam && (fixTeamName(resultTeam) === teamName)) {
         pool.matchesWon = columns[1];
         pool.matchesLost = columns[2];
         pool.setsWon = columns[3];
@@ -40,7 +40,7 @@ module.exports = function resultsObserver(resultsData, eventType) {
       }
     });
 
-    results.children('tr.list_even_row').each(function (index /*, item */) {
+    results.children('tbody').children('tr.list_even_row').each(function (index /*, item */) {
       let columns = [];
 
       $(this).children().filter('td').each(function (/* index1, item1 */) {
@@ -49,7 +49,7 @@ module.exports = function resultsObserver(resultsData, eventType) {
 
       let resultTeam = columns[0];
 
-      if (resultTeam && (fixTeamName(resultTeam) == teamName)) {
+      if (resultTeam && (fixTeamName(resultTeam) === teamName)) {
         console.log("teamName = [" + teamName + "] - pool = [" + resultsData.poolName + "], pool.place = [" + columns[8] + "]");
         pool.matchesWon = columns[1];
         pool.matchesLost = columns[2];
