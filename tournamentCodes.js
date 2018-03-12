@@ -1,7 +1,7 @@
 let exportedValue = '';
 
 // let southernDream = 'PTAwMDAwMTMyMzQ90';
-let leapinLittles = 'PTAwMDAwMTMyMzg90';
+// let leapinLittles = 'PTAwMDAwMTMyMzg90';
 // let winterBump = 'PTAwMDAwMTA4ODk90';
 // let boysWinterChamp = 'PTAwMDAwMDkwMjA90';
 // let centralZoneInvitational = 'PTAwMDAwMTA2ODk90';
@@ -19,19 +19,21 @@ let leapinLittles = 'PTAwMDAwMTMyMzg90';
 // let spvb = 'PTAwMDAwMTExMDk90';
 // let floridaQualifier = 'PTAwMDAwMTA5MDU90';
 // let avcQualifier = 'PTAwMDAwMTEwNDA90';
-// let lafata = 'PTAwMDAwMDgyNDA90';
-// let beast = 'PTAwMDAwMTEyMzc90';
+// let lafata = 'PTAwMDAwMTMwNzc90';
+// let beast = 'PTAwMDAwMTMyNDA90';
 // let jaxJam = 'PTAwMDAwMTEzOTc90';
 // let bvcValentine = 'PTAwMDAwMTI2NjE90';
 // let clubWestClassic = 'PTAwMDAwMDk3NzM90';
-// let donnybrook = 'PTAwMDAwMTEzMzg90';
-// let savl = 'PTAwMDAwMTA5MjY90';
-// let nasa = 'PTAwMDAwMTIwNzU90';
+// let donnybrook = 'PTAwMDAwMTMyNDE90';
+// let savl = 'PTAwMDAwMTM1MDQ90';
+// let charlotteGrandPrix = 'PTAwMDAwMTMxOTg90';
+// let nasa = 'PTAwMDAwMTM3ODI90';
 // let aauSuperRegional = 'PTAwMDAwMTEwODk90';
 // let farOut = 'RmFyX091dF9GZXN0aXZhbA2';
-// let bluegrass = 'PTAwMDAwMTA3MjA90';
-// let firstCoast = 'PTAwMDAwMTEzOTk90';
-// let peachtree = 'PTAwMDAwMTIyMzQ90';
+let bluegrass = 'PTAwMDAwMTMwNzk90';
+let firstCoast = 'PTAwMDAwMTQwODE90';
+let peachtree = 'PTAwMDAwMTM4MjY90';
+let battleOfBros = 'PTAwMDAwMTMzNzU90';
 // let disneyQualifier = 'PTAwMDAwMDkxNDg90';
 // let mideast1 = 'PTAwMDAwMTA3MDU90';
 // let northeast = 'PTAwMDAwMTA3ODQ90';
@@ -105,10 +107,11 @@ let srvaClubs = {
 
 tournaments = [
   // { name: 'AAU Girls National Chapmionships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams },
-  { name: 'Leapin\' Littles', code: leapinLittles, eventType: 'usav', clubs: { a5: '39' } }
-  // { name: 'Rally Rumble', code: rallyRumble, eventType: 'usav', clubs: { a5: '39'} }
-  // { name: 'Florida Qualifier', code: floridaQualifier, eventType: 'usav', clubs: { a5: '39'} },
-  // { name: 'Sports Performance Presidents\' Day', code: spvb, eventType: 'usav', clubs: { a5: '39'} }
+  // { name: 'Bluegrass', code: bluegrass, eventType: 'usav', clubs: { a5: '39' } },
+  // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39' } },
+  { name: 'Peachtree Classic', code: peachtree, eventType: 'usav', clubs: { a5: '39'} }
+  // { name: 'Battle of the Bros', code: battleOfBros, eventType: 'usav', clubs: { a5: '39'} }
+  // { name: 'Charlotte AAU Grand Prix', code: charlotteGrandPrix, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39'} }
 
   // { name: 'USAV Girls', code: 'PTAwMDAwMTExODY90', eventType: 'usav', clubs: usavGirls },
