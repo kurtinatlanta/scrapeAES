@@ -51,7 +51,7 @@ function getCourt(location) {
   newLocation = newLocation.replace('Atl Vb (Boom)', 'Atlanta Boom');
   newLocation = newLocation.replace('Peachtree VBC', 'PCVC');
   newLocation = newLocation.replace(' Richmond CC', '');
-  newLocation = newLocation.replace('GICC', 'Court');
+  // newLocation = newLocation.replace('GICC', 'Court');
   return newLocation;
 }
 
