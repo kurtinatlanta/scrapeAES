@@ -30,19 +30,19 @@ let exportedValue = '';
 // let nasa = 'PTAwMDAwMTM3ODI90';
 // let aauSuperRegional = 'PTAwMDAwMTEwODk90';
 // let farOut = 'RmFyX091dF9GZXN0aXZhbA2';
-let bluegrass = 'PTAwMDAwMTMwNzk90';
-let firstCoast = 'PTAwMDAwMTQwODE90';
-let peachtree = 'PTAwMDAwMTM4MjY90';
-let battleOfBros = 'PTAwMDAwMTMzNzU90';
-// let disneyQualifier = 'PTAwMDAwMDkxNDg90';
-// let mideast1 = 'PTAwMDAwMTA3MDU90';
+// let bluegrass = 'PTAwMDAwMTMwNzk90';
+// let firstCoast = 'PTAwMDAwMTQwODE90';
+// let peachtree = 'PTAwMDAwMTM4MjY90';
+let battleOfBros = 'PTAwMDAwMTMyNDI90';
+// let disneyQualifier = 'PTAwMDAwMTM0MjY90';
+// let mideast1 = 'PTAwMDAwMTMwODM90';
 // let northeast = 'PTAwMDAwMTA3ODQ90';
 // let windyCity = 'PTAwMDAwMTA4MTg90';
-// let youthFestival = 'PTAwMDAwMTEzMzk90';
+// let youthFestival = 'PTAwMDAwMTMyMzU90';
 // let showMe = 'PTAwMDAwMTExODQ90';
 // let showMe2 = 'PTAwMDAwMDkxNDk90';
 // let jjvaSpring = 'PTAwMDAwMDg4MjI90';
-// let mideast2 = 'PTAwMDAwMTA3MDk90';
+// let mideast2 = 'PTAwMDAwMTMwODQ90';
 // let dixieClassic = 'PTAwMDAwMTE0NzE90';
 // let dixieClassic2 = 'PTAwMDAwMTA4OTQ90';
 // let jvaWorldChallenge = 'PTAwMDAwMTA4NjA90';
@@ -107,9 +107,9 @@ let srvaClubs = {
 
 tournaments = [
   // { name: 'AAU Girls National Chapmionships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams },
-  // { name: 'Bluegrass', code: bluegrass, eventType: 'usav', clubs: { a5: '39' } },
-  // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39' } },
-  { name: 'Peachtree Classic', code: peachtree, eventType: 'usav', clubs: { a5: '39'} }
+  { name: 'Battle Between Boys Belligerents', code: battleOfBros, eventType: 'usav', clubs: { a5: '39' } }
+  // { name: 'Disney Qualifier', code: disneyQualifier, eventType: 'usav', clubs: { a5: '39' } },
+  // { name: 'Southern Youth Festival', code: youthFestival, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'Battle of the Bros', code: battleOfBros, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'Charlotte AAU Grand Prix', code: charlotteGrandPrix, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39'} }
