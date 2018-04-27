@@ -42,7 +42,7 @@ function fixOpponent(opponent, teamName, eventType) {
 function getCourt(location) {
   let newLocation = location.substr(0, location.indexOf('at ')).trim();
   newLocation = newLocation.replace('DCC Ct', 'Court');
-  newLocation = newLocation.replace('Ct. ', '');
+  newLocation = newLocation.replace('Ct. ', 'Court ');
   newLocation = newLocation.replace('Ct ', '');
   // newLocation = newLocation.replace('Court ', '');
   newLocation = newLocation.replace('DCC ', '');
@@ -325,10 +325,10 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
       let score = getScore(match.score, !won);
 
       if (won) {
-        html += '<span class="fa fa-check" aria-hidden="true">&nbsp;</span><strong>' + score + '</strong>';
+        html += '<span class="fa fa-check" style="color: green;" aria-hidden="true">&nbsp;</span><strong>' + score + '</strong>';
       }
       else {
-        html += '<span class="fa fa-times" aria-hidden="true">&nbsp;</span>' + score;
+        html += '<span class="fa fa-times" style="color: red;" aria-hidden="true">&nbsp;</span>' + score;
       }
 
       html += '</span>';

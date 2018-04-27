@@ -1,7 +1,7 @@
 let masterTeamList = {
-  'A5 18 Bob': { playing: true, rank: 1 },
-  'A5 18 John': { playing: true, rank: 2 },
-  'A5 18 Tee': { playing: true, rank: 3 },
+  // 'A5 18 Bob': { playing: true, rank: 1 },
+  // 'A5 18 John': { playing: true, rank: 2 },
+  // 'A5 18 Tee': { playing: true, rank: 3 },
   'A5 17 Jing': { playing: true, rank: 4 },
   'A5 17 Marc': { playing: true, rank: 5 },
   'A5 17 Lisa': { playing: true, rank: 6 },
@@ -99,6 +99,22 @@ let aauSession4 = {
   'GA5 16 Beverly': { playing: true, rank: 37 }
 };
 
+let usav18 = {
+  // Open
+  'A5 18 Bob': { playing: true, rank: 1 },
+  'A5 18 John': { playing: true, rank: 2 },
+  // National
+  'Alliance 18 MIZUNO': { playing: true, rank: 3 },
+  'Tsunami S181E Joe': { playing: true, rank: 4 },
+  // USA
+  'Alliance 18 Molten': { playing: true, rank: 5 },
+  // American
+  'A5 18 Tee': { playing: true, rank: 6 },
+  'A5 South 18-Jason': { playing: true, rank: 7 },
+  'GA5 18-April': { playing: true, rank: 8 },
+  'Tsunami S182E Tim': { playing: true, rank: 9 },
+};
+
 let usavGirls = {
   // 25 Jun
   'A5 14 Suzanne': { playing: false, rank: 1 },
@@ -147,4 +163,4 @@ let usavBoys = {
   'A5 16 Erin': { playing: false, rank: 33 }
 };
 
-module.exports = Object.assign({}, masterTeamList);
+module.exports = Object.assign({}, masterTeamList, usav18);
