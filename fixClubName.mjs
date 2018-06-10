@@ -1,7 +1,6 @@
-let fixTeamName = require('./fixTeamName');
+import fixTeamName from './fixTeamName';
 
 function fixAAUNames(teamName) {
-  "use strict";
   let newTeamName = teamName;
 
   if (newTeamName.indexOf('(') > 0) {
@@ -391,7 +390,6 @@ function fixAAUNames(teamName) {
 }
 
 function fixUSAVNames(teamName) {
-  "use strict";
   let newTeamName = teamName;
 
   if (newTeamName.startsWith('AJV')) {
@@ -1754,7 +1752,7 @@ function fixUSAVNames(teamName) {
 
 }
 
-module.exports = function fixClubName(teamName, eventType) {
+export default function fixClubName(teamName, eventType) {
   let newTeamName = teamName;
 
   if (eventType === 'aau') {
@@ -1792,4 +1790,4 @@ module.exports = function fixClubName(teamName, eventType) {
   newTeamName = newTeamName.replace(' M1', ' 1');
 
   return newTeamName;
-};
+}

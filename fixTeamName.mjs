@@ -1,4 +1,4 @@
-module.exports = function fixTeamName(teamName) {
+export default function fixTeamName(teamName) {
   let newName = teamName;
   newName = newName.replace('[+]', '');
   // newName = newName.replace('101', '10');
@@ -109,4 +109,4 @@ module.exports = function fixTeamName(teamName) {
   }
 
   return newName;
-};
+}

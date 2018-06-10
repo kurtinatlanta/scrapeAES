@@ -1,16 +1,16 @@
-let Rx = require('rxjs/Rx');
+import Rx from 'rxjs';
 
-let tournamentObserver = require('./tournamentObserver');
-let divisionObserver = require('./divisionObserver');
-let teamObserver = require('./teamObserver');
-let scheduleObserver = require('./scheduleObserver');
-let poolObserver = require('./poolObserver');
-let resultsObserver = require('./resultsObserver');
+import tournamentObserver from './tournamentObserver';
+import divisionObserver from './divisionObserver';
+import teamObserver from './teamObserver';
+import scheduleObserver from './scheduleObserver';
+import poolObserver from './poolObserver';
+import resultsObserver from './resultsObserver';
 
-let makePool = require('./makePool');
+import makePool from './makePool';
 
-// let divisionList = require('./divisionList');
-let teamList = require('./teamList');
+// import divisionList from './divisionList';
+import teamList from './teamList';
 
 function isTeamPlaying(teamName) {
   console.log('TEAM PLAYING [' + teamName + ']');
@@ -26,14 +26,14 @@ function isTodayOrLater(poolData) {
   today.setMinutes(0);
   today.setSeconds(0);
 
-  let lastDate = matchList.
-    map(function(match) {
+  let lastDate = matchList
+    .map(function(match) {
       let location = match.location;
       let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
       matchDate.setYear(2018);
       return matchDate;
-    }).
-    reduce(function(previous, current) {
+    })
+    .reduce(function(previous, current) {
       if (!previous) {
         return current;
       }
@@ -47,13 +47,11 @@ function isTodayOrLater(poolData) {
       }
     });
 
-  console.log("isTodayOrLater(): [" + (lastDate >= today) + "] - today = [" + today + "], lastDate = [" + lastDate + "]");
+  console.log(`isTodayOrLater(): [${(lastDate >= today)}] - today = [${today}], lastDate = [${lastDate}]`);
   return lastDate >= today;
 }
 /*
 function sortTeamsUsingDivisons(a, b) {
-  "use strict";
-
   if (divisionList[a.division].rank < divisionList[b.division].rank) {
     return -1;
   }
@@ -74,8 +72,6 @@ function sortTeamsUsingDivisons(a, b) {
 }
 */
 function sortTeams(a, b) {
-  "use strict";
-
   if (teamList[a.name].rank < teamList[b.name].rank) {
     return -1;
   }
@@ -89,31 +85,31 @@ function sortTeams(a, b) {
 
 // Send back the HTML so we can see it
 function generateHtml(teamResults, name, eventType) {
-  console.log("generateHtml(): Starting");
-  let html = "<h2>" + name + "</h2>\n";
+  console.log('generateHtml(): Starting');
+  let html = '<h2>' + name + '</h2>\n';
 
   // groupTeamsByDivision();
   let lastDivision = '';
   let teamFound = {};
 
-  teamResults.
-    filter(team => {
+  teamResults
+    .filter(team => {
       let returnValue = !teamFound[team.name];
       teamFound[team.name] = true;
       return returnValue;
-    }).
-    sort(sortTeams).
-    forEach(function(team) {
+    })
+    .sort(sortTeams)
+    .forEach(function(team) {
       if (team.division !== lastDivision) {
-        html += "<h3>" + team.division + "</h3>\n";
+        html += '<h3>' + team.division + '</h3>\n';
         lastDivision = team.division;
       }
 
-      Object.keys(team.pools).
-        filter(function(pool) {
+      Object.keys(team.pools)
+        .filter(function(pool) {
           return isTodayOrLater(team.pools[pool]);
-        }).
-        forEach(function(pool) {
+        })
+        .forEach(function(pool) {
           html += makePool(team.name, pool, team.pools[pool], eventType);
         });
     });
@@ -122,53 +118,53 @@ function generateHtml(teamResults, name, eventType) {
   return html;
 }
 
-module.exports = function extractData(tournament) {
+export default function extractData(tournament) {
   return Rx.Observable.create(function subscriber(observer) {
-    "use strict";
     let teamResults = [];
 
-    Rx.Observable.from(Object.keys(tournament.clubs)).
-      map(function(key) {
+    Rx.Observable.from(Object.keys(tournament.clubs))
+      .map(function(key) {
         console.log('extractData(): fetching participating team list for [' + key + ']');
         return tournamentObserver(tournament.code, tournament.clubs[key]);
-      }).
-      mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
-      map(data => {
+      })
+      .mergeAll() // map() returns an array of observables and we want the results from all of them as one array
+      .map(data => {
         console.log('extractData(): division statusCode = [' + data.response.statusCode + ']');
         return divisionObserver(data.content);
-      }).
-      mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
-      filter(team => isTeamPlaying(team.name)).
-      map(team => {
+      })
+      .mergeAll() // map() returns an array of observables and we want the results from all of them as one array
+      .filter(team => isTeamPlaying(team.name))
+      .map(team => {
         console.log('extractData(): fetching data for [' + team.name + ']');
         return teamObserver(team);
-      }).
-      mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
-      map(teamData => {
+      })
+      .mergeAll() // map() returns an array of observables and we want the results from all of them as one array
+      .map(teamData => {
         console.log('extractData(): team status code = [' + teamData.response.statusCode + ']');
         return scheduleObserver(teamData);
-      }).
-      mergeAll(). // map() returns an array of observables and we want the results from all of them as one array
-      filter(team => team.pools).
-      map(team => {
+      })
+      .mergeAll() // map() returns an array of observables and we want the results from all of them as one array
+      .filter(team => team.pools)
+      .map(team => {
         console.log('extractData(): getting pool results for [' + team.name + ']');
         return Rx.Observable.
           from(Object.keys(team.pools)).
           filter(pool => isTodayOrLater(team.pools[pool])). // Only fetch pools from today or later so we make fewer requests
           map(pool => poolObserver(team, pool));
-      }).
-      mergeAll(). // map() returns an array of arrays of observables, so we must flatten twice.
-      mergeAll().
-      map(results => {
+      })
+      .mergeAll() // map() returns an array of arrays of observables, so we must flatten twice.
+      .mergeAll()
+      .map(results => {
         console.log('extractData(): fetched pool data status code = [' + results.response.statusCode + ']');
         return resultsObserver(results, tournament.eventType);
-      }).
-      mergeAll().
-      subscribe(team => {
+      })
+      .mergeAll()
+      .subscribe(
+        (team) => {
           console.log('extractData: finished team [' + team.name + ']');
           teamResults.push(team);
         },
-        error => console.log(error),
+        (error) => console.log(error),
         () => {
           console.log('extractData(): COMPLETED.');
           // console.log('teamResults = ' + JSON.stringify(teamResults));
@@ -176,4 +172,4 @@ module.exports = function extractData(tournament) {
           observer.complete();
         });
   });
-};
+}

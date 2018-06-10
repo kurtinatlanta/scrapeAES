@@ -1,5 +1,3 @@
-let exportedList = {};
-
 let aauDivisions = {
   '18 Open': { playing: true, rank: 1 }, // 23 Jun
   '18 Premier': { playing: true, rank: 2 }, // 23 Jun
@@ -87,4 +85,4 @@ let divisions = {
   'boys': boysDivisions
 };
 
-module.exports = divisions;
+export default divisions;

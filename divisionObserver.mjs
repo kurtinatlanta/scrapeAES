@@ -1,14 +1,14 @@
-let Rx = require('rxjs/Rx');
-let cheerio = require('cheerio');
-let fixTeamName = require('./fixTeamName');
-let fixDivision = require('./fixDivision');
+import Rx from 'rxjs';
+import cheerio from 'cheerio';
+import fixTeamName from './fixTeamName';
+import fixDivision from './fixDivision';
 
-module.exports = function divisionObserver(content) {
+export default function divisionObserver(content) {
   // console.log('divisionObservable(): content = [' + content + ']');
   let $ = cheerio.load(content);
 
   return Rx.Observable.create(function subscriber(observer) {
-    let list = $('.list tr').each(function (/* index, item */) {
+    $('.list tr').each(function (/* index, item */) {
       let teamRows = [];
 
       $(this).children().filter('td').children().filter('a').each(function (/* index1, item1 */) {
@@ -28,5 +28,4 @@ module.exports = function divisionObserver(content) {
 
     observer.complete();
   });
-};
-
+}

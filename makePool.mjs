@@ -1,6 +1,5 @@
-"use strict";
-let fixClubName = require('./fixClubName');
-let baseUrl = require('./baseUrl');
+import fixClubName from './fixClubName';
+import baseUrl from './baseUrl';
 
 function chopTeamName(teamName) {
   let newName = teamName;
@@ -20,7 +19,7 @@ function didWeWin(match) {
   if (opponentWon === 0) {
     return 'lost';
   }
-  else if (match.winner != "Undecided") {
+  else if (match.winner != 'Undecided') {
     return 'won';
   }
   else {
@@ -33,7 +32,7 @@ function fixOpponent(opponent, teamName, eventType) {
   let teamStart = teamName.substr(0, 4);
 
   if ((newOpponent.startsWith(teamStart)) && (newOpponent.indexOf('A5 South') == -1)) {
-    newOpponent = "<strong>" + newOpponent + "</strong>";
+    newOpponent = '<strong>' + newOpponent + '</strong>';
   }
 
   return newOpponent;
@@ -61,7 +60,7 @@ let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
 function getDate(location) {
   let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
   matchDate.setYear(2018);
-  return days[matchDate.getDay()] + " " + matchDate.getDate() + " " + months[matchDate.getMonth()];
+  return days[matchDate.getDay()] + ' ' + matchDate.getDate() + ' ' + months[matchDate.getMonth()];
 }
 
 function getPoolName(pool, eventType) {
@@ -121,12 +120,12 @@ function getPoolName(pool, eventType) {
   }
 
   return brackets.
-  filter(function(item) {
-    return pool.match(item.regex);
-  }).
-  reduce(function(previous, current) {
-    return (current ? current.name : previous);
-  }, 'Pool ' + pool);
+    filter(function(item) {
+      return pool.match(item.regex);
+    }).
+    reduce(function(previous, current) {
+      return (current ? current.name : previous);
+    }, 'Pool ' + pool);
 }
 
 function getScore(score, lost) {
@@ -150,31 +149,31 @@ function getScore(score, lost) {
 
 function getTime(location) {
   let matchDate = new Date(location.substr(location.indexOf('at ') + 3));
-  matchDate.setYear(2017);
+  matchDate.setYear(2018);
   let hours = matchDate.getHours();
   let minutes = matchDate.getMinutes().toString();
-  let ampm = "";
+  let ampm = '';
 
   if (hours > 12) {
     hours = hours - 12;
-    ampm = "pm";
+    ampm = 'pm';
   }
   else if (hours == 12) {
-    ampm = "pm";
+    ampm = 'pm';
   }
   else if (hours === 0) {
     hours = 12;
-    ampm = "am";
+    ampm = 'am';
   }
   else {
-    ampm = "am";
+    ampm = 'am';
   }
 
   if (minutes.length < 2) {
-    minutes = "0" + minutes;
+    minutes = '0' + minutes;
   }
 
-  return hours + ":" + minutes + ampm;
+  return hours + ':' + minutes + ampm;
 }
 
 function pushUnique(theArray, item) {
@@ -192,11 +191,11 @@ function pushUnique(theArray, item) {
   }
 }
 
-module.exports = function makePool(teamName, pool, poolData, eventType) {
-  let html = "";
+export default function makePool(teamName, pool, poolData, eventType) {
+  let html = '';
   let courts = [];
   let poolStarted = false;
-  let startTimes = "";
+  // let startTimes = '';
   let matchList = poolData.matches;
 
   let numbers = pool.match(/(\d+)/g, pool) || [];
@@ -257,66 +256,63 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
   }
 
   matchList.forEach(function (match) {
-    if (match.winner == "Undecided") {
+    if (match.winner == 'Undecided') {
       pushUnique(courts, getCourt(match.location));
     }
     else {
-      // console.log("Found result!");
+      // console.log('Found result!');
       poolStarted = true;
     }
 
-    let time = getTime(match.location);
-    startTimes += time.substr(0, time.indexOf(':'));
+    // let time = getTime(match.location);
+    // startTimes += time.substr(0, time.indexOf(':'));
   });
 
   // console.log(startTimes);
   // let seed = inferPlace(startTimes);
   let seed = poolData.rank;
 
-  // html = "<div><b>" + teamName + "</b> - #" + seed + " in " + division + " Pool " + pool;
+  // html = '<div><b>' + teamName + '</b> - #' + seed + ' in ' + division + ' Pool ' + pool;
   if ((round == 1) && (seed == 1)) {
-    html = "<div>\n<b>" + teamName + "</b> - #" + poolNumber + " overall seed and #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool, eventType) + "</a>";
+    html = `<div><b>${teamName}</b> - #${poolNumber} overall seed and #${seed} in <a href="${baseUrl}${poolData.poolLink}" target="new">${getPoolName(pool, eventType)}</a>`;
   }
   else if (seed) {
-    html = "<div>\n<b>" + teamName + "</b> - #" + seed + " in <a href='" + baseUrl + poolData.poolLink + "' target='new'>" + getPoolName(pool, eventType) + (matchNumber ? " " + matchNumber : "") + "</a>";
+    html = `<div><b>${teamName}</b> - #${seed} in <a href="${baseUrl}${poolData.poolLink}" target="new">${getPoolName(pool, eventType)}${(matchNumber ? ' ' + matchNumber : '')}</a>`;
   }
   else {
-    html = "<div>\n<b>" + teamName + "</b> - <a href='" + baseUrl + poolData.poolLink + "' target='new'><b>" + getPoolName(pool, eventType) + (matchNumber ? " " + matchNumber : "") + "</b></a>";
+    html = `<div><b>${teamName}</b> - <a href="${baseUrl}${poolData.poolLink}" target="new"><b>${getPoolName(pool, eventType)}${(matchNumber ? ' ' + matchNumber : '')}</b></a>`;
   }
 
   if (seed && (courts.length == 1)) {
-    html += " on " + courts[0];
+    html += ` on ${courts[0]}`;
   }
 
-  // html += "\n<table class='table tableauto table-striped'>\n<tbody>\n";
-  html += "\n<table class='table tableauto table-condensed table-responsive'>\n<tbody>\n";
+  // html += '\n<table class='table tableauto table-striped'>\n<tbody>\n';
+  html += '<table class="table tableauto table-condensed table-responsive"><tbody>';
 
   let lastDate = '';
 
   matchList.forEach(function (match) {
-    let lost = false;
     let thisDate = getDate(match.location);
     let matchResult = didWeWin(match);
 
     if (thisDate != lastDate) {
-      html += "<tr>\n<td colspan='2'><h5 class='small'>" + thisDate + "</h5></td>\n</tr>\n"
+      html += `<tr><td colspan="2"><h5 class="small">${thisDate}</h5></td></tr>`;
     }
 
-    html += "<tr";
+    html += '<tr';
 
     if (matchResult === 'lost') {
-      html += " class='text-muted'";
+      html += ' class="text-muted"';
     }
 
-    html += ">\n";
+    html += '>';
 
-    // html += "<td style=\"text-align: right\">" + ((lastDate != thisDate) ? thisDate : '&nbsp') + "</td>\n";
-    html += "<td style=\"text-align: right\">" + getTime(match.location) + "</td>\n";
-    // html += "<td><strong>" + teamName + "</strong> vs. " + fixOpponent(match.opponent, teamName);
-    html += "<td>" + fixOpponent(match.opponent, teamName, eventType);
+    html += `<td style="text-align: right">${getTime(match.location)}</td>`;
+    html += `<td>${fixOpponent(match.opponent, teamName, eventType)}`;
 
-    if ((!seed || (courts.length > 1)) && (match.winner == "Undecided")) {
-      html += " on " + getCourt(match.location);
+    if ((!seed || (courts.length > 1)) && (match.winner == 'Undecided')) {
+      html += ` on ${getCourt(match.location)}`;
     }
 
     if (matchResult !== 'undecided') {
@@ -325,21 +321,21 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
       let score = getScore(match.score, !won);
 
       if (won) {
-        html += '<span class="fa fa-check" style="color: green;" aria-hidden="true">&nbsp;</span><strong>' + score + '</strong>';
+        html += `<span class="fa fa-check" style="color: green;" aria-hidden="true">&nbsp;</span><strong>${score}</strong>`;
       }
       else {
-        html += '<span class="fa fa-times" style="color: red;" aria-hidden="true">&nbsp;</span>' + score;
+        html += `<span class="fa fa-times" style="color: red;" aria-hidden="true">&nbsp;</span>${score}`;
       }
 
       html += '</span>';
     }
 
-    html += "</td>\n</tr>\n";
+    html += '</td></tr>';
 
     lastDate = thisDate;
   });
 
-  html += "</tbody>\n</table>\n";
+  html += '</tbody></table>';
 
   if (poolStarted) {
     html += teamName;
@@ -392,7 +388,7 @@ module.exports = function makePool(teamName, pool, poolData, eventType) {
     }
   }
 
-  html += "</div>\n";
-  html += "<br/>\n";
+  html += '</div>\n';
+  html += '<br/>\n';
   return html;
-};
+}

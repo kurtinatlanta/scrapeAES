@@ -1,8 +1,8 @@
-let Rx = require('rxjs/Rx');
-let request = require('request');
-let baseUrl = require('./baseUrl');
+import Rx from 'rxjs';
+import request from 'request';
+import baseUrl from './baseUrl';
 
-module.exports = function poolObserver(team, poolName) {
+export default function poolObserver(team, poolName) {
   let pool = team.pools[poolName];
   let url = baseUrl + pool.poolLink;
   console.log('poolObserver(): Requesting url [' + url + ']');
@@ -20,4 +20,4 @@ module.exports = function poolObserver(team, poolName) {
       observer.complete();
     });
   });
-};
+}

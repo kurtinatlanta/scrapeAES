@@ -12,11 +12,11 @@ let ga5_prime = '-56323';
 let ga5_prime2 = '-50021';
 let ga5_aau = '-64921';
 */
-
+/*
 let boys = {
   a5Boys: '-50659'
 };
-
+*/
 let aauGirls = {
   a5: '-62830',
   a5South: '-63896',
@@ -55,4 +55,4 @@ else if (eventType === 'boys') {
   exportedList = Object.assign({}, usavBoys);
 }
 
-module.exports = exportedList;
+export default exportedList;

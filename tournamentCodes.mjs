@@ -1,5 +1,3 @@
-let exportedValue = '';
-
 // let southernDream = 'PTAwMDAwMTMyMzQ90';
 // let leapinLittles = 'PTAwMDAwMTMyMzg90';
 // let winterBump = 'PTAwMDAwMTA4ODk90';
@@ -47,36 +45,38 @@ let exportedValue = '';
 // let dixieClassic2 = 'PTAwMDAwMTA4OTQ90';
 // let jvaWorldChallenge = 'PTAwMDAwMTMzMzU90';
 // let disneyShowcase = 'PTAwMDAwMTExODU90';
-let kudzu = 'PTAwMDAwMTMyNDM90';
+// let kudzu = 'PTAwMDAwMTMyNDM90';
 // let aauSuperRegional2 = 'PTAwMDAwMDYzMDM90';
 // let srvaRegionals = 'PTAwMDAwMTU1MTQ90';
 // let loneStar = 'PTAwMDAwMDYwMTQ90';
 // let powerRegionals = 'PTAwMDAwMTU1MTU90';
 // let boysEastCoast = 'PTAwMDAwMDY1Nzg90';
-// let charlotteJVA = 'PTAwMDAwMTA4MDg90';
+// let charlotteJVA = 'PTAwMDAwMTMxOTY90';
 // let k2SummerBlast = 'PTAwMDAwMTEyNTU90';
-// let rallyRumble = 'PTAwMDAwMTEyMTY90';
+// let rallyRumble = 'PTAwMDAwMTM4MjE90';
+// let sweetTea = 'PTAwMDAwMTQ5MTg90';
 // let usavNationals = 'PTAwMDAwMDY1OTI90';
 // let usavBoys = 'PTAwMDAwMDYyMzk90';
-let usav18 = 'PTAwMDAwMTMzOTY90';
-let showdownSmokies = 'PTAwMDAwMTMxMzY90';
+// let usav18 = 'PTAwMDAwMTMzOTY90';
+// let showdownSmokies = 'PTAwMDAwMTMxMzY90';
 
-// let aauGirls = 'NDR0aF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
+let aauGirls = 'NDR0aF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
 // let aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
 // let usavGirls = 'PTAwMDAwMDkxNjc90';
 // let usavBoys = 'PTAwMDAwMDkxMzU90';
 
 // Teams
+/*
 let aauBoys = {
   a5: '-50659'
 };
-
+*/
 let aauGirlsTeams = {
   a5: '-61421',
   a5South: '-62611',
   ga5: '-63420'
 };
-
+/*
 let usav18Girls = {
   a5: '39',
   a5South: '5869',
@@ -84,36 +84,47 @@ let usav18Girls = {
   ga5: '1148',
   tsunami: '1164'
 };
-
+*/
+/*
 let usavGirls = {
   a5: '39',
   a5South: '5869',
   ga5: '1148',
-  cobbAtlanta: '1501',
+  atlantaExtreme: '1109',
+  capitalCity: '1110',
+  clubUnite: '1111',
+  cobbAtlanta: '1112',
+  midtn: '1113',
+  naca: '1115',
   northAtlanta: '1812',
+  prolink: '1114',
+  rio: '1501',
   rocketCity: '564',
   tsunami: '1164'
 };
-
+*/
+/*
 let usavBoys = {
   a5: '39'
 };
-
+*/
+/*
 let srvaClubs = {
   a5: '-50607'
 };
+*/
 
-tournaments = [
-  // { name: 'AAU Girls National Chapmionships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams },
+const tournaments = [
+  { name: 'AAU Girls National Chapmionships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams }
   // { name: 'Show Me Qualifier', code: showMe2, eventType: 'usav', clubs: { a5: '39'} },
   // { name: 'SRVA Regionals', code: powerRegionals, eventType: 'usav', clubs: { a5: '-56063' } }
-  { name: 'Kudzu Klassic', code: kudzu, eventType: 'usav', clubs: { a5: '39' } },
-  { name: 'Showdown in the Smokies', code: showdownSmokies, eventType: 'usav', clubs: { a5: '39'} },
-  // { name: 'Charlotte AAU Grand Prix', code: charlotteGrandPrix, eventType: 'usav', clubs: { a5: '39'} }
+  // { name: 'Kudzu Klassic', code: kudzu, eventType: 'usav', clubs: { a5: '39' } },
+  // { name: 'Rally Rumble', code: rallyRumble, eventType: 'usav', clubs: { a5: '39'} }
+  // { name: 'Sweet Tea Showdown', code: sweetTea, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39'} }
 
-  { name: 'USAV 18s National Championships', code: usav18, eventType: 'usav', clubs: usav18Girls }
+  // { name: 'USAV National Championships', code: usavGirls, eventType: 'usav', clubs: usavGirls }
   // { name: 'USAV Boys', code: 'PTAwMDAwMTExODA90', eventType: 'boys', clubs: usavBoys }
 ];
 
-module.exports = tournaments;
+export default tournaments;

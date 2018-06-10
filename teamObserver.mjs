@@ -1,8 +1,8 @@
-let Rx = require('rxjs/Rx');
-let request = require('request');
-let baseUrl = require('./baseUrl');
+import Rx from 'rxjs/Rx';
+import request from 'request';
+import baseUrl from './baseUrl';
 
-module.exports = function teamObserver(team) {
+export default function teamObserver(team) {
   let url = baseUrl + team.link;
   console.log('teamObserver(): Requesting url [' + url + ']');
 
@@ -19,4 +19,4 @@ module.exports = function teamObserver(team) {
       observer.complete();
     });
   });
-};
+}

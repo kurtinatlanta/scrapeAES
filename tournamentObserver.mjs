@@ -1,9 +1,9 @@
-let Rx = require('rxjs/Rx');
-let request = require('request');
-let baseUrl = require('./baseUrl');
+import Rx from 'rxjs';
+import request from 'request';
+import baseUrl from './baseUrl';
 let eventClubListUrl = 'ClubList.aspx';
 
-module.exports = function tournamentObserver(tournamentCode, clubCode) {
+export default function tournamentObserver(tournamentCode, clubCode) {
   let url = baseUrl + eventClubListUrl + '?e=' + tournamentCode + '&c=' + clubCode;
   console.log('tournamentObserver(): Requesting url [' + url + ']');
 
@@ -20,4 +20,4 @@ module.exports = function tournamentObserver(tournamentCode, clubCode) {
       observer.complete();
     });
   });
-};
+}
