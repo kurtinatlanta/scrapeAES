@@ -13,7 +13,7 @@ import makePool from './makePool';
 import teamList from './teamList';
 
 function isTeamPlaying(teamName) {
-  console.log('TEAM PLAYING [' + teamName + ']');
+  console.log('TEAM PLAYING [' + teamName + '] = [' + (teamList[teamName] && teamList[teamName].playing) + ']');
   // return true;
   return teamList[teamName] && teamList[teamName].playing;
 }

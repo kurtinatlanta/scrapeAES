@@ -60,7 +60,7 @@
 // let usav18 = 'PTAwMDAwMTMzOTY90';
 // let showdownSmokies = 'PTAwMDAwMTMxMzY90';
 
-let aauGirls = 'NDR0aF9BQVVfR2lybHNfX0p1bmlvcl9OYXRpb25hbF9Wb2xsZXliYWxsX0NoYW1waW9uc2hpcHM1';
+let aauGirls = 'NDV0aF9BQVVfR2lybHNfX2FuZF9Cb3lzX19KdW5pb3JfTmF0aW9uYWxfVm9sbGV5YmFsbF9DaGFtcGlvbnNoaXBz0';
 // let aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
 // let usavGirls = 'PTAwMDAwMDkxNjc90';
 // let usavBoys = 'PTAwMDAwMDkxMzU90';
@@ -72,9 +72,10 @@ let aauBoys = {
 };
 */
 let aauGirlsTeams = {
-  a5: '-61421',
-  a5South: '-62611',
-  ga5: '-63420'
+  a5: '-50852',
+  a5Chattanooga: '-52695',
+  a5South: '-52591',
+  ga5: '-65949'
 };
 /*
 let usav18Girls = {

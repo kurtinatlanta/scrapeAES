@@ -51,46 +51,51 @@ let aauSession1 = {
   'A5 15 JJ': { playing: true, rank: 2 },
   'A5 South 15 Joe': { playing: true, rank: 3 },
   'A5 15 LA': { playing: true, rank: 4 },
-  'A5 14 Suzanne': { playing: true, rank: 5 },
-  'A5 14 Karen': { playing: true, rank: 6 },
-  'A5 14 Allison': { playing: true, rank: 7 },
-  'A5 13 Earl': { playing: true, rank: 8 },
-  'A5 13 Anna Marie': { playing: true, rank: 9 },
-  'A5 13 Betty': { playing: true, rank: 10 },
-  'A5 13 Tina': { playing: true, rank: 11 },
-  'A5 12 Jing': { playing: true, rank: 12 }
+  'A5 Chattanooga 15 Shelby': { playing: true, rank: 5 },
+  'A5 14 Suzanne': { playing: true, rank: 6 },
+  'A5 14 Karen': { playing: true, rank: 7 },
+  'A5 14 Allison': { playing: true, rank: 8 },
+  'A5 13 Earl': { playing: true, rank: 9 },
+  'A5 13 Anna': { playing: true, rank: 10 },
+  'A5 13 Betty': { playing: true, rank: 11 },
+  'A5 13 Tina': { playing: true, rank: 12 },
+  'A5 12 Jing': { playing: true, rank: 13 }
+};
+
+let aauSession2 = {
+  // AAU Session 2
+  'A5 17 Jing': { playing: true, rank: 14 },
+  'A5 17 Marc': { playing: true, rank: 15 },
+  'A5 South 17 JMAC': { playing: true, rank: 16 },
+  'A5 Chattanooga 17 Bryan': { playing: true, rank: 17 },
+  'A5 17 Lisa': { playing: true, rank: 18 },
+  'GA5 17 Suzanne': { playing: true, rank: 19 },
+  'A5 South 17 Hannah': { playing: true, rank: 20 },
+  'GA5 17 Matt': { playing: true, rank: 21 },
+  'GA5 15 Arieon': { playing: true, rank: 22 },
+  'A5 Chattanooga 15 Heather': { playing: true, rank: 23 },
+  'A5 15 Sydney': { playing: true, rank: 24 },
+  'A5 South 15 Derick': { playing: true, rank: 25 },
+  'A5 South 15 Robert': { playing: true, rank: 26 },
+  'GA5 15 Aneisha': { playing: true, rank: 27 },
+  'GA5 15 Jaileen': { playing: true, rank: 28 },
+  'A5 16 Carlos': { playing: true, rank: 29 },
+  'A5 14 Kip': { playing: true, rank: 30 },
+  'A5 14 Rachel': { playing: true, rank: 31 },
 };
 
 /*
-let aauSession2 = {
-  // AAU Session 2
-  'A5 17 Jing': { playing: true, rank: 13 },
-  'A5 17 Marc': { playing: true, rank: 14 },
-  'A5 South 17 JMAC': { playing: true, rank: 15 },
-  'A5 17 Lisa': { playing: true, rank: 16 },
-  'GA5 17 Suzanne': { playing: true, rank: 17 },
-  'A5 South 17 Hannah': { playing: true, rank: 18 },
-  'GA5 17 Matt': { playing: true, rank: 19 },
-  'GA5 15 Arieon': { playing: true, rank: 20 },
-  'A5 15 Sydney': { playing: true, rank: 21 },
-  'A5 South 15 Derick': { playing: true, rank: 22 },
-  'A5 South 15 Robert': { playing: true, rank: 23 },
-  'GA5 15 Aneisha': { playing: true, rank: 24 },
-  'GA5 15 Jaileen': { playing: true, rank: 25 }
-};
-*/
-/*
 let aauSession3 = {
   // AAU Session 3
-  'A5 16 Gabe': { playing: true, rank: 26 },
-  'A5 16 Scott': { playing: true, rank: 27 },
-  'A5 16 Liang': { playing: true, rank: 28 },
-  'A5 South 16 Trina': { playing: true, rank: 29 },
-  'GA5 16 Shelby': { playing: true, rank: 30 },
-  'A5 South 16 Charlette': { playing: true, rank: 31 },
-  'A5 South 16 Gemma': { playing: true, rank: 32 },
-  'GA5 16 Beverly': { playing: true, rank: 33 },
-  'GA5 16 Christine': { playing: true, rank: 34 }
+  'A5 16 Gabe': { playing: true, rank: 32 },
+  'A5 16 Scott': { playing: true, rank: 33 },
+  'A5 16 Liang': { playing: true, rank: 34 },
+  'A5 South 16 Trina': { playing: true, rank: 35 },
+  'GA5 16 Shelby': { playing: true, rank: 36 },
+  'A5 South 16 Charlette': { playing: true, rank: 37 },
+  'A5 South 16 Gemma': { playing: true, rank: 38 },
+  'GA5 16 Beverly': { playing: true, rank: 39 },
+  'GA5 16 Christine': { playing: true, rank: 40 }
 };
 */
 /*
@@ -163,4 +168,4 @@ let usavBoys = {
   'A5 14 Boys': { playing: true, rank: 37 }
 };
 */
-export default Object.assign({}, aauSession1);
+export default Object.assign({}, aauSession1, aauSession2);
