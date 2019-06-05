@@ -62,7 +62,7 @@
 
 let aauGirls = 'NDV0aF9BQVVfR2lybHNfX2FuZF9Cb3lzX19KdW5pb3JfTmF0aW9uYWxfVm9sbGV5YmFsbF9DaGFtcGlvbnNoaXBz0';
 // let aauBoys = 'MjAxNl9BQVVfQm95c19fSnVuaW9yX05hdGlvbmFsX1ZvbGxleWJhbGxfQ2hhbXBpb25zaGlwcw2';
-// let usavGirls = 'PTAwMDAwMDkxNjc90';
+let usavGirls2018 = 'PTAwMDAwMTMzOTU90';
 // let usavBoys = 'PTAwMDAwMDkxMzU90';
 
 // Teams
@@ -86,24 +86,22 @@ let usav18Girls = {
   tsunami: '1164'
 };
 */
-/*
 let usavGirls = {
   a5: '39',
   a5South: '5869',
   ga5: '1148',
-  atlantaExtreme: '1109',
-  capitalCity: '1110',
-  clubUnite: '1111',
-  cobbAtlanta: '1112',
-  midtn: '1113',
-  naca: '1115',
+  a5Chattanooga: '20677',
+  atlantaExtreme: '5902',
+  capitalCity: '2971',
+  clubUnite: '17772',
+  cobbAtlanta: '1501',
+  midtn: '3163',
+  naca: '4114',
   northAtlanta: '1812',
-  prolink: '1114',
-  rio: '1501',
-  rocketCity: '564',
+  prolink: '1893',
+  rio: '21115',
   tsunami: '1164'
 };
-*/
 /*
 let usavBoys = {
   a5: '39'
@@ -116,7 +114,7 @@ let srvaClubs = {
 */
 
 const tournaments = [
-  { name: 'AAU Girls National Chapmionships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams }
+  // { name: 'AAU Girls National Championships', code: aauGirls, eventType: 'aau', clubs: aauGirlsTeams },
   // { name: 'Show Me Qualifier', code: showMe2, eventType: 'usav', clubs: { a5: '39'} },
   // { name: 'SRVA Regionals', code: powerRegionals, eventType: 'usav', clubs: { a5: '-56063' } }
   // { name: 'Kudzu Klassic', code: kudzu, eventType: 'usav', clubs: { a5: '39' } },
@@ -124,7 +122,7 @@ const tournaments = [
   // { name: 'Sweet Tea Showdown', code: sweetTea, eventType: 'usav', clubs: { a5: '39'} }
   // { name: 'First Coast Festival', code: firstCoast, eventType: 'usav', clubs: { a5: '39'} }
 
-  // { name: 'USAV National Championships', code: usavGirls, eventType: 'usav', clubs: usavGirls }
+  { name: 'USAV National Championships', code: usavGirls2018, eventType: 'usav', clubs: usavGirls }
   // { name: 'USAV Boys', code: 'PTAwMDAwMTExODA90', eventType: 'boys', clubs: usavBoys }
 ];
 

@@ -1,35 +1,36 @@
 export default function fixTeamName(teamName) {
   let newName = teamName;
   newName = newName.replace('[+]', '');
-  // newName = newName.replace('101', '10');
-  // newName = newName.replace('111', '11');
-  newName = newName.replace('121', '12');
-  // newName = newName.replace('122', '12');
-  newName = newName.replace('131', '13');
-  newName = newName.replace('132', '13');
-  newName = newName.replace('133', '13');
-  newName = newName.replace('134', '13');
-  // newName = newName.replace('135', '13');
-  newName = newName.replace('141', '14');
-  newName = newName.replace('142', '14');
-  newName = newName.replace('143', '14');
-  // newName = newName.replace('144', '14');
-  // newName = newName.replace('145', '14');
+  // A5
+  newName = newName.replace(' 101', ' 10');
+  newName = newName.replace(' 111', ' 11');
+  newName = newName.replace(' 121', ' 12');
+  newName = newName.replace(' 122', ' 12');
+  newName = newName.replace(' 131', ' 13');
+  newName = newName.replace(' 132', ' 13');
+  newName = newName.replace(' 133', ' 13');
+  newName = newName.replace(' 134', ' 13');
+  newName = newName.replace(' 135', ' 13');
+  newName = newName.replace(' 141', ' 14');
+  newName = newName.replace(' 142', ' 14');
+  newName = newName.replace(' 143', ' 14');
+  newName = newName.replace(' 144', ' 14');
+  newName = newName.replace(' 145', ' 14');
   // newName = newName.replace('14 B', '14');
-  newName = newName.replace('151', '15');
-  newName = newName.replace('152', '15');
-  newName = newName.replace('153', '15');
-  newName = newName.replace('154', '15');
-  newName = newName.replace('161', '16');
-  newName = newName.replace('162', '16');
-  newName = newName.replace('163', '16');
+  newName = newName.replace(' 151', ' 15');
+  newName = newName.replace(' 152', ' 15');
+  newName = newName.replace(' 153', ' 15');
+  newName = newName.replace(' 154', ' 15');
+  newName = newName.replace(' 161', ' 16');
+  newName = newName.replace(' 162', ' 16');
+  newName = newName.replace(' 163', ' 16');
   // newName = newName.replace('16-B', '16');
-  newName = newName.replace('171', '17');
-  newName = newName.replace('172', '17');
-  newName = newName.replace('173', '17');
-  // newName = newName.replace('181', '18');
-  // newName = newName.replace('182', '18');
-  // newName = newName.replace('183', '18');
+  newName = newName.replace(' 171', ' 17');
+  newName = newName.replace(' 172', ' 17');
+  newName = newName.replace(' 173', ' 17');
+  newName = newName.replace(' 181', ' 18');
+  newName = newName.replace(' 182', ' 18');
+  newName = newName.replace(' 183', ' 18');
   // newName = newName.replace('18-B', '18');
   // newName = newName.replace('12-5', '12-5 Kathryn');
   // newName = newName.replace('12-6', '12-5 Dani');
@@ -104,6 +105,8 @@ export default function fixTeamName(teamName) {
   // newName = newName.replace('NAVC', 'North Atlanta');
   // newName = newName.replace('RCVC', 'Rocket City');
 
+  newName = newName.replace('13-JD', '13 JD');
+
   if (newName.indexOf('(') > 0) {
     newName = newName.substr(0, (newName.indexOf('(') - 1));
   }
@@ -116,9 +119,43 @@ export default function fixTeamName(teamName) {
     newName = newName.replace('  ', ' ');
   }
 
-  if (newName.startsWith('CAPITAL CITY')) {
-    newName = newName.replace('CAPITAL CITY JUNIORS', 'Capital City Juniors');
+  // Capital City Juniors
+  if (newName.startsWith('CCJRS')) {
+    newName = newName.replace('CCJRS', 'Capital City');
+    newName = newName.replace('12', '12-1');
+    newName = newName.replace('15', '15-1');
   }
+
+  // MIDTN
+  newName = newName.replace('MIDTN 12', 'MIDTN 12-1');
+
+  // NACA
+  newName = newName.replace('16BLK', '16 Black');
+
+  // North Atlanta
+  newName = newName.replace('NAVC ', 'North Atlanta ');
+
+  // Tsunami
+  newName = newName.replace('S151E', '15-1');
+  newName = newName.replace('S161E', '16-1');
+  newName = newName.replace('S171E', '17-1');
+  newName = newName.replace('S172E', '17-2');
+
+  // Rio
+  if (newName.startsWith('Rio Claudio 13')) {
+    newName = 'Rio 13-1 Claudio';
+  }
+
+  if (newName.startsWith('Rio Rafael 14')) {
+    newName = 'Rio 14-1 Rafael';
+  }
+
+  if (newName.startsWith('Rio Luciano 16')) {
+    newName = 'Rio 16-1 Luciano';
+  }
+
+  // Club Unite
+  newName = newName.replace('14  Brandon', '14 Brandon');
 
   return newName;
 }
